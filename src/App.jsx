@@ -4,7 +4,8 @@ import { ThemeProvider } from "@/contexts/theme-context";
 
 import Layout from "@/routes/layout";
 import DashboardPage from "@/routes/dashboard/page";
-import Employee from "./routes/Employee";
+import Employees from "./routes/Employee";
+import EmployeeGrid from "./routes/EmployeeGrid";
 
 function App() {
     const router = createBrowserRouter([
@@ -17,8 +18,8 @@ function App() {
                     element: <DashboardPage />,
                 },
                 {
-                    path: "analytics",
-                    element: <Employee />,
+                    path: "all-employees",
+                    element: <Employees />,
                 },
                 {
                     path: "reports",
@@ -51,6 +52,10 @@ function App() {
                 {
                     path: "settings",
                     element: <h1 className="title">Settings</h1>,
+                },
+                {
+                    path: "employeesgrid",
+                    element: <EmployeeGrid />,
                 },
             ],
         },

@@ -1,8 +1,9 @@
-import { PencilLine, Trash, LayoutGrid, SlidersHorizontal, ArrowDownWideNarrow } from "lucide-react";
+import { PencilLine, Trash, LayoutGrid, SlidersHorizontal, ArrowDownWideNarrow, PlusSquare } from "lucide-react";
 import { Footer } from "@/layouts/footer";
-import { topProducts } from "@/constants";
+import { allEmployees } from "@/constants";
+import { Link } from "react-router-dom";
 
-const Employee = () => {
+const Employees = () => {
     return (
         <div className="w-full">
             {/* Header Section */}
@@ -14,10 +15,13 @@ const Employee = () => {
                 {/* Action Buttons */}
                 <div className="flex items-center gap-3">
                     {/* All Button */}
-                    <button className="flex items-center gap-2 px-3 py-2 border rounded-lg text-slate-900 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <Link
+                        to="/employeesgrid"
+                        className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-white text-slate-900 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+                    >
                         <LayoutGrid size={18} />
                         <span>All</span>
-                    </button>
+                    </Link>
 
                     {/* Filter Select */}
                     <div className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-200">
@@ -51,6 +55,14 @@ const Employee = () => {
                             <option value="za">Z–A</option>
                         </select>
                     </div>
+                    {/* Add Employee */}
+                    <Link
+                        to="/add-employee"
+                        className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-white text-slate-900  dark:bg-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-blue-900"
+                    >
+                        <PlusSquare size={18} />
+                        <span>Add Employee</span>
+                    </Link>
                 </div>
             </div>
 
@@ -59,40 +71,38 @@ const Employee = () => {
                 <table className="table">
                     <thead className="table-header">
                         <tr className="table-row">
+                            <th className="table-head">ID</th>
                             <th className="table-head">Name</th>
-                            <th className="table-head">Leave Type</th>
-                            <th className="table-head">From</th>
-                            <th className="table-head">To</th>
-                            <th className="table-head">Days</th>
-                            <th className="table-head">Remaining Leaves</th>
+                            <th className="table-head">Team Leader</th>
+                            <th className="table-head">Position</th>
+                            <th className="table-head">Department</th>
                             <th className="table-head">Status</th>
                             <th className="table-head">Action</th>
                         </tr>
                     </thead>
                     <tbody className="table-body">
-                        {topProducts.map((product) => (
-                            <tr key={product.number} className="table-row">
+                        {allEmployees.map((Employee) => (
+                            <tr key={Employee.number} className="table-row">
+                                <td className="table-cell">{Employee.number}</td>
                                 <td className="table-cell">
                                     <div className="flex w-max gap-x-4">
                                         <img
-                                            src={product.image}
-                                            alt={product.name}
+                                            src={Employee.image}
+                                            alt={Employee.name}
                                             className="size-14 rounded-lg object-cover"
                                         />
                                         <div className="flex flex-col">
-                                            <p>{product.name}</p>
+                                            <p>{Employee.name}</p>
                                             <p className="font-normal text-slate-600 dark:text-slate-400">
-                                                {product.description}
+                                                {Employee.description}
                                             </p>
                                         </div>
                                     </div>
                                 </td>
-                                <td className="table-cell">{product.leaveType}</td>
-                                <td className="table-cell">{product.from}</td>
-                                <td className="table-cell">{product.to}</td>
-                                <td className="table-cell">{product.days}</td>
-                                <td className="table-cell">{product.remainingDays}</td>
-                                <td className="table-cell">{product.status}</td>
+                                <td className="table-cell">{Employee.teamLeader}</td>
+                                <td className="table-cell">{Employee.position}</td>
+                                <td className="table-cell">{Employee.department}</td>
+                                <td className="table-cell">{Employee.status}</td>
                                 <td className="table-cell">
                                     <div className="flex items-center gap-x-4">
                                         <button className="text-blue-500 dark:text-blue-600">
@@ -114,4 +124,4 @@ const Employee = () => {
     );
 };
 
-export default Employee;
+export default Employees;
