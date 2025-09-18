@@ -8,6 +8,7 @@ import Employees from "./routes/Employee";
 import EmployeeGrid from "./routes/EmployeeGrid";
 import AddEmployee from "./routes/AddEmployee";
 import Leaves from "./routes/Leaves";
+import ShortLeaves from "./routes/ShortLeaves";
 
 function App() {
     const router = createBrowserRouter([
@@ -40,8 +41,8 @@ function App() {
                     element: <Leaves />,
                 },
                 {
-                    path: "verified-customers",
-                    element: <h1 className="title">Verified Customers</h1>,
+                    path: "short-leaves",
+                    element: <ShortLeaves />,
                 },
                 {
                     path: "products",

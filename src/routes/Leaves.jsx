@@ -136,7 +136,7 @@ const Leaves = () => {
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-                                                Duration
+                                                Duration (Number Of Days)
                                             </label>
                                             <input
                                                 type="number"
