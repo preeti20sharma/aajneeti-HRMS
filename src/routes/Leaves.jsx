@@ -123,35 +123,29 @@ const Leaves = () => {
                                             <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
                                                 Leave Type
                                             </label>
-                                            <select
+                                            <input
+                                                type="text"
                                                 name="leaveType"
-                                                value={leaveData.leaveType}
+                                                // value={leaveData.leaveType}
+                                                defaultValue={"Full Leave"}
+                                                disabled
                                                 onChange={handleChange}
                                                 className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
-                                                required
-                                            >
-                                                <option value="">Select</option>
-                                                <option value="full">Full Leave</option>
-                                                <option value="short">Short Leave</option>
-                                            </select>
+
+                                            />
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-                                                Remaining Days
+                                                Duration
                                             </label>
-                                            <select
-                                                name="remainingDays"
-                                                value={leaveData.remainingDays}
+                                            <input
+                                                type="number"
+                                                name="duration"
+                                                defaultValue={0}
                                                 onChange={handleChange}
                                                 className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
-                                                required
-                                            >
-                                                {leaves.map((leave) => (
-                                                    <option key={leave.number} value={leave.leaves} disabled>
-                                                        {leave.remainingDays}
-                                                    </option>
-                                                ))}
-                                            </select>
+
+                                            />
                                         </div>
                                     </div>
 

@@ -13,7 +13,7 @@ const Employees = () => {
                 </h2>
 
                 {/* Action Buttons */}
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3 ">
                     {/* All Button */}
                     <Link
                         to="/employeesgrid"
@@ -56,13 +56,15 @@ const Employees = () => {
                         </select>
                     </div>
                     {/* Add Employee */}
-                    <Link
-                        to="/add-employee"
-                        className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-white text-slate-900  dark:bg-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-blue-900"
-                    >
-                        <PlusSquare size={18} />
-                        <span>Add Employee</span>
-                    </Link>
+                    <div>
+                        <Link
+                            to="/add-employee"
+                            className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-white text-slate-900  dark:bg-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-blue-900"
+                        >
+                            <PlusSquare size={18} />
+                            <span>Add Employee</span>
+                        </Link>
+                    </div>
                 </div>
             </div>
 
