@@ -35,7 +35,7 @@ export const navbarLinks = [
             {
                 label: "Leaves",
                 icon: UserPlus,
-                path: "/new-customer",
+                path: "/leaves",
             },
             {
                 label: "Short Leaves",
@@ -180,6 +180,148 @@ export const recentSalesData = [
 ];
 
 export const topProducts = [
+    {
+        number: 1,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        leaveType: "sick leave",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        remainingDays: "20",
+        status: "approved",
+
+
+    },
+    {
+        number: 2,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        leaveType: "sick leave",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        remainingDays: "20",
+        status: "approved",
+
+
+    },
+    {
+        number: 3,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        leaveType: "sick leave",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        remainingDays: "20",
+        status: "approved",
+
+
+    },
+    {
+        number: 4,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        leaveType: "sick leave",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        remainingDays: "20",
+        status: "approved",
+
+
+    },
+    {
+        number: 5,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        leaveType: "sick leave",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        remainingDays: "20",
+        status: "approved",
+
+
+    },
+    {
+        number: 6,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        leaveType: "sick leave",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        remainingDays: "20",
+        status: "approved",
+
+
+    },
+    {
+        number: 7,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        leaveType: "sick leave",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        remainingDays: "20",
+        status: "approved",
+
+
+    },
+    {
+        number: 8,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        leaveType: "sick leave",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        remainingDays: "20",
+        status: "approved",
+
+
+    },
+    {
+        number: 9,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        leaveType: "sick leave",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        remainingDays: "20",
+        status: "approved",
+
+
+    },
+    {
+        number: 10,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        leaveType: "sick leave",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        remainingDays: "20",
+        status: "approved",
+
+
+    }
+];
+export const leaves = [
     {
         number: 1,
         name: "Preeti Sharma",

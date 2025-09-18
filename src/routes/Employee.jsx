@@ -76,6 +76,7 @@ const Employees = () => {
                             <th className="table-head">Team Leader</th>
                             <th className="table-head">Position</th>
                             <th className="table-head">Department</th>
+                            <th className="table-head">Joining Date</th>
                             <th className="table-head">Status</th>
                             <th className="table-head">Action</th>
                         </tr>
@@ -102,6 +103,7 @@ const Employees = () => {
                                 <td className="table-cell">{Employee.teamLeader}</td>
                                 <td className="table-cell">{Employee.position}</td>
                                 <td className="table-cell">{Employee.department}</td>
+                                <td className="table-cell">{Employee.joiningDate}</td>
                                 <td className="table-cell">{Employee.status}</td>
                                 <td className="table-cell">
                                     <div className="flex items-center gap-x-4">
