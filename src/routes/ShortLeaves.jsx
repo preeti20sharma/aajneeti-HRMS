@@ -3,7 +3,6 @@ import { Footer } from "@/layouts/footer";
 import { ShortLeave } from "../constants";
 import { useState } from "react";
 import { X } from "lucide-react";
-import { allEmployees } from "../constants";
 
 
 const ShortLeaves = () => {
@@ -103,20 +102,14 @@ const ShortLeaves = () => {
                                         <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
                                             Employee Name
                                         </label>
-                                        <select
-                                            name="employees"
-                                            value={leaveData.employees}
+                                        <input
+                                            type="text"
+                                            name=" employees"
+                                            placeholder="Employee name"
                                             onChange={handleChange}
                                             className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
-                                            required
-                                        >
-                                            <option value="">Select</option>
-                                            {allEmployees.map((emp) => (
-                                                <option key={emp.number} value={emp.name}>
-                                                    {emp.name}
-                                                </option>
-                                            ))}
-                                        </select>
+
+                                        />
                                     </div>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
