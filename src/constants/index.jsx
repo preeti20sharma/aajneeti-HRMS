@@ -30,7 +30,7 @@ export const navbarLinks = [
             {
                 label: "Holiday",
                 icon: Users,
-                path: "/customers",
+                path: "/holidays",
             },
             {
                 label: "Leaves",
