@@ -1,4 +1,4 @@
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, PencilLine, Trash } from "lucide-react";
 
 const holidays = [
     { id: 1, name: "New Year", date: "2025-01-01", day: "Wednesday" },
@@ -14,11 +14,12 @@ const holidays = [
 
 const CompanyHolidays = () => {
     return (
-        <div className="w-full max-w-3xl mx-auto p-6 
-                    bg-white dark:bg-slate-900 
-                    rounded-2xl shadow-lg 
-                    text-slate-800 dark:text-slate-100">
-
+        <div
+            className="w-full  mx-auto p-6 
+                 bg-white dark:bg-slate-900 
+                 rounded-2xl shadow-lg 
+                 text-slate-800 dark:text-slate-100"
+        >
             {/* Header */}
             <div className="flex items-center gap-2 mb-6">
                 <CalendarDays size={24} className="text-purple-600 dark:text-purple-400" />
@@ -26,12 +27,15 @@ const CompanyHolidays = () => {
             </div>
 
             {/* Table Header */}
-            <div className="grid grid-cols-3 text-sm font-semibold uppercase 
-                      border-b border-slate-300 dark:border-slate-700 
-                      pb-2 mb-3 text-slate-600 dark:text-slate-300">
+            <div
+                className="grid grid-cols-4 text-sm font-semibold uppercase 
+                   border-b border-slate-300 dark:border-slate-700 
+                   pb-2 mb-3 text-slate-600 dark:text-slate-300"
+            >
                 <span>Occasion</span>
                 <span className="text-center">Day</span>
-                <span className="text-right">Date</span>
+                <span className="text-center">Date</span>
+                <span className="text-right">Action</span>
             </div>
 
             {/* Holiday List */}
@@ -39,7 +43,7 @@ const CompanyHolidays = () => {
                 {holidays.map((holiday) => (
                     <div
                         key={holiday.id}
-                        className="grid grid-cols-3 items-center 
+                        className="grid grid-cols-4 items-center 
                        bg-slate-100 dark:bg-slate-800 
                        rounded-xl px-4 py-3 
                        hover:bg-slate-200 dark:hover:bg-slate-700 
@@ -47,7 +51,16 @@ const CompanyHolidays = () => {
                     >
                         <h3 className="text-base font-medium">{holiday.name}</h3>
                         <span className="text-sm text-center">{holiday.day}</span>
-                        <span className="text-sm text-right">{holiday.date}</span>
+                        <span className="text-sm text-center">{holiday.date}</span>
+
+                        <div className="flex items-center justify-end gap-4">
+                            <button className="text-blue-500 dark:text-blue-400 hover:scale-110 transition">
+                                <PencilLine size={20} />
+                            </button>
+                            <button className="text-red-500 hover:scale-110 transition">
+                                <Trash size={20} />
+                            </button>
+                        </div>
                     </div>
                 ))}
             </div>
