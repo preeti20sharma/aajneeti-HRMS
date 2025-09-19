@@ -725,6 +725,128 @@ export const ShortLeave = [
 
     }
 ];
+
+export const WorkingHour = [
+    {
+        number: 1,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        date: "12 sep 2025",
+        workingPlace: "Short leave",
+        Shift: "Day Shift",
+        totalHours: "4 Hours",
+        status: "approved",
+
+    },
+    {
+        number: 2,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        date: "12 sep 2025",
+        workingPlace: "Short leave",
+        Shift: "Day Shift",
+        totalHours: "7 Hours",
+        status: "approved",
+
+    },
+    {
+        number: 3,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        date: "12 sep 2025",
+        workingPlace: "Short leave",
+        Shift: "Night Shift",
+        totalHours: "4 Hours",
+        status: "approved",
+
+    },
+    {
+        number: 4,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        date: "12 sep 2025",
+        workingPlace: "Short leave",
+        Shift: "Day Shift",
+        totalHours: "8 Hours",
+        status: "approved",
+
+    },
+    {
+        number: 5,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        date: "12 sep 2025",
+        workingPlace: "Short leave",
+        Shift: "Day Shift",
+        totalHours: "6 Hours",
+        status: "approved",
+    },
+    {
+        number: 6,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        date: "12 sep 2025",
+        workingPlace: "Short leave",
+        Shift: "Night Shift",
+        totalHours: "4 Hours",
+        status: "approved",
+
+    },
+    {
+        number: 7,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        date: "12 sep 2025",
+        workingPlace: "Short leave",
+        Shift: "Day Shift",
+        totalHours: "5 Hours",
+        status: "approved",
+
+
+    },
+    {
+        number: 8,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        date: "12 sep 2025",
+        workingPlace: "Short leave",
+        Shift: "Night Shift",
+        totalHours: "4 Hours",
+        status: "approved",
+
+    },
+    {
+        number: 9,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        date: "12 sep 2025",
+        workingPlace: "Short leave",
+        Shift: "Day Shift",
+        totalHours: "3 Hours",
+        status: "approved",
+    },
+    {
+        number: 10,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        date: "12 sep 2025",
+        workingPlace: "Short leave",
+        Shift: "Night Shift",
+        totalHours: "4 Hours",
+        status: "approved",
+
+    }
+];
 export const allEmployees = [
     {
         number: 1,

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Employees = () => {
     return (
-        <div className="w-full">
+        <div className="w-full mx-auto p-4 bg-slate-50 dark:bg-slate-900 rounded-2xl shadow-lg text-slate-800 dark:text-slate-100">
             {/* Header Section */}
             <div className="flex flex-col sm:flex-row items-center justify-between mb-6 p-2">
                 <h2 className="text-2xl hidden sm:inline font-bold text-slate-800 dark:text-slate-100">

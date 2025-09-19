@@ -1,11 +1,11 @@
 import { PencilLine, Trash, LayoutGrid, SlidersHorizontal, ArrowDownWideNarrow, PlusSquare } from "lucide-react";
 import { Footer } from "@/layouts/footer";
-import { allEmployees } from "@/constants";
+import { WorkingHour } from "@/constants";
 import { Link } from "react-router-dom";
 
 const WorkingHours = () => {
     return (
-        <div className="w-full">
+        <div className="w-full mx-auto p-4 bg-slate-50 dark:bg-slate-900 rounded-2xl shadow-lg text-slate-800 dark:text-slate-100">
             {/* Header Section */}
             <div className="flex flex-col sm:flex-row items-center justify-between mb-6 p-2">
                 <h2 className="text-2xl hidden sm:inline font-bold text-slate-800 dark:text-slate-100">
@@ -75,38 +75,38 @@ const WorkingHours = () => {
                         <tr className="table-row">
                             <th className="table-head">ID</th>
                             <th className="table-head">Name</th>
-                            <th className="table-head">Team Leader</th>
-                            <th className="table-head">Position</th>
-                            <th className="table-head">Department</th>
-                            <th className="table-head">Joining Date</th>
+                            <th className="table-head">Date</th>
+                            <th className="table-head">Total Hours</th>
+                            <th className="table-head">Working Place</th>
+                            <th className="table-head">Shift</th>
                             <th className="table-head">Status</th>
                             <th className="table-head">Action</th>
                         </tr>
                     </thead>
                     <tbody className="table-body">
-                        {allEmployees.map((Employee) => (
-                            <tr key={Employee.number} className="table-row">
-                                <td className="table-cell">{Employee.number}</td>
+                        {WorkingHour.map((Hours) => (
+                            <tr key={Hours.number} className="table-row">
+                                <td className="table-cell">{Hours.number}</td>
                                 <td className="table-cell">
                                     <div className="flex w-max gap-x-4">
                                         <img
-                                            src={Employee.image}
-                                            alt={Employee.name}
+                                            src={Hours.image}
+                                            alt={Hours.name}
                                             className="size-14 rounded-lg object-cover"
                                         />
                                         <div className="flex flex-col">
-                                            <p>{Employee.name}</p>
+                                            <p>{Hours.name}</p>
                                             <p className="font-normal text-slate-600 dark:text-slate-400">
-                                                {Employee.description}
+                                                {Hours.description}
                                             </p>
                                         </div>
                                     </div>
                                 </td>
-                                <td className="table-cell">{Employee.teamLeader}</td>
-                                <td className="table-cell">{Employee.position}</td>
-                                <td className="table-cell">{Employee.department}</td>
-                                <td className="table-cell">{Employee.joiningDate}</td>
-                                <td className="table-cell">{Employee.status}</td>
+                                <td className="table-cell">{Hours.date}</td>
+                                <td className="table-cell">{Hours.totalHours}</td>
+                                <td className="table-cell">{Hours.workingPlace}</td>
+                                <td className="table-cell">{Hours.Shift}</td>
+                                <td className="table-cell">{Hours.status}</td>
                                 <td className="table-cell">
                                     <div className="flex items-center gap-x-4">
                                         <button className="text-blue-500 dark:text-blue-600">
@@ -122,7 +122,6 @@ const WorkingHours = () => {
                     </tbody>
                 </table>
             </div>
-
             <Footer />
         </div>
     );
