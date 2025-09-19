@@ -10,6 +10,7 @@ import AddEmployee from "./routes/AddEmployee";
 import Leaves from "./routes/Leaves";
 import ShortLeaves from "./routes/ShortLeaves";
 import CompanyHolidays from "./routes/Holiday";
+import RemoteWork from "./routes/RemoteWork";
 
 function App() {
     const router = createBrowserRouter([
@@ -50,8 +51,8 @@ function App() {
                     element: <h1 className="title">Products</h1>,
                 },
                 {
-                    path: "new-product",
-                    element: <h1 className="title">New Product</h1>,
+                    path: "remote-work",
+                    element: <RemoteWork />,
                 },
                 {
                     path: "inventory",
