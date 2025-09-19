@@ -55,12 +55,12 @@ export const navbarLinks = [
             {
                 label: "Extra Working Hours",
                 icon: PackagePlus,
-                path: "/new-product",
+                path: "/extra-working-hours",
             },
             {
-                label: "Clients",
+                label: "Salary Details",
                 icon: ShoppingBag,
-                path: "/inventory",
+                path: "/employees-salary",
             },
         ],
     },
@@ -319,6 +319,125 @@ export const topProducts = [
         status: "approved",
 
 
+    }
+];
+
+export const remoteWork = [
+    {
+        number: 1,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        status: "approved",
+
+
+    },
+    {
+        number: 2,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        status: "pending",
+
+
+    },
+    {
+        number: 3,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        status: "approved",
+
+
+    },
+    {
+        number: 4,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        from: "12 sep 2025",
+        to: "18 sep 2025",
+        days: "03",
+        status: "pending",
+
+
+    },
+    {
+        number: 5,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        status: "approved",
+
+
+    },
+    {
+        number: 6,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        status: "approved",
+
+
+    },
+    {
+        number: 7,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "04",
+        status: "pending",
+
+
+    },
+    {
+        number: 8,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        status: "approved",
+
+    },
+    {
+        number: 9,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        status: "approved",
+
+    },
+    {
+        number: 10,
+        name: "Preeti Sharma",
+        image: ProfileImage,
+        description: "Frontend Developer ",
+        from: "12 sep 2025",
+        to: "14 sep 2025",
+        days: "02",
+        status: "approved",
     }
 ];
 export const leaves = [
