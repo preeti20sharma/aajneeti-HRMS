@@ -44,7 +44,7 @@ const Employees = () => {
                 {/* All Button */}
                 <Link
                     to="/employeesgrid"
-                    className="flex items-center gap-2 px-2 py-2 border rounded-lg text-slate-900 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+                    className="flex items-center gap-2 px-1 sm:px-2 py-2 border rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-200"
                 >
                     <LayoutGrid size={18} />
                     <span>All</span>

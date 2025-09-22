@@ -96,7 +96,7 @@ const WorkingHours = () => {
                 {/* Left: Title + Breadcrumb */}
                 <div className="flex flex-col">
                     <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
-                        Full Leave
+                        Extra Working Hours
                     </h2>
                     <ul className="flex items-center text-sm mt-2">
                         <li>
@@ -109,7 +109,7 @@ const WorkingHours = () => {
                             </Link>
                         </li>
                         <li className="px-2 text-slate-500">|</li>
-                        <li className="text-slate-600 dark:text-slate-50">Leave</li>
+                        <li className="text-slate-600 dark:text-slate-50">Extra Working Hours </li>
                     </ul>
                 </div>
 
@@ -157,7 +157,6 @@ const WorkingHours = () => {
                         <option value="invited">Invited</option>
                     </select>
                 </div>
-
                 {/* Sort */}
                 <div className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-white 
                     dark:bg-slate-800 text-slate-900 dark:text-slate-200">
