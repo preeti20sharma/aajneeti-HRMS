@@ -74,6 +74,26 @@ export const navbarLinks = [
             },
         ],
     },
+    {
+        title: "Authentication",
+        links: [
+            {
+                label: "Register",
+                icon: Settings,
+                path: "/register",
+            },
+            {
+                label: "Login",
+                icon: Settings,
+                path: "/login",
+            },
+            {
+                label: "Logout",
+                icon: Settings,
+                path: "/logout",
+            },
+        ],
+    },
 ];
 
 export const overviewData = [

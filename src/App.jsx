@@ -13,9 +13,25 @@ import CompanyHolidays from "./routes/Holiday";
 import RemoteWork from "./routes/RemoteWork";
 import EmployeeSalary from "./routes/Salary";
 import WorkingHours from "./routes/WorkingHours";
+import Register from "./routes/register/Register";
+import Login from "./routes/login/Login";
+import Logout from "./routes/logout/Logout";
 
 function App() {
     const router = createBrowserRouter([
+        {
+            path: "register",
+            element: <Register />
+        },
+        {
+            path: "login",
+            element: <Login />
+        },
+        {
+            path: "logout",
+            element: <Logout />
+        },
+
         {
             path: "/",
             element: <Layout />,
@@ -68,8 +84,22 @@ function App() {
                     path: "employeesgrid",
                     element: <EmployeeGrid />,
                 },
+                {
+                    path: "register",
+                    element: <Register />,
+                },
+                {
+                    path: "login",
+                    element: <EmployeeGrid />,
+                },
+                {
+                    path: "logout",
+                    element: <EmployeeGrid />,
+                },
             ],
         },
+
+
     ]);
 
     return (
