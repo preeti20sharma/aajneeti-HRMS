@@ -16,6 +16,7 @@ import WorkingHours from "./routes/WorkingHours";
 import Register from "./routes/register/Register";
 import Login from "./routes/login/Login";
 import Logout from "./routes/logout/Logout";
+import Empdashboard from "./routes/dashboard/Empdashboard";
 
 function App() {
     const router = createBrowserRouter([
@@ -39,6 +40,10 @@ function App() {
                 {
                     index: true,
                     element: <DashboardPage />,
+                },
+                {
+                    path: "employees-dashboard",
+                    element: <Empdashboard />,
                 },
                 {
                     path: "all-employees",

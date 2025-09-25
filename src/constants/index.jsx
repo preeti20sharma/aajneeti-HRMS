@@ -8,9 +8,14 @@ export const navbarLinks = [
         title: "Dashboard",
         links: [
             {
-                label: "Dashboard",
+                label: "Admin Dashboard",
                 icon: Home,
                 path: "/",
+            },
+            {
+                label: "Employee Dashboard",
+                icon: Home,
+                path: "/employees-dashboard",
             },
             {
                 label: "Employees",
