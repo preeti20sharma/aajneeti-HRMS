@@ -61,7 +61,7 @@ const DashboardPage = () => {
                         </span>
                     </div>
                 </div>
-                <div className="border border-1 rounded-md shadow p-10">
+                <div className="border border-1 rounded-md shadow p-10 hidden sm:inline">
                     <div className="card-header flex flex-col items-center">
                         <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-blue-500 shadow-md mb-3">
                             <img
@@ -171,7 +171,7 @@ const DashboardPage = () => {
                                     <th className="table-head">From</th>
                                     <th className="table-head">To</th>
                                     <th className="table-head">Days</th>
-                                    <th className="table-head">Remaining Leaves</th>
+                                    <th className="table-head">Remaining Days</th>
                                     <th className="table-head">Status</th>
                                     <th className="table-head">Action</th>
 
