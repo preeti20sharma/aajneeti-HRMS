@@ -1,52 +1,79 @@
-import { PencilLine, Trash, LayoutGrid, SlidersHorizontal, ArrowDownWideNarrow, PlusSquare, HomeIcon } from "lucide-react";
+import { PencilLine, Trash, PlusSquare, HomeIcon, SlidersHorizontal, ArrowDownWideNarrow } from "lucide-react";
 import { Footer } from "@/layouts/footer";
 import { allEmployees } from "@/constants";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Employees = () => {
     const [employees, setEmployees] = useState(allEmployees);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedEmployee, setSelectedEmployee] = useState(null);
+    const [preview, setPreview] = useState(null);
+    const labelClasses = "text-sm font-medium text-slate-700 dark:text-slate-200";
 
     // Handle Add Employee button
     const handleAdd = () => {
-        setSelectedEmployee(null); // empty form
+        setSelectedEmployee(null);
+        setPreview(null);
         setIsOpen(true);
     };
 
     // Handle Edit Employee button
     const handleEdit = (emp) => {
-        setSelectedEmployee(emp); // prefill form
+        setSelectedEmployee(emp);
+        setPreview(emp.image || null);
         setIsOpen(true);
     };
+
+    // Handle Image Change
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const objectUrl = URL.createObjectURL(file);
+            setPreview(objectUrl);
+        }
+    };
+
+    // Cleanup object URL
+    useEffect(() => {
+        return () => {
+            if (preview) URL.revokeObjectURL(preview);
+        };
+    }, [preview]);
 
     // Handle Form Submit
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = new FormData(e.target);
+        const file = form.get("image");
+
+        let imageUrl = selectedEmployee?.image || "https://via.placeholder.com/50";
+        if (file && file.size > 0) {
+            imageUrl = preview; // use uploaded preview
+        }
+
         const newEmp = {
-            number: selectedEmployee ? selectedEmployee.number : employees.length + 1,
+            number: form.get("id") || (selectedEmployee ? selectedEmployee.number : employees.length + 1),
             name: form.get("name"),
             description: form.get("description"),
             teamLeader: form.get("teamLeader"),
-            position: form.get("position"),
-            department: form.get("department"),
+            email: form.get("email"),
+            phone: form.get("phone"),
             joiningDate: form.get("joiningDate"),
             status: form.get("status"),
-            image: selectedEmployee?.image || "https://via.placeholder.com/50"
+            image: imageUrl
         };
 
         if (selectedEmployee) {
-            // update existing
             setEmployees(
                 employees.map((emp) => (emp.number === selectedEmployee.number ? newEmp : emp))
             );
         } else {
-            // add new
             setEmployees([...employees, newEmp]);
         }
+
         setIsOpen(false);
+        setPreview(null);
     };
 
     return (
@@ -76,6 +103,40 @@ const Employees = () => {
                     <span>Add Employee</span>
                 </button>
             </div>
+            {/* Action Buttons */}
+            <div className="flex items-center gap-3 pb-4 mt-4 justify-end sm:px-4">
+                {/* Filter Select */}
+                <div className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-white 
+                              dark:bg-slate-800 text-slate-900 dark:text-slate-200">
+                    <SlidersHorizontal size={18} />
+                    <select
+                        className="bg-transparent focus:outline-none text-sm"
+                        defaultValue=""
+                    >
+                        <option value="" disabled>Filter</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="invited">Invited</option>
+                    </select>
+                </div>
+
+                {/* Sort Select */}
+                <div className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-white 
+                              dark:bg-slate-800 text-slate-900 dark:text-slate-200">
+                    <ArrowDownWideNarrow size={18} />
+                    <select
+                        className="bg-transparent focus:outline-none text-sm"
+                        defaultValue=""
+                    >
+                        <option value="" disabled>Sort by</option>
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="az">A–Z</option>
+                        <option value="za">Z–A</option>
+                    </select>
+                </div>
+            </div>
+
 
             {/* Table Section */}
             <div className="relative w-full overflow-auto [scrollbar-width:_thin]">
@@ -108,8 +169,8 @@ const Employees = () => {
                                     </div>
                                 </td>
                                 <td className="table-cell">{Employee.teamLeader}</td>
-                                <td className="table-cell">{Employee.position}</td>
-                                <td className="table-cell">{Employee.department}</td>
+                                <td className="table-cell">{Employee.email}</td>
+                                <td className="table-cell">{Employee.phone}</td>
                                 <td className="table-cell">{Employee.joiningDate}</td>
                                 <td className="table-cell">{Employee.status}</td>
                                 <td className="table-cell">
@@ -131,25 +192,83 @@ const Employees = () => {
             {/* Popup Form */}
             {isOpen && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                    <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg w-full max-w-md">
+                    <div className="bg-white dark:bg-slate-800 px-6 py-2 rounded-lg shadow-lg w-full max-w-xl  ">
                         <h2 className="text-xl font-bold mb-4">
                             {selectedEmployee ? "Edit Employee" : "Add Employee"}
                         </h2>
                         <form onSubmit={handleSubmit} className="space-y-3">
-                            <input name="name" placeholder="Name" defaultValue={selectedEmployee?.name || ""} className="w-full p-2 border rounded" />
-                            <input name="description" placeholder="Description" defaultValue={selectedEmployee?.description || ""} className="w-full p-2 border rounded" />
-                            <input name="teamLeader" placeholder="Team Manager" defaultValue={selectedEmployee?.teamLeader || ""} className="w-full p-2 border rounded" />
-                            <input name="position" placeholder="Email ID" defaultValue={selectedEmployee?.position || ""} className="w-full p-2 border rounded" />
-                            <input name="department" placeholder="Mobile No." defaultValue={selectedEmployee?.department || ""} className="w-full p-2 border rounded" />
-                            <input type="date" name="joiningDate" defaultValue={selectedEmployee?.joiningDate || ""} className="w-full p-2 border rounded" />
-                            <select name="status" defaultValue={selectedEmployee?.status || ""} className="w-full p-2 border rounded">
-                                <option value="">Select Status</option>
-                                <option value="Active">Active</option>
-                                <option value="Inactive">Inactive</option>
-                            </select>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label className={labelClasses}>Employee Name</label>
+                                    <input name="name" placeholder="Name" defaultValue={selectedEmployee?.name || ""}
+                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                </div>
+                                <div>
+                                    <label className={labelClasses}>Employee ID</label>
+                                    <input name="id" placeholder="Employee ID" defaultValue={selectedEmployee?.number || ""}
+                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label className={labelClasses}>Employee Type</label>
+                                    <input name="status" placeholder="Employment Type" defaultValue={selectedEmployee?.status || ""}
+                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                </div>
+                                <div>
+                                    <label className={labelClasses}>Employee Designation</label>
+                                    <input name="description" placeholder="Designation" defaultValue={selectedEmployee?.description || ""}
+                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label className={labelClasses}>Team Manager</label>
+                                    <input name="teamLeader" placeholder="Team Manager" defaultValue={selectedEmployee?.teamLeader || ""}
+                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                </div>
+                                <div>
+                                    <label className={labelClasses}>Email ID</label>
+                                    <input name="email" placeholder="Email ID" defaultValue={selectedEmployee?.email || ""}
+                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label className={labelClasses}>Mobile No.</label>
+                                    <input name="phone" placeholder="Mobile No." defaultValue={selectedEmployee?.phone || ""}
+                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                </div>
+                                <div>
+                                    <label className={labelClasses}>Joining Date</label>
+                                    <input type="date" name="joiningDate" defaultValue={selectedEmployee?.joiningDate || ""}
+                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                </div>
+                            </div>
+
+                            <h2 className="text-lg font-semibold mb-4 border-b pb-2 border-gray-200 dark:border-slate-700">
+                                Upload Profile
+                            </h2>
+                            <div className="flex flex-col items-center md:items-start">
+                                <label className={`${labelClasses} mb-1`}>Image</label>
+                                <input
+                                    type="file"
+                                    name="image"
+                                    accept="image/*"
+                                    onChange={handleImageChange}
+                                    className="block text-sm text-slate-700 dark:text-slate-200"
+                                />
+                                {preview && (
+                                    <img src={preview} alt="Preview" className="mt-2 w-20 h-20 rounded-lg object-cover" />
+                                )}
+                                <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">JPG or PNG, max 5MB</p>
+                            </div>
 
                             <div className="flex justify-end gap-3">
-                                <button type="button" onClick={() => setIsOpen(false)} className="px-4 py-2 bg-gray-300 rounded">
+                                <button type="button" onClick={() => setIsOpen(false)} className="px-4 py-2 text-slate-800 bg-gray-300 rounded">
                                     Cancel
                                 </button>
                                 <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded">
@@ -160,7 +279,6 @@ const Employees = () => {
                     </div>
                 </div>
             )}
-
             <Footer />
         </div>
     );
