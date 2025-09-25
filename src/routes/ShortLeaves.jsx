@@ -217,17 +217,31 @@ const ShortLeaves = () => {
                         </h2>
 
                         <form onSubmit={handleSubmit} className="space-y-4">
-                            <div>
-                                <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-                                    Employee Name
-                                </label>
-                                <input
-                                    type="text"
-                                    name="employees"
-                                    value={shortLeaveData.employees}
-                                    onChange={handleChange}
-                                    className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
-                                />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
+                                        Employee Name
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="employees"
+                                        value={shortLeaveData.employees}
+                                        onChange={handleChange}
+                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
+                                        Employee ID
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="employees"
+                                        value={shortLeaveData.number}
+                                        onChange={handleChange}
+                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
+                                    />
+                                </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -235,14 +249,16 @@ const ShortLeaves = () => {
                                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
                                         Leave Type
                                     </label>
-                                    <input
-                                        type="text"
+                                    <select
                                         name="leaveType"
-                                        value={"Short Leave"}
+                                        // value={shortLeaveData.leaveType}
                                         onChange={handleChange}
-                                        disabled
                                         className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
-                                    />
+                                    >
+                                        <option value="">Select</option>
+                                        <option value="firstHalf">Casual Leave</option>
+                                        <option value="secondHalf">Sick Leave</option>
+                                    </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">

@@ -12,14 +12,14 @@ const Empdashboard = () => {
         phone: "+91 9876543210",
         joiningDate: "2024-05-01",
         leavesPolicy: {
-            total: 24,
-            casual: 8,
-            sick: 8,
-            earned: 8,
+            total: 2,
+            casual: 1,
+            sick: 1,
+            earned: 28,
         },
         leavesTaken: [
-            { date: "2025-09-05", type: "Casual", days: 1 },
-            { date: "2025-09-12", type: "Sick", days: 1 },
+            { date: "2025-09-05", type: "Casual", days: 1, status: "Approved" },
+            { date: "2025-09-12", type: "Sick", days: 1, status: "rejected" },
         ],
     });
 
@@ -97,7 +97,7 @@ const Empdashboard = () => {
                     <p><span className="font-semibold">Total Leaves:</span> {employee.leavesPolicy.total}</p>
                     <p><span className="font-semibold">Casual:</span> {employee.leavesPolicy.casual}</p>
                     <p><span className="font-semibold">Sick:</span> {employee.leavesPolicy.sick}</p>
-                    <p><span className="font-semibold">Earned:</span> {employee.leavesPolicy.earned}</p>
+                    <p><span className="font-semibold">Earned Days:</span> {employee.leavesPolicy.earned}</p>
                 </div>
             </div>
 
@@ -115,6 +115,7 @@ const Empdashboard = () => {
                                 <th className="border px-2 py-1">Date</th>
                                 <th className="border px-2 py-1">Leave Type</th>
                                 <th className="border px-2 py-1">Days</th>
+                                <th className="border px-2 py-1">Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -123,6 +124,9 @@ const Empdashboard = () => {
                                     <td className="border px-2 py-1">{leave.date}</td>
                                     <td className="border px-2 py-1">{leave.type}</td>
                                     <td className="border px-2 py-1">{leave.days}</td>
+                                    {leave.status === "Approved" ? (
+                                        <td className="border px-2 py-1 text-green-600 font-semibold">{leave.status}</td>
+                                    ) : <td className="border px-2 py-1 text-red-600 font-semibold">{leave.status}</td>}
                                 </tr>
                             ))}
                         </tbody>

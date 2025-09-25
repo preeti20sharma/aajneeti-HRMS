@@ -9,7 +9,9 @@ const Leaves = () => {
     const [editingLeave, setEditingLeave] = useState(null);
     const [leaveData, setLeaveData] = useState({
         employees: "",
-        leaveType: "Full Leave",
+        id: "",
+        durationType: "Full Leave",
+        leaveType: "",
         duration: 0,
         fromDate: "",
         toDate: "",
@@ -34,7 +36,9 @@ const Leaves = () => {
         setEditingLeave(null);
         setLeaveData({
             employees: "",
-            leaveType: "Full Leave",
+            leaveType: "",
+            id: "",
+            durationType: "Full Leave",
             duration: 0,
             fromDate: "",
             toDate: "",
@@ -46,7 +50,9 @@ const Leaves = () => {
         setEditingLeave(leave.number);
         setLeaveData({
             employees: leave.name,
-            leaveType: leave.leaveType || "Full Leave",
+            id: leave.number,
+            durationType: leave.durationType || "Full Leave",
+            leaveType: leave.leaveType,
             duration: leave.days || 0,
             fromDate: leave.from,
             toDate: leave.to,
@@ -85,6 +91,8 @@ const Leaves = () => {
                         setEditingLeave(null);
                         setLeaveData({
                             employees: "",
+                            id: "",
+                            durationType: "",
                             leaveType: "Full Leave",
                             duration: 0,
                             fromDate: "",
@@ -144,6 +152,7 @@ const Leaves = () => {
                             <th className="table-head">ID</th>
                             <th className="table-head">Name</th>
                             <th className="table-head">Leaves Type</th>
+                            <th className="table-head">Duration Type</th>
                             <th className="table-head">From</th>
                             <th className="table-head">To</th>
                             <th className="table-head">Days</th>
@@ -170,7 +179,9 @@ const Leaves = () => {
                                             </p>
                                         </div>
                                     </div>
-                                </td>                                <td className="table-cell">{fullLeaves.leaveType}</td>
+                                </td>
+                                <td className="table-cell">{fullLeaves.leaveType}</td>
+                                <td className="table-cell">{fullLeaves.durationType}</td>
                                 <td className="table-cell">{fullLeaves.from}</td>
                                 <td className="table-cell">{fullLeaves.to}</td>
                                 <td className="table-cell">{fullLeaves.days}</td>
@@ -229,27 +240,57 @@ const Leaves = () => {
                                     name="employees"
                                     value={leaveData.employees}
                                     onChange={handleChange}
+                                    placeholder="Employee Name"
                                     className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
                                 />
                             </div>
-
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-                                        Leave Type
+                                        Employee ID
                                     </label>
                                     <input
                                         type="text"
-                                        name="leaveType"
-                                        value={leaveData.leaveType}
+                                        name="number"
+                                        value={leaveData.number}
                                         onChange={handleChange}
-                                        disabled
+                                        placeholder="Employee ID"
                                         className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
                                     />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-                                        Duration (Number Of Days)
+                                        Leave Type
+                                    </label>
+                                    <select
+                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
+                                        defaultValue=""
+                                    >
+                                        <option value="" disabled>Leave Type</option>
+                                        <option value="newest">Sick Leave</option>
+                                        <option value="oldest">Casual Leave</option>
+                                        <option value="az">Others</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
+                                        Duration Type
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="durationType"
+                                        onChange={handleChange}
+                                        disabled
+                                        defaultValue={"Full Leave"}
+                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
+                                        Number Of Days Leave
                                     </label>
                                     <input
                                         type="number"
