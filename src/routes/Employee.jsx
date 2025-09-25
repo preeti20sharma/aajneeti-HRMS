@@ -191,8 +191,8 @@ const Employees = () => {
 
             {/* Popup Form */}
             {isOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                    <div className="bg-white dark:bg-slate-800 px-6 py-2 rounded-lg shadow-lg w-full max-w-xl  ">
+                <div className="fixed inset-0 z-50 bg-black bg-opacity-50 overflow-auto">
+                    <div className="bg-white dark:bg-slate-800 px-6 py-2 rounded-lg relative my-8 mx-auto shadow-lg w-full max-w-md  ">
                         <h2 className="text-xl font-bold mb-4">
                             {selectedEmployee ? "Edit Employee" : "Add Employee"}
                         </h2>
