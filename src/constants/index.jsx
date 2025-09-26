@@ -84,6 +84,7 @@ export const navbarLinks = [
                 icon: Settings,
                 path: "/logout",
             },
+
         ],
     },
 ];

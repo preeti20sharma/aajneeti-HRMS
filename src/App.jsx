@@ -33,6 +33,7 @@ function App() {
             element: <Logout />
         },
 
+
         {
             path: "/",
             element: <Layout />,
@@ -86,18 +87,7 @@ function App() {
                     path: "employeesgrid",
                     element: <EmployeeGrid />,
                 },
-                {
-                    path: "register",
-                    element: <Register />,
-                },
-                {
-                    path: "login",
-                    element: <EmployeeGrid />,
-                },
-                {
-                    path: "logout",
-                    element: <EmployeeGrid />,
-                },
+
             ],
         },
 
