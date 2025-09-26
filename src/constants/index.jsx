@@ -22,11 +22,7 @@ export const navbarLinks = [
                 icon: ChartColumn,
                 path: "/all-employees",
             },
-            {
-                label: "Companies",
-                icon: NotepadText,
-                path: "/reports",
-            },
+
         ],
     },
     {
@@ -69,16 +65,7 @@ export const navbarLinks = [
             },
         ],
     },
-    {
-        title: "Settings",
-        links: [
-            {
-                label: "Settings",
-                icon: Settings,
-                path: "/settings",
-            },
-        ],
-    },
+
     {
         title: "Authentication",
         links: [

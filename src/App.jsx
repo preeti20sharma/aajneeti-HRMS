@@ -81,10 +81,7 @@ function App() {
                     path: "employees-salary",
                     element: <EmployeeSalary />,
                 },
-                {
-                    path: "settings",
-                    element: <h1 className="title">Settings</h1>,
-                },
+
                 {
                     path: "employeesgrid",
                     element: <EmployeeGrid />,
