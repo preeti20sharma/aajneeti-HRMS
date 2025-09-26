@@ -121,7 +121,7 @@ const Employees = () => {
                 </div>
 
                 {/* Sort Select */}
-                <div className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-white 
+                <div className="flex items-center  gap-2 px-3 py-2 border rounded-lg bg-white 
                               dark:bg-slate-800 text-slate-900 dark:text-slate-200">
                     <ArrowDownWideNarrow size={18} />
                     <select

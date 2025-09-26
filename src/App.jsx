@@ -6,7 +6,6 @@ import Layout from "@/routes/layout";
 import DashboardPage from "@/routes/dashboard/page";
 import Employees from "./routes/Employee";
 import EmployeeGrid from "./routes/EmployeeGrid";
-import AddEmployee from "./routes/AddEmployee";
 import Leaves from "./routes/Leaves";
 import ShortLeaves from "./routes/ShortLeaves";
 import CompanyHolidays from "./routes/Holiday";
@@ -17,6 +16,7 @@ import Register from "./routes/register/Register";
 import Login from "./routes/login/Login";
 import Logout from "./routes/logout/Logout";
 import Empdashboard from "./routes/dashboard/Empdashboard";
+import EditProfile from "./routes/EditProfile";
 
 function App() {
     const router = createBrowserRouter([
@@ -50,8 +50,8 @@ function App() {
                     element: <Employees />,
                 },
                 {
-                    path: "add-employee",
-                    element: <AddEmployee />
+                    path: "edit-profile",
+                    element: <EditProfile />
                 },
                 {
                     path: "reports",
