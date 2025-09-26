@@ -28,7 +28,14 @@ const Empdashboard = () => {
             { from: "25-08-2025", to: "29-08-2025", days: "04", reason: "Urgent Work", status: "rejected", approvedBy: "HR" },
             { from: "25-09-2025", to: "28-09-2025", days: "03", reason: "Health Issues", status: "Approved", approvedBy: "Manager" },
         ],
-
+        extraWorkingHours: [
+            { date: "25-09-2025", inTime: "4:34 PM", outTime: "8:32 PM", totalHours: "04", workingPlace: "At Office", reason: "Urgent delivered", approvedBy: "Manager", compensationType: "paid overtime" },
+            { date: "24-08-2025", inTime: "9:10 PM", outTime: "12:10 AM", totalHours: "03", workingPlace: "From Home", reason: "project deadline", approvedBy: "HR", compensationType: "paid overtime" },
+            { date: "25-09-2025", inTime: "4:34 PM", outTime: "8:32 PM", totalHours: "04", workingPlace: "At Office", reason: "Urgent delivered", approvedBy: "Manager", compensationType: "paid overtime" },
+        ],
+        salary: [
+            { basic: "30000", hra: "15000", allowance: "5000", deductions: "2000", net: "48000" },
+        ]
     });
 
     const leavesStatus = {
@@ -210,26 +217,100 @@ const Empdashboard = () => {
                     <h3 className="text-lg font-semibold flex items-center gap-2">
                         <ClipboardList size={20} /> Work From Home
                     </h3>
+                    {employee.remoteWork.length === 0 ? (
+                        <p className="text-md mt-2">No remote work records yet.</p>
+                    ) : (
+                        <table className="w-full text-md border-collapse mt-3">
+                            <thead>
+                                <tr className="bg-slate-200 dark:bg-slate-700">
+                                    <th className="border px-2 py-1">From Date</th>
+                                    <th className="border px-2 py-1">To Date</th>
+                                    <th className="border px-2 py-1">Days</th>
+                                    <th className="border px-2 py-1">Reason</th>
+                                    <th className="border px-2 py-1">Status</th>
+                                    <th className="border px-2 py-1">Approved By</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {employee.remoteWork.map((work, idx) => (
+                                    <tr key={idx} className="hover:bg-slate-100 dark:hover:bg-slate-800">
+                                        <td className="border px-2 py-1">{work.from}</td>
+                                        <td className="border px-2 py-1">{work.to}</td>
+                                        <td className="border px-2 py-1">{work.days}</td>
+                                        <td className="border px-2 py-1">{work.reason}</td>
+                                        <td className="border px-2 py-1">{work.status}</td>
+                                        <td className="border px-2 py-1">{work.approvedBy}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    )}
+                </div>
+            </div>
+            {/* Extra Working Hours */}
+            <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
+                <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow overflow-auto">
+                    <h3 className="text-lg font-semibold flex items-center gap-2">
+                        <ClipboardList size={20} /> Extra Working Hours
+                    </h3>
+                    {employee.extraWorkingHours.length === 0 ? (
+                        <p className="text-md mt-2">No extra working record yet. </p>
+                    ) : (
+                        <table className="w-full text-md border-collapse mt-3">
+                            <thead>
+                                <tr className="bg-slate-200 dark:bg-slate-700">
+                                    <th className="border px-2 py-1">Date</th>
+                                    <th className="border px-2 py-1">In Time</th>
+                                    <th className="border px-2 py-1">Out Time</th>
+                                    <th className="border px-2 py-1">Total Hours</th>
+                                    <th className="border px-2 py-1">Working Place</th>
+                                    <th className="border px-2 py-1">Reason</th>
+                                    <th className="border px-2 py-1">Approved By</th>
+                                    <th className="border px-2 py-1">Compensation Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {employee.extraWorkingHours.map((work, idx) => (
+                                    <tr key={idx} className="hover:bg-slate-100 dark:hover:bg-slate-800">
+                                        <td className="border px-2 py-1">{work.date}</td>
+                                        <td className="border px-2 py-1">{work.inTime}</td>
+                                        <td className="border px-2 py-1">{work.outTime}</td>
+                                        <td className="border px-2 py-1">{work.totalHours}</td>
+                                        <td className="border px-2 py-1">{work.workingPlace}</td>
+                                        <td className="border px-2 py-1">{work.reason}</td>
+                                        <td className="border px-2 py-1">{work.approvedBy}</td>
+                                        <td className="border px-2 py-1">{work.compensationType}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    )}
+                </div>
+            </div>
+            {/* Salary Details */}
+            <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
+                <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow overflow-auto">
+                    <h3 className="text-lg font-semibold flex items-center gap-2">
+                        <ClipboardList size={20} /> Salary Details
+                    </h3>
                     <table className="w-full text-md border-collapse mt-3">
                         <thead>
                             <tr className="bg-slate-200 dark:bg-slate-700">
-                                <th className="border px-2 py-1">From Date</th>
-                                <th className="border px-2 py-1">To Date</th>
-                                <th className="border px-2 py-1">Days</th>
-                                <th className="border px-2 py-1">Reason</th>
-                                <th className="border px-2 py-1">Status</th>
-                                <th className="border px-2 py-1">Approved By</th>
+                                <th className="border px-2 py-1">Basic</th>
+                                <th className="border px-2 py-1">HRA</th>
+                                <th className="border px-2 py-1">Allowance</th>
+                                <th className="border px-2 py-1">Deductions</th>
+                                <th className="border px-2 py-1">Net</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {employee.remoteWork.map((work, idx) => (
+                            {employee.salary.map((salary, idx) => (
                                 <tr key={idx} className="hover:bg-slate-100 dark:hover:bg-slate-800">
-                                    <td className="border px-2 py-1">{work.from}</td>
-                                    <td className="border px-2 py-1">{work.to}</td>
-                                    <td className="border px-2 py-1">{work.days}</td>
-                                    <td className="border px-2 py-1">{work.reason}</td>
-                                    <td className="border px-2 py-1">{work.status}</td>
-                                    <td className="border px-2 py-1">{work.approvedBy}</td>
+                                    <td className="border px-2 py-1 text-center">{salary.basic}</td>
+                                    <td className="border px-2 py-1 text-center">{salary.hra}</td>
+                                    <td className="border px-2 py-1 text-center">{salary.allowance}</td>
+                                    <td className="border px-2 py-1 text-center">{salary.deductions}</td>
+                                    <td className="border px-2 py-1 text-center">{salary.net}</td>
                                 </tr>
                             ))}
                         </tbody>
