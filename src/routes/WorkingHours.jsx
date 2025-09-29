@@ -89,7 +89,7 @@ const WorkingHours = () => {
 
     // ------------------- JSX -------------------
     return (
-        <div className="w-full mx-auto p-4 bg-slate-50 dark:bg-slate-900 rounded-2xl shadow-lg text-slate-800 dark:text-slate-100">
+        <div className="w-full mx-auto  bg-slate-50 dark:bg-slate-900 rounded-2xl shadow-lg text-slate-800 dark:text-slate-100">
 
             {/* ---------- Header Section ---------- */}
             <div className="flex items-center justify-between mb-6 sm:p-4">

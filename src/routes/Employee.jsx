@@ -77,7 +77,7 @@ const Employees = () => {
     };
 
     return (
-        <div className="w-full mx-auto p-2 bg-slate-50 dark:bg-slate-900 rounded-2xl shadow-lg text-slate-800 dark:text-slate-100">
+        <div className="w-full mx-auto  bg-slate-50 dark:bg-slate-900 rounded-2xl shadow-lg text-slate-800 dark:text-slate-100">
             {/* Header */}
             <div className="flex flex-row sm:p-4 items-center justify-between mb-6 ">
                 <div className="flex flex-col">

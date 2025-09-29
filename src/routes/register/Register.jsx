@@ -38,7 +38,7 @@ const Register = () => {
                                 </label>
                                 <input
                                     type="text"
-                                    placeholder="John Doe"
+                                    placeholder="Enter User Name"
                                     className="mt-1 w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition-colors"
                                 />
                             </div>
@@ -50,7 +50,7 @@ const Register = () => {
                                 </label>
                                 <input
                                     type="email"
-                                    placeholder="example@mail.com"
+                                    placeholder="Enter Your Email"
                                     className="mt-1 w-full px-2 py-2 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition-colors"
                                 />
                             </div>
@@ -62,7 +62,7 @@ const Register = () => {
                                 </label>
                                 <input
                                     type="password"
-                                    placeholder="********"
+                                    placeholder="Enter Your Password"
                                     className="mt-1 w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition-colors"
                                 />
                             </div>
@@ -74,7 +74,7 @@ const Register = () => {
                                 </label>
                                 <input
                                     type="password"
-                                    placeholder="********"
+                                    placeholder="Re-enter Your Password"
                                     className="mt-1 w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition-colors"
                                 />
                             </div>
