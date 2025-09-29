@@ -89,16 +89,16 @@ const CompanyHolidays = () => {
     };
 
     return (
-        <div className="w-full mx-auto p-3 bg-white dark:bg-slate-900 rounded-2xl shadow-lg text-slate-800 dark:text-slate-100">
+        <div className="w-full mx-auto  bg-white dark:bg-slate-900   text-slate-800 dark:text-slate-100">
             {/* Header */}
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center justify-between mb-8 sm:px-4 px-1 pt-6">
                 <div className="flex flex-col">
                     <div className="flex items-center gap-2 ">
                         <CalendarDays
                             size={24}
                             className="text-purple-600 dark:text-purple-400"
                         />
-                        <h2 className="text-2xl font-bold">Company Holidays</h2>
+                        <h2 className="sm:text-2xl text-md font-bold">Company Holidays</h2>
                     </div>
                     <ul className="flex items-center text-sm mt-2">
                         <li>
@@ -120,14 +120,14 @@ const CompanyHolidays = () => {
                 {/* Add Event Button */}
                 <button
                     onClick={() => openForm()}
-                    className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition"
+                    className="flex items-center sm:gap-2 gap-1 bg-purple-600 hover:bg-purple-700 text-white sm:px-4 px-2  py-2 rounded-lg transition"
                 >
                     <PlusSquare size={18} /> Add Event
                 </button>
             </div>
 
             {/* Table */}
-            <div className="overflow-x-auto rounded-xl border border-slate-300 dark:border-slate-700">
+            <div className="overflow-x-auto  border border-slate-800 dark:border-slate-700">
                 <table className="min-w-full border-collapse">
                     <thead className="sticky top-0 bg-slate-200 dark:bg-slate-800 z-10">
                         <tr className="text-xs uppercase text-slate-700 dark:text-slate-300">
@@ -142,7 +142,7 @@ const CompanyHolidays = () => {
                             ([month, holidays]) => (
                                 <React.Fragment key={month}>
                                     {/* Month Row */}
-                                    <tr className="bg-purple-100 dark:bg-purple-950">
+                                    <tr className="bg-purple-100 dark:bg-purple-600">
                                         <td
                                             colSpan="4"
                                             className="text-left px-4 py-2 font-bold text-purple-700 dark:text-purple-300 border-y border-slate-300 dark:border-slate-700"
@@ -221,7 +221,7 @@ const CompanyHolidays = () => {
                         >
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-                                    Employee name
+                                    Event name
                                 </label>
                                 <input
                                     type="text"
@@ -235,7 +235,7 @@ const CompanyHolidays = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-                                    Employee name
+                                    Event Date
                                 </label>
                                 <input
                                     type="date"
@@ -248,7 +248,7 @@ const CompanyHolidays = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-                                    Employee name
+                                    Event Day
                                 </label>
                                 <input
                                     type="text"

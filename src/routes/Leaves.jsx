@@ -116,7 +116,8 @@ const Leaves = () => {
                   dark:bg-slate-800 text-slate-900 dark:text-slate-200">
                     <SlidersHorizontal size={18} />
                     <select
-                        className="bg-transparent focus:outline-none text-sm"
+                        className="bg-white 
+                              dark:bg-slate-800 text-slate-900 dark:text-slate-200 focus:outline-none text-sm"
                         defaultValue=""
                     >
                         <option value="" disabled>Filter</option>
@@ -131,7 +132,8 @@ const Leaves = () => {
                   dark:bg-slate-800 text-slate-900 dark:text-slate-200">
                     <ArrowDownWideNarrow size={18} />
                     <select
-                        className="bg-transparent focus:outline-none text-sm"
+                        className="bg-white 
+                              dark:bg-slate-800 text-slate-900 dark:text-slate-200 focus:outline-none text-sm"
                         defaultValue=""
                     >
                         <option value="" disabled>Sort by</option>
