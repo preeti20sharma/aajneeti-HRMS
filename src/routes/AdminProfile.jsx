@@ -3,22 +3,20 @@ import { useNavigate, useLocation } from "react-router-dom";
 import ProfileImage from "@/assets/profile-image.jpg";
 
 
-const EditProfile = () => {
+const AdminProfile = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Employee data passed from Empdashboard
-    const { employee } = location.state || {};
+    // admin data passed from Empdashboard
+    const { admin } = location.state || {};
 
     const [formData, setFormData] = useState({
-        name: employee?.name || "",
-        image: employee?.image || "",
-        empId: employee?.empId || "",
-        department: employee?.department || "",
-        designation: employee?.designation || "",
-        email: employee?.email || "",
-        phone: employee?.phone || "",
-        joiningDate: employee?.joiningDate || "",
+        name: admin?.name || "",
+        email: admin?.email || "",
+        phone: admin?.phone || "",
+        position: admin?.position || "",
+        image: admin?.image || "",
+        adminID: admin?.adminID || "",
     });
 
     const handleChange = (e) => {
@@ -28,7 +26,7 @@ const EditProfile = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Updated Employee:", formData);
+        console.log("Updated admin:", formData);
         // here you can call API to save changes
         navigate("/dashboard"); // redirect back to dashboard after save
     };
@@ -45,7 +43,7 @@ const EditProfile = () => {
 
     return (
         <div className="p-4 md:p-6 bg-slate-50 dark:bg-slate-900 min-h-screen text-slate-800 dark:text-slate-100">
-            <h2 className="text-2xl font-bold mb-4">Edit Employee Profile</h2>
+            <h2 className="text-2xl font-bold mb-4">Edit Admin Profile</h2>
 
             <form
                 onSubmit={handleSubmit}
@@ -60,7 +58,7 @@ const EditProfile = () => {
                         />
                         <div>
                             <h3 className="text-xl font-semibold">{formData.name}</h3>
-                            <p className="text-slate-600 dark:text-slate-400">{formData.designation}</p>
+                            <p className="text-slate-600 dark:text-slate-400">{formData.position}</p>
                         </div>
                     </div>
                     <input
@@ -83,43 +81,33 @@ const EditProfile = () => {
                             className="w-full px-3 py-2 border rounded-lg bg-transparent focus:outline-none focus:ring focus:ring-blue-500"
                         />
                     </div>
-
-                    {/* Employee ID */}
+                    {/* Admin ID */}
                     <div>
-                        <label className="block font-semibold mb-1">Employee ID</label>
+                        <label className="block font-semibold mb-1">Admin ID</label>
                         <input
                             type="text"
-                            name="empId"
-                            value={formData.empId}
-                            onChange={handleChange}
-                            disabled
-                            className="w-full px-3 py-2 border rounded-lg bg-slate-100 dark:bg-slate-700 cursor-not-allowed"
-                        />
-                    </div>
-                    {/* Department */}
-                    <div>
-                        <label className="block font-semibold mb-1">Department</label>
-                        <input
-                            type="text"
-                            name="department"
-                            value={formData.department}
+                            name="adminID"
+                            value={formData.adminID}
                             onChange={handleChange}
                             className="w-full px-3 py-2 border rounded-lg bg-transparent focus:outline-none focus:ring focus:ring-blue-500"
                         />
                     </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {/* Designation */}
                     <div>
                         <label className="block font-semibold mb-1">Designation</label>
                         <input
                             type="text"
-                            name="designation"
-                            value={formData.designation}
+                            name="position"
+                            value={formData.position}
                             onChange={handleChange}
                             className="w-full px-3 py-2 border rounded-lg bg-transparent focus:outline-none focus:ring focus:ring-blue-500"
                         />
                     </div>
+
+
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
                     {/* Email */}
                     <div>
                         <label className="block font-semibold mb-1">Email</label>
@@ -144,17 +132,7 @@ const EditProfile = () => {
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    {/* Joining Date */}
-                    <div>
-                        <label className="block font-semibold mb-1">Joining Date</label>
-                        <input
-                            type="date"
-                            name="joiningDate"
-                            value={formData.joiningDate}
-                            onChange={handleChange}
-                            className="w-full px-3 py-2 border rounded-lg bg-transparent focus:outline-none focus:ring focus:ring-blue-500"
-                        />
-                    </div>
+
 
                     {/* Buttons */}
                     <div className="flex gap-4 mt-4">
@@ -179,4 +157,4 @@ const EditProfile = () => {
     );
 };
 
-export default EditProfile;
+export default AdminProfile;

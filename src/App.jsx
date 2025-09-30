@@ -17,6 +17,7 @@ import Login from "./routes/login/Login";
 import Logout from "./routes/logout/Logout";
 import Empdashboard from "./routes/dashboard/Empdashboard";
 import EditProfile from "./routes/EditProfile";
+import AdminProfile from "./routes/AdminProfile";
 
 function App() {
     const router = createBrowserRouter([
@@ -53,6 +54,10 @@ function App() {
                 {
                     path: "edit-profile",
                     element: <EditProfile />
+                },
+                {
+                    path: "admin-profile",
+                    element: <AdminProfile />
                 },
                 {
                     path: "reports",

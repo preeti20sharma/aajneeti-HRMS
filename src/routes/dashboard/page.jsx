@@ -7,12 +7,22 @@ import { overviewData, recentSalesData, topProducts } from "@/constants";
 import { Footer } from "@/layouts/footer";
 
 import profileImg from "@/assets/profile-image.jpg";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 import { DollarSign, Package, PencilLine, Trash, Users } from "lucide-react";
 
 const DashboardPage = () => {
     const { theme } = useTheme();
+    const [admin] = useState({
+        name: "Preeti Sharma",
+        email: "preetiaajneeti@gmail.com",
+        phone: "6396634822",
+        position: "Head",
+        image: profileImg,
+        adminID: "admin123",
+    })
 
     return (
         <div className="flex flex-col gap-y-4">
@@ -61,27 +71,35 @@ const DashboardPage = () => {
                         </span>
                     </div>
                 </div>
-                <div className="border border-1 rounded-md shadow p-10 hidden sm:inline">
+                <div className="border border-1 rounded-md shadow p-4 hidden sm:inline">
                     <div className="card-header flex flex-col items-center">
                         <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-blue-500 shadow-md mb-3">
                             <img
-                                src={profileImg}
+                                src={admin.image}
                                 alt="Profile"
                                 className="w-full h-full object-cover"
                             />
                         </div>
                         <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-50">
-                            Preeti sharma
+                            {admin.name}
                         </h2>
                         <p className="text-sm text-slate-600 dark:text-slate-400">
-                            preetiaajneeti@gmail.com
+                            {admin.adminID}
+                        </p>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">
+                            {admin.email}
+                        </p>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">
+                            {admin.phone}
                         </p>
                         <p className="text-sm font-medium text-blue-500 dark:text-blue-400">
-                            Frontend Developer
+                            {admin.position}
                         </p>
-                        <button className="mt-3 rounded-md border border-blue-500 px-3 py-1 text-blue-500 hover:bg-blue-500 hover:text-white transition-colors">
-                            Edit Profile
-                        </button>
+                        <Link to="/admin-profile" state={{ admin }}>
+                            <button className="mt-3 rounded-md border border-blue-500 px-3 py-1 text-blue-500 hover:bg-blue-500 hover:text-white transition-colors">
+                                Edit Profile
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -174,7 +192,6 @@ const DashboardPage = () => {
                                     <th className="table-head">Remaining Days</th>
                                     <th className="table-head">Status</th>
                                     <th className="table-head">Action</th>
-
                                 </tr>
                             </thead>
                             <tbody className="table-body">

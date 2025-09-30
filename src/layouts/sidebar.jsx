@@ -48,7 +48,7 @@ export const Sidebar = forwardRef(({ collapsed }, ref) => {
                             >
                                 <link.icon
                                     size={22}
-                                    className="flex-shrink-0"
+                                    className="flex-shrink-0 text-green-900 dark:text-slate-200"
                                 />
                                 {!collapsed && <p className="whitespace-nowrap">{link.label}</p>}
                             </NavLink>

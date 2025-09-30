@@ -47,7 +47,7 @@ const Employees = () => {
         const form = new FormData(e.target);
         const file = form.get("image");
 
-        let imageUrl = selectedEmployee?.image || "https://via.placeholder.com/50";
+        let imageUrl = selectedEmployee?.image || "";
         if (file && file.size > 0) {
             imageUrl = preview; // use uploaded preview
         }
@@ -60,6 +60,9 @@ const Employees = () => {
             email: form.get("email"),
             phone: form.get("phone"),
             joiningDate: form.get("joiningDate"),
+            department: form.get("department"),
+            designation: form.get("designation"),
+            experience: form.get("experience"),
             status: form.get("status"),
             image: imageUrl
         };
@@ -148,10 +151,13 @@ const Employees = () => {
                             <th className="table-head">ID</th>
                             <th className="table-head">Name</th>
                             <th className="table-head">Team Manager</th>
+                            <th className="table-head">Department</th>
+                            <th className="table-head">Designation</th>
+                            <th className="table-head">Employment Type</th>
+                            <th className="table-head">Experience</th>
                             <th className="table-head">Email ID</th>
                             <th className="table-head">Mobile No.</th>
                             <th className="table-head">Joining Date</th>
-                            <th className="table-head">Employment Type</th>
                             <th className="table-head">Action</th>
                         </tr>
                     </thead>
@@ -171,10 +177,13 @@ const Employees = () => {
                                     </div>
                                 </td>
                                 <td className="table-cell">{Employee.teamLeader}</td>
+                                <td className="table-cell text-center">{Employee.department}</td>
+                                <td className="table-cell">{Employee.position}</td>
+                                <td className="table-cell">{Employee.status}</td>
+                                <td className="table-cell">{Employee.experience}</td>
                                 <td className="table-cell">{Employee.email}</td>
                                 <td className="table-cell">{Employee.phone}</td>
                                 <td className="table-cell">{Employee.joiningDate}</td>
-                                <td className="table-cell">{Employee.status}</td>
                                 <td className="table-cell">
                                     <div className="flex items-center gap-x-4">
                                         <button onClick={() => handleEdit(Employee)} className="text-blue-500 dark:text-blue-600">
@@ -194,12 +203,12 @@ const Employees = () => {
             {/* Popup Form */}
             {isOpen && (
                 <div className="fixed inset-0 z-50 bg-black bg-opacity-50 overflow-auto">
-                    <div className="bg-white dark:bg-slate-800 px-6 py-2 rounded-lg relative my-8 mx-auto shadow-lg w-full max-w-md  ">
+                    <div className="bg-white dark:bg-slate-800 px-6 py-2 rounded-lg relative my-8 mx-auto shadow-lg w-full max-w-xl  ">
                         <h2 className="text-xl font-bold mb-4">
                             {selectedEmployee ? "Edit Employee" : "Add Employee"}
                         </h2>
                         <form onSubmit={handleSubmit} className="space-y-3">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div>
                                     <label className={labelClasses}>Employee Name</label>
                                     <input name="name" placeholder="Name" defaultValue={selectedEmployee?.name || ""}
@@ -210,12 +219,17 @@ const Employees = () => {
                                     <input name="id" placeholder="Employee ID" defaultValue={selectedEmployee?.number || ""}
                                         className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
                                 </div>
-                            </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label className={labelClasses}>Employee Type</label>
                                     <input name="status" placeholder="Employment Type" defaultValue={selectedEmployee?.status || ""}
+                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div>
+                                    <label className={labelClasses}>Experience</label>
+                                    <input name="experience" placeholder="Experience" defaultValue={selectedEmployee?.experience || ""}
                                         className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
                                 </div>
                                 <div>
@@ -223,9 +237,15 @@ const Employees = () => {
                                     <input name="description" placeholder="Designation" defaultValue={selectedEmployee?.description || ""}
                                         className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
                                 </div>
+                                <div>
+                                    <label className={labelClasses}>Department</label>
+                                    <input name="department" placeholder="Department" defaultValue={selectedEmployee?.department || ""}
+                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                </div>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+
                                 <div>
                                     <label className={labelClasses}>Team Manager</label>
                                     <input name="teamLeader" placeholder="Team Manager" defaultValue={selectedEmployee?.teamLeader || ""}
@@ -236,14 +256,15 @@ const Employees = () => {
                                     <input name="email" placeholder="Email ID" defaultValue={selectedEmployee?.email || ""}
                                         className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
                                 </div>
-                            </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label className={labelClasses}>Mobile No.</label>
                                     <input name="phone" placeholder="Mobile No." defaultValue={selectedEmployee?.phone || ""}
                                         className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
                                 </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+
                                 <div>
                                     <label className={labelClasses}>Joining Date</label>
                                     <input type="date" name="joiningDate" defaultValue={selectedEmployee?.joiningDate || ""}

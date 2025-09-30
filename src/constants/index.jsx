@@ -1,4 +1,4 @@
-import { ChartColumn, Home, Package, PackagePlus, Settings, ShoppingBag, UserCheck, UserPlus, Users } from "lucide-react";
+import { CalendarCog, CalendarDays, Clock10, FileClock, Home, IndianRupeeIcon, LogIn, LogOutIcon, UserPlus2, UsersRound, Wifi } from "lucide-react";
 
 import ProfileImage from "@/assets/profile-image.jpg";
 // import ProductImage from "@/assets/product-image.jpg";
@@ -19,7 +19,7 @@ export const navbarLinks = [
             },
             {
                 label: "Employees",
-                icon: ChartColumn,
+                icon: UsersRound,
                 path: "/all-employees",
             },
 
@@ -30,17 +30,17 @@ export const navbarLinks = [
         links: [
             {
                 label: "Holiday",
-                icon: Users,
+                icon: CalendarCog,
                 path: "/holidays",
             },
             {
                 label: "Leaves",
-                icon: UserPlus,
+                icon: CalendarDays,
                 path: "/leaves",
             },
             {
                 label: "Short Leaves",
-                icon: UserCheck,
+                icon: FileClock,
                 path: "/short-leaves",
             },
         ],
@@ -50,17 +50,17 @@ export const navbarLinks = [
         links: [
             {
                 label: "Remote Work",
-                icon: Package,
+                icon: Wifi,
                 path: "/remote-work",
             },
             {
                 label: "Extra Working Hours",
-                icon: PackagePlus,
+                icon: Clock10,
                 path: "/extra-working-hours",
             },
             {
                 label: "Salary Details",
-                icon: ShoppingBag,
+                icon: IndianRupeeIcon,
                 path: "/employees-salary",
             },
         ],
@@ -71,17 +71,17 @@ export const navbarLinks = [
         links: [
             {
                 label: "Register",
-                icon: Settings,
+                icon: UserPlus2,
                 path: "/register",
             },
             {
                 label: "Login",
-                icon: Settings,
+                icon: LogIn,
                 path: "/login",
             },
             {
                 label: "Logout",
-                icon: Settings,
+                icon: LogOutIcon,
                 path: "/logout",
             },
 
@@ -923,6 +923,7 @@ export const allEmployees = [
         teamLeader: "Prashant Kumar",
         status: "Intern",
         email: "preetiaajneeti@gmail.com",
+        experience: "fresher",
         phone: 6396634822,
     },
     {
@@ -942,6 +943,7 @@ export const allEmployees = [
         teamLeader: "Prashant Kumar",
         status: "Intern",
         email: "preetiaajneeti@gmail.com",
+        experience: "fresher",
         phone: 6396634822,
     },
     {
@@ -961,6 +963,7 @@ export const allEmployees = [
         teamLeader: "Prashant Kumar",
         status: "Intern",
         email: "preetiaajneeti@gmail.com",
+        experience: "fresher",
         phone: 6396634822,
     },
     {
@@ -980,6 +983,7 @@ export const allEmployees = [
         teamLeader: "Prashant Kumar",
         status: "Intern",
         email: "preetiaajneeti@gmail.com",
+        experience: "fresher",
         phone: 6396634822,
     },
     {
@@ -999,6 +1003,7 @@ export const allEmployees = [
         teamLeader: "Prashant Kumar",
         status: "Intern",
         email: "preetiaajneeti@gmail.com",
+        experience: "fresher",
         phone: 6396634822,
     },
     {
@@ -1018,6 +1023,7 @@ export const allEmployees = [
         teamLeader: "Prashant Kumar",
         status: "Intern",
         email: "preetiaajneeti@gmail.com",
+        experience: "fresher",
         phone: 6396634822,
     },
     {
@@ -1037,6 +1043,7 @@ export const allEmployees = [
         teamLeader: "Prashant Kumar",
         status: "Intern",
         email: "preetiaajneeti@gmail.com",
+        experience: "fresher",
         phone: 6396634822,
     },
     {
@@ -1056,6 +1063,7 @@ export const allEmployees = [
         teamLeader: "Prashant Kumar",
         status: "Intern",
         email: "preetiaajneeti@gmail.com",
+        experience: "fresher",
         phone: 6396634822,
     },
     {
@@ -1075,6 +1083,7 @@ export const allEmployees = [
         teamLeader: "Prashant Kumar",
         status: "Intern",
         email: "preetiaajneeti@gmail.com",
+        experience: "fresher",
         phone: 6396634822,
     },
     {
@@ -1094,6 +1103,7 @@ export const allEmployees = [
         teamLeader: "Prashant Kumar",
         status: "Intern",
         email: "preetiaajneeti@gmail.com",
+        experience: "fresher",
         phone: 6396634822,
     }
 ];
