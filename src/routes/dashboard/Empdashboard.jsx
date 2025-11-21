@@ -88,7 +88,7 @@ const Empdashboard = () => {
                             </div>
                         </div>
                         <Link to="/edit-profile" state={{ employee }}>
-                            <button className="bg-blue-700 text-slate-200 sm:p-2 p-2 rounded-lg">Edit Profile</button>
+                            <button className="bg-red-800 text-slate-200 sm:p-2 p-2 rounded-lg">Edit Profile</button>
                         </Link>
                     </div>
                     <table className="w-full text-md">
@@ -117,7 +117,7 @@ const Empdashboard = () => {
                             return (
                                 <div
                                     key={date.toISOString()}
-                                    className={`p-2 h-10 flex items-center justify-center rounded ${isToday ? "bg-purple-600 text-white" : "bg-slate-100 dark:bg-slate-700"}`}
+                                    className={`p-2 h-10 flex items-center justify-center rounded ${isToday ? "bg-red-800 text-white" : "bg-slate-100 dark:bg-slate-700"}`}
                                 >
                                     {date.getDate()}
                                 </div>
@@ -139,7 +139,7 @@ const Empdashboard = () => {
                     ) : (
                         <table className="w-full text-md border-collapse mt-3">
                             <thead>
-                                <tr className="bg-slate-200 dark:bg-slate-700">
+                                <tr className="bg-gradient-to-r from-red-700 to-black text-slate-200 dark:bg-slate-700">
                                     <th className="border px-2 py-1">Date</th>
                                     <th className="border px-2 py-1">Type</th>
                                     <th className="border px-2 py-1">Duration Type</th>

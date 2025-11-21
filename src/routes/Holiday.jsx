@@ -96,7 +96,7 @@ const CompanyHolidays = () => {
                     <div className="flex items-center gap-2 ">
                         <CalendarDays
                             size={24}
-                            className="text-purple-600 dark:text-purple-400"
+                            className="text-red-600 dark:text-red-400"
                         />
                         <h2 className="sm:text-2xl text-md font-bold">Company Holidays</h2>
                     </div>
@@ -120,21 +120,21 @@ const CompanyHolidays = () => {
                 {/* Add Event Button */}
                 <button
                     onClick={() => openForm()}
-                    className="flex items-center sm:gap-2 gap-1 bg-purple-600 hover:bg-purple-700 text-white sm:px-4 px-2  py-2 rounded-lg transition"
+                    className="flex items-center sm:gap-2 gap-1 bg-gradient-to-r from-red-700 to-black hover:bg-red-700 text-white sm:px-4 px-2  py-2 rounded-lg transition"
                 >
                     <PlusSquare size={18} /> Add Event
                 </button>
             </div>
 
             {/* Table */}
-            <div className="overflow-x-auto  border border-slate-800 dark:border-slate-700">
+            <div className="overflow-x-auto">
                 <table className="min-w-full border-collapse">
-                    <thead className="sticky top-0 bg-slate-200 dark:bg-slate-800 z-10">
-                        <tr className="text-xs uppercase text-slate-700 dark:text-slate-300">
-                            <th className="border px-4 py-2 text-left">Occasion</th>
-                            <th className="border px-4 py-2 text-center">Day</th>
-                            <th className="border px-4 py-2 text-center">Date</th>
-                            <th className="border px-4 py-2 text-center">Action</th>
+                    <thead className="sticky top-0 bg-gradient-to-r from-red-700 to-black dark:bg-slate-800 z-10">
+                        <tr className="text-xs uppercase text-slate-200 dark:text-slate-300">
+                            <th className=" px-4 py-2 text-left">Occasion</th>
+                            <th className=" px-4 py-2 text-center">Day</th>
+                            <th className=" px-4 py-2 text-center">Date</th>
+                            <th className=" px-4 py-2 text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -142,10 +142,10 @@ const CompanyHolidays = () => {
                             ([month, holidays]) => (
                                 <React.Fragment key={month}>
                                     {/* Month Row */}
-                                    <tr className="bg-purple-100 dark:bg-purple-600">
+                                    <tr className="bg-red-50 dark:bg-slate-600">
                                         <td
                                             colSpan="4"
-                                            className="text-left px-4 py-2 font-bold text-purple-700 dark:text-purple-300 border-y border-slate-300 dark:border-slate-700"
+                                            className="text-left px-4 py-2 font-bold text-red-700 dark:text-slate-200"
                                         >
                                             {month}
                                         </td>
@@ -157,16 +157,16 @@ const CompanyHolidays = () => {
                                             key={holiday.id}
                                             className="hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-sm"
                                         >
-                                            <td className="border px-4 py-2 font-medium">
+                                            <td className=" px-4 py-2 font-medium">
                                                 {holiday.name}
                                             </td>
-                                            <td className="border px-4 py-2 text-center">
+                                            <td className=" px-4 py-2 text-center">
                                                 {holiday.day}
                                             </td>
-                                            <td className="border px-4 py-2 text-center">
+                                            <td className=" px-4 py-2 text-center">
                                                 {holiday.date}
                                             </td>
-                                            <td className="border px-4 py-2">
+                                            <td className=" px-4 py-2">
                                                 <div className="flex items-center justify-center gap-4">
                                                     <button
                                                         onClick={() =>
@@ -209,7 +209,7 @@ const CompanyHolidays = () => {
                             </h3>
                             <button
                                 onClick={() => setIsOpen(false)}
-                                className="text-slate-500 hover:text-red-500"
+                                className="text-slate-800 hover:text-red-500"
                             >
                                 <X size={22} />
                             </button>
@@ -262,7 +262,7 @@ const CompanyHolidays = () => {
                             </div>
                             <button
                                 type="submit"
-                                className="bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg transition"
+                                className="bg-gradient-to-r from-red-700 to-black hover:bg-red-700 text-white py-2 rounded-lg transition"
                             >
                                 {editingHoliday ? "Update Holiday" : "Add Holiday"}
                             </button>

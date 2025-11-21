@@ -1,15 +1,10 @@
 import { forwardRef } from "react";
 import { NavLink } from "react-router-dom";
-
 import { navbarLinks } from "@/constants";
-
 import logoLight from "@/assets/logo.jpg";
 import logoDark from "@/assets/logo.jpg";
-
 import { cn } from "@/utils/cn";
-
 import PropTypes from "prop-types";
-
 export const Sidebar = forwardRef(({ collapsed }, ref) => {
     return (
         <aside
@@ -44,11 +39,24 @@ export const Sidebar = forwardRef(({ collapsed }, ref) => {
                             <NavLink
                                 key={link.label}
                                 to={link.path}
-                                className={cn("sidebar-item", collapsed && "md:w-[45px]")}
+                                className={({ isActive }) =>
+                                    cn(
+                                        "sidebar-item",
+                                        "hover:bg-red-50 dark:hover:bg-red-900/40",
+                                        collapsed && "md:w-[45px]",
+                                        isActive &&
+                                        "bg-gradient-to-r from-red-700 to-black text-white shadow-lg"
+                                    )
+                                }
                             >
                                 <link.icon
                                     size={22}
-                                    className="flex-shrink-0 text-green-900 dark:text-slate-200"
+                                    className={({ isActive }) =>
+                                        cn(
+                                            "flex-shrink-0",
+                                            isActive ? "text-white" : "text-red-800 dark:text-slate-200"
+                                        )
+                                    }
                                 />
                                 {!collapsed && <p className="whitespace-nowrap">{link.label}</p>}
                             </NavLink>
