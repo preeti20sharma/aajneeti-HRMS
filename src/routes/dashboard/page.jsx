@@ -125,8 +125,9 @@ const DashboardPage = () => {
                             <table className="table w-full">
                                 <thead className="
                     table-header
-                    bg-gradient-to-r from-red-700 to-black
-                    text-white
+                   bg-red-50
+                    text-slate-800 
+                
                     dark:bg-none dark:text-red-300
                 ">
                                     <tr className="table-row">
@@ -246,7 +247,7 @@ const DashboardPage = () => {
                             <thead className="
                     table-header 
                   bg-red-50
-                    text-white 
+                    text-slate-800 
                     dark:bg-none dark:text-red-300
                 ">
                                 <tr className="table-row">
