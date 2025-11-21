@@ -94,8 +94,8 @@ const DashboardPage = () => {
                             </h2>
 
                             {/* Details */}
-                            <p className="text-sm text-red-300">{admin.adminID}</p>
-                            <p className="text-sm text-red-300">{admin.email}</p>
+                            <p className="text-sm text-slate-100">{admin.adminID}</p>
+                            <p className="text-sm text-slate-100 ">{admin.email}</p>
                             <p className="text-sm text-red-300">{admin.phone}</p>
 
                             {/* Position */}
@@ -114,7 +114,12 @@ const DashboardPage = () => {
                 </div>
             </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-6">
-                <div className=" card col-span-1 md:col-span-2 lg:col-span-3  rounded-xl border border-red-700/40 shadow-md bg-white dark:bg-slate-900  transition-all duration-300 hover:shadow-red-700/40 hover:border-red-700">
+                <div className=" card col-span-1 md:col-span-2 lg:col-span-3  rounded-xl  bg-white dark:bg-slate-900  transition-all duration-300  shadow-md 
+  shadow-red-500/20 
+  hover:shadow-red-500/20
+  border border-red-100  dark:border-slate-700
+  dark:shadow-none 
+  dark:hover:shadow-none">
                     <div className="card-header px-4 py-3  rounded-t-xl  font-semibold tracking-wide dark:bg-none dark:text-red-300 ">
                         <p className="card-title">UpComing Leaves</p>
                     </div>
@@ -139,11 +144,11 @@ const DashboardPage = () => {
 
                                 <tbody className="table-body">
                                     {topProducts.map((product) => (
-                                        <tr key={product.name} className="table-row hover:bg-red-50 dark:hover:bg-slate-800/50">
+                                        <tr key={product.name} className="table-row border-b border-red-100 hover:bg-red-50 dark:hover:bg-slate-800/50">
 
                                             <td className="table-cell">
                                                 <div className="flex w-max gap-x-4">
-                                                    <img src={product.image} alt={product.name} className="size-14 rounded-lg object-cover border border-red-700/40" />
+                                                    <img src={product.image} alt={product.name} className="size-14 rounded-lg object-cover border border-red-100" />
                                                     <div className="flex flex-col">
                                                         <p className="font-semibold text-black dark:text-white">
                                                             {product.name}
@@ -172,10 +177,14 @@ const DashboardPage = () => {
 
                 <div className="
     card h-[380px] col-span-1 md:col-span-2 lg:col-span-3
-    rounded-xl border border-red-700/40 
+    rounded-xl  border border-red-100
     bg-white dark:bg-slate-900 
-    shadow-md hover:shadow-red-700/40 
-    transition-all duration-300 hover:border-red-700
+    shadow-md shadow-red-500/20 
+  hover:shadow-red-500/20
+ dark:border-slate-700
+  dark:shadow-none 
+  dark:hover:shadow-none
+    transition-all duration-300 
 ">
                     {/* Header */}
                     <div className="
@@ -194,7 +203,7 @@ const DashboardPage = () => {
                         {recentSalesData.map((sale) => (
                             <div key={sale.id} className="
                     flex items-center justify-between gap-x-4 py-2 pr-2 px-2
-                    border-b border-slate-200/40 dark:border-slate-700/40
+                    border-b border-red-100 dark:border-slate-700/40
                     hover:bg-red-50 dark:hover:bg-slate-800/40
                     transition-all duration-200
                 ">
@@ -202,7 +211,7 @@ const DashboardPage = () => {
                                 <div className="flex items-center gap-x-4">
                                     <img src={sale.image} alt={sale.name} className="
                             size-12 rounded-full object-cover
-                            border border-red-700/40 shadow-sm
+                            border border-red-100 shadow-sm
                         " />
                                     <div className="flex flex-col gap-y-1">
                                         <p className="font-semibold text-slate-900 dark:text-white">
@@ -222,10 +231,12 @@ const DashboardPage = () => {
                 </div>
             </div>
             <div className="
-    card rounded-xl border border-red-700/40 
+    card rounded-xl 
     bg-white dark:bg-slate-900 
-    shadow-md hover:shadow-red-700/40 
-    transition-all duration-300  hover:border-red-700
+    shadow-md  shadow-red-500/20 
+  border border-red-100  dark:border-slate-700
+  dark:shadow-none 
+    transition-all duration-300 
 ">
                 {/* Header */}
                 <div className="
@@ -233,7 +244,7 @@ const DashboardPage = () => {
        
         rounded-t-xl text-white 
         font-semibold tracking-wide
-        dark:bg-none dark:text-red-300
+        dark:bg-none dark:text-slate-200
     ">
                     <p className="card-title">Leave Status</p>
                 </div>
@@ -248,7 +259,7 @@ const DashboardPage = () => {
                     table-header 
                   bg-red-50
                     text-slate-800 
-                    dark:bg-none dark:text-red-300
+                    dark:bg-none dark:text-slate-200
                 ">
                                 <tr className="table-row">
                                     <th className="table-head">ID</th>
@@ -267,8 +278,8 @@ const DashboardPage = () => {
                             <tbody className="table-body text-slate-900 dark:text-slate-200">
                                 {topProducts.map((product) => (
                                     <tr key={product.number} className="
-                                table-row border-b border-slate-200/40 dark:border-slate-700/40
-                                hover:bg-red-50/60 dark:hover:bg-slate-800/50
+                                table-row border-b border-red-100 dark:border-slate-700/40
+                                hover:bg-red-50 dark:hover:bg-slate-800/50
                                 transition-all duration-200
                             ">
                                         <td className="table-cell font-semibold">{product.number}</td>
@@ -278,7 +289,7 @@ const DashboardPage = () => {
                                             <div className="flex w-max gap-x-4 items-center">
                                                 <img src={product.image} alt={product.name} className="
                                             size-14 rounded-lg object-cover
-                                            border border-red-700/40 shadow-sm
+                                            border border-red-100 shadow-sm
                                         " />
                                                 <div className="flex flex-col">
                                                     <p className="font-semibold">{product.name}</p>
@@ -357,18 +368,20 @@ const DashboardPage = () => {
                 </div>
                 <div className="
     card col-span-1 md:col-span-2 lg:col-span-3
-    rounded-xl border border-red-700/40 
+    rounded-xl 
     bg-white dark:bg-slate-900 
-    shadow-md hover:shadow-red-700/40 
-    transition-all duration-300 hover:border-red-700
+    shadow-md  shadow-red-500/20 
+  border border-red-100  dark:border-slate-700
+  dark:shadow-none 
+    transition-all duration-300 
 ">
                     {/* Header */}
                     <div className="
         card-header px-4 py-3
-       bg-red-50
+    
         rounded-t-xl text-white 
         font-semibold tracking-wide
-        dark:bg-none dark:text-red-300
+         dark:text-red-300
     ">
                         <p className="card-title">Recent Activities</p>
                     </div>
@@ -377,25 +390,18 @@ const DashboardPage = () => {
                     <div className="card-body h-[300px] overflow-auto p-0 [scrollbar-width:_thin]">
 
                         {recentSalesData.map((sale) => (
-                            <div
-                                key={sale.id}
-                                className="
+                            <div key={sale.id} className="
                     flex items-center justify-between gap-x-4 py-3 px-2
-                    border-b border-slate-200/40 dark:border-slate-700/40
-                    hover:bg-red-50/50 dark:hover:bg-slate-800/50
+                    border-b border-red-100 dark:border-slate-700/40
+                    hover:bg-red-50 dark:hover:bg-slate-800/50
                     transition-all duration-200
-                "
-                            >
+                ">
                                 {/* Left Side */}
                                 <div className="flex items-center gap-x-4">
-                                    <img
-                                        src={sale.image}
-                                        alt={sale.name}
-                                        className="
+                                    <img src={sale.image} alt={sale.name} className="
                             size-12 rounded-full object-cover 
-                            border border-red-700/40 shadow-sm
-                        "
-                                    />
+                            border border-red-100 
+                        " />
                                     <div className="flex flex-col gap-y-1">
                                         <p className="font-semibold text-slate-900 dark:text-white">
                                             {sale.name}
