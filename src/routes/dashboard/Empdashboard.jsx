@@ -78,8 +78,8 @@ const Empdashboard = () => {
   dark:hover:shadow-none
     transition-all duration-300
 
-     hover:shadow-md hover:shadow-red-500/20
-    dark:hover:border-slate-600 dark:hover:shadow-slate-900/30
+     hover:shadow-md 
+    dark:hover:border-slate-600 
   ">
 
                 {/* TOP SECTION */}
@@ -268,6 +268,132 @@ const Empdashboard = () => {
             </div>
         </div>
 
+
+        {/* Availability Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
+            <div
+                className="
+      bg-white dark:bg-slate-800
+      p-6 rounded-xl overflow-auto
+      transition-all duration-300
+      shadow-md shadow-red-500/20 hover:shadow-red-600/30
+      border border-transparent dark:shadow-none
+       
+    "
+            >
+                <h3 className="text-lg font-semibold flex items-center gap-2 text-red-700 dark:text-white mb-5">
+                    <ClipboardList size={20} /> Availability Overview
+                </h3>
+
+                {/* Stats Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+
+                    {/* Full Leave */}
+                    <div className="
+        p-4 rounded-xl
+        bg-gradient-to-br from-black to-red-600
+        text-white 
+        transition-all duration-300
+      ">
+                        <h4 className="text-sm font-medium">Full Leave</h4>
+                        <p className="text-2xl font-bold mt-1">03</p>
+                        <p className="text-xs text-red-100/80 mt-1">Available to Use</p>
+                    </div>
+
+                    {/* Half Leave */}
+                    <div className="
+        p-4 rounded-xl
+       bg-gradient-to-br from-black to-red-600 text-white
+        
+        dark:border-slate-600
+         hover:shadow-none
+        transition-all duration-300
+      ">
+                        <h4 className="text-sm font-medium ">Half Leaves</h4>
+                        <p className="text-2xl font-bold mt-1">02</p>
+                        <p className="text-xs text-red-100/80  mt-1">Available to Use</p>
+                    </div>
+
+
+                    {/* Work From Home */}
+                    <div className="
+        p-4 rounded-xl
+        bg-gradient-to-br from-black to-red-600
+        text-white dark:bg-slate-700
+        transition-all duration-300
+      ">
+                        <h4 className="text-sm font-medium">Work From Home</h4>
+                        <p className="text-2xl font-bold mt-1">06</p>
+                        <p className="text-xs text-red-100/80 mt-1">Available to Use</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {/* short leave availability */}
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
+            <div
+                className="
+      bg-white dark:bg-slate-800
+      p-6 rounded-xl overflow-auto
+      transition-all duration-300
+      shadow-md shadow-red-500/20 hover:shadow-red-600/30
+      border border-transparent dark:shadow-none
+       dark:hover:shadow-none
+    "
+            >
+                <h3 className="text-lg font-semibold flex items-center gap-2  text-red-700 dark:text-white mb-5">
+                    <ClipboardList size={20} /> Short Leave Overview
+                </h3>
+
+                {/* Stats Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+
+
+                    {/* short leave Used */}
+                    <div className="
+        p-4 rounded-xl
+         bg-gradient-to-br from-black to-red-600 text-white
+        dark:bg-slate-800
+        dark:border-slate-600
+        hover:shadow-lg dark:hover:shadow-none
+        transition-all duration-300
+      ">
+                        <h4 className="text-sm font-medium">Short Leaves already taken</h4>
+                        <p className="text-2xl font-bold  mt-1">02</p>
+                        <p className="text-xs text-red-100/80  mt-1">Already Used</p>
+                    </div>
+                    {/* Short Leave available */}
+                    <div className="
+        p-4 rounded-xl
+        bg-gradient-to-br from-black to-red-600 text-white
+        transition-all duration-300
+      ">
+                        <h4 className="text-sm font-medium">Short Leaves available</h4>
+                        <p className="text-2xl font-bold  mt-1">03</p>
+                        <p className="text-xs text-red-100/80 mt-1">Available to Use</p>
+                    </div>
+
+                    {/* Work From Home */}
+                    {/* <div className="
+        p-4 rounded-xl
+        bg-gradient-to-br from-black to-red-600
+        text-white
+        border border-red-500
+        hover:shadow-lg hover:shadow-red-600/40
+        transition-all duration-300
+      ">
+                        <h4 className="text-sm font-medium">Work From Home</h4>
+                        <p className="text-2xl font-bold mt-1">06</p>
+                        <p className="text-xs text-red-100/80 mt-1">Available to Use</p>
+                    </div> */}
+
+
+                </div>
+            </div>
+        </div>
+
         {/* leave policy */}
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
             <div className="bg-white dark:bg-slate-800 p-6 rounded-xl overflow-auto  transition-all duration-300  shadow-md 
@@ -305,7 +431,6 @@ const Empdashboard = () => {
                 </table>
             </div>
         </div>
-
 
         {/* Work from home */}
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">

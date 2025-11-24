@@ -18,6 +18,7 @@ import Logout from "./routes/logout/Logout";
 import Empdashboard from "./routes/dashboard/Empdashboard";
 import EditProfile from "./routes/EditProfile";
 import AdminProfile from "./routes/AdminProfile";
+import Attendance from "./routes/Attendance";
 
 function App() {
     const router = createBrowserRouter([
@@ -78,6 +79,10 @@ function App() {
                 {
                     path: "extra-working-hours",
                     element: <WorkingHours />,
+                },
+                {
+                    path: "attendance-report",
+                    element: <Attendance />,
                 },
                 {
                     path: "remote-work",

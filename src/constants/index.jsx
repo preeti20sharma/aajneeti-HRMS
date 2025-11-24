@@ -22,6 +22,11 @@ export const navbarLinks = [
                 icon: UsersRound,
                 path: "/all-employees",
             },
+            {
+                label: "Attendance Report",
+                icon: UsersRound,
+                path: "/attendance-report",
+            },
 
         ],
     },

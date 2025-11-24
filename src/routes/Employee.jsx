@@ -84,24 +84,19 @@ const Employees = () => {
             {/* Header */}
             <div className="flex flex-row sm:p-4 items-center justify-between mb-6 ">
                 <div className="flex flex-col">
-                    <h2
-                        className="
+                    <h2 className="
             text-3xl font-bold 
             bg-gradient-to-r from-red-800 to-slate-900 
             bg-clip-text text-transparent 
             animate-gradient-slide
             dark:text-slate-100
-        "
-                    >
+        ">
                         Employees
                     </h2>
 
                     <ul className="flex items-center text-sm mt-2">
                         <li>
-                            <Link
-                                to="/"
-                                className="flex items-center text-slate-900 dark:text-slate-200 hover:underline"
-                            >
+                            <Link to="/" className="flex items-center text-slate-900 dark:text-slate-200 hover:underline">
                                 <HomeIcon size={15} />
                                 <span className="pl-2">Home</span>
                             </Link>
@@ -110,13 +105,8 @@ const Employees = () => {
                         <li className="text-slate-600 dark:text-slate-50">Employees</li>
                     </ul>
                 </div>
-
-
                 {/* Add Employee */}
-                <button
-                    onClick={handleAdd}
-                    className="flex items-center gap-2 px-2 sm:px-4 py-2 border rounded-lg bg-white text-slate-900 dark:bg-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-blue-900"
-                >
+                <button onClick={handleAdd} className="flex items-center gap-2 px-2 sm:px-4 py-2 border rounded-lg bg-white text-slate-900 dark:bg-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-blue-900">
                     <PlusSquare size={18} />
                     <span>Add Employee</span>
                 </button>
@@ -127,11 +117,8 @@ const Employees = () => {
                 <div className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-white 
                               dark:bg-slate-800 text-slate-900 dark:text-slate-200">
                     <SlidersHorizontal size={18} />
-                    <select
-                        className="bg-white 
-                              dark:bg-slate-800 text-slate-900 dark:text-slate-200  focus:outline-none text-sm"
-                        defaultValue=""
-                    >
+                    <select className="bg-white 
+                              dark:bg-slate-800 text-slate-900 dark:text-slate-200  focus:outline-none text-sm" defaultValue="">
                         <option value="" disabled>Filter</option>
                         <option value="active">Active</option>
                         <option value="inactive">Inactive</option>
@@ -143,11 +130,8 @@ const Employees = () => {
                 <div className="flex items-center  gap-2 px-3 py-2 border rounded-lg bg-white 
                               dark:bg-slate-800 text-slate-900 dark:text-slate-200">
                     <ArrowDownWideNarrow size={18} />
-                    <select
-                        className="bg-white 
-                              dark:bg-slate-800 text-slate-900 dark:text-slate-200 focus:outline-none text-sm"
-                        defaultValue=""
-                    >
+                    <select className="bg-white 
+                              dark:bg-slate-800 text-slate-900 dark:text-slate-200 focus:outline-none text-sm" defaultValue="">
                         <option value="" disabled>Sort by</option>
                         <option value="newest">Newest First</option>
                         <option value="oldest">Oldest First</option>
@@ -161,12 +145,10 @@ const Employees = () => {
             {/* Table Section */}
             <div className="relative w-full overflow-auto [scrollbar-width:_thin]">
                 <table className="table w-full text-left text-sm">
-                    <thead
-                        className="table-header 
+                    <thead className="table-header 
         bg-gradient-to-r from-red-700 to-black text-white 
         dark:bg-slate-800 dark:text-slate-200
-        sticky top-0 z-10 shadow-sm"
-                    >
+        sticky top-0 z-10 shadow-sm">
                         <tr className="table-row">
                             <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
                  text-white
@@ -228,20 +210,16 @@ const Employees = () => {
                         </tr>
                     </thead>
 
-                    <tbody
-                        className="
+                    <tbody className="
             table-body 
             divide-y divide-red-100 
             dark:divide-slate-800
 
             [&>*:nth-child(even)]:bg-red-50/40 
             dark:[&>*:nth-child(even)]:bg-transparent
-        "
-                    >
+        ">
                         {employees.map((Employee) => (
-                            <tr
-                                key={Employee.number}
-                                className="
+                            <tr key={Employee.number} className="
                     table-row 
                     transition-all duration-200
                     
@@ -252,21 +230,16 @@ const Employees = () => {
                    
 
                     rounded-lg
-                "
-                            >
+                ">
                                 <td className="table-cell px-4 py-3 border-none text-sm text-slate-700 dark:text-slate-100">
                                     {Employee.number}
                                 </td>
 
                                 <td className="table-cell px-4 py-3 border-none">
                                     <div className="flex w-max gap-x-4 items-center">
-                                        <img
-                                            src={Employee.image}
-                                            alt={Employee.name}
-                                            className="size-14 rounded-xl object-cover 
+                                        <img src={Employee.image} alt={Employee.name} className="size-14 rounded-xl object-cover 
                                 shadow-md border border-red-200 
-                                dark:border-slate-700 dark:shadow-none"
-                                        />
+                                dark:border-slate-700 dark:shadow-none" />
                                         <div className="flex flex-col">
                                             <p className="font-semibold text-slate-900 dark:text-slate-100">
                                                 {Employee.name}
@@ -305,8 +278,7 @@ const Employees = () => {
 
                                 <td className="table-cell px-4 py-3 border-none">
                                     <div className="flex items-center gap-x-4">
-                                        <button
-                                            onClick={() => handleEdit(Employee)}
+                                        <button onClick={() => handleEdit(Employee)}
                                             className="text-red-600 hover:text-black dark:text-blue-500"
                                         >
                                             <PencilLine size={20} />
@@ -334,36 +306,30 @@ const Employees = () => {
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div>
                                     <label className={labelClasses}>Employee Name</label>
-                                    <input name="name" placeholder="Name" defaultValue={selectedEmployee?.name || ""}
-                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="name" placeholder="Name" defaultValue={selectedEmployee?.name || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
                                 </div>
                                 <div>
                                     <label className={labelClasses}>Employee ID</label>
-                                    <input name="id" placeholder="Employee ID" defaultValue={selectedEmployee?.number || ""}
-                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="id" placeholder="Employee ID" defaultValue={selectedEmployee?.number || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
                                 </div>
                                 <div>
                                     <label className={labelClasses}>Employee Type</label>
-                                    <input name="status" placeholder="Employment Type" defaultValue={selectedEmployee?.status || ""}
-                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="status" placeholder="Employment Type" defaultValue={selectedEmployee?.status || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div>
                                     <label className={labelClasses}>Experience</label>
-                                    <input name="experience" placeholder="Experience" defaultValue={selectedEmployee?.experience || ""}
-                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="experience" placeholder="Experience" defaultValue={selectedEmployee?.experience || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
                                 </div>
                                 <div>
                                     <label className={labelClasses}>Employee Designation</label>
-                                    <input name="description" placeholder="Designation" defaultValue={selectedEmployee?.description || ""}
-                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="description" placeholder="Designation" defaultValue={selectedEmployee?.description || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
                                 </div>
                                 <div>
                                     <label className={labelClasses}>Department</label>
-                                    <input name="department" placeholder="Department" defaultValue={selectedEmployee?.department || ""}
-                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="department" placeholder="Department" defaultValue={selectedEmployee?.department || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
                                 </div>
                             </div>
 
@@ -371,18 +337,15 @@ const Employees = () => {
 
                                 <div>
                                     <label className={labelClasses}>Team Manager</label>
-                                    <input name="teamLeader" placeholder="Team Manager" defaultValue={selectedEmployee?.teamLeader || ""}
-                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="teamLeader" placeholder="Team Manager" defaultValue={selectedEmployee?.teamLeader || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
                                 </div>
                                 <div>
                                     <label className={labelClasses}>Email ID</label>
-                                    <input name="email" placeholder="Email ID" defaultValue={selectedEmployee?.email || ""}
-                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="email" placeholder="Email ID" defaultValue={selectedEmployee?.email || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
                                 </div>
                                 <div>
                                     <label className={labelClasses}>Mobile No.</label>
-                                    <input name="phone" placeholder="Mobile No." defaultValue={selectedEmployee?.phone || ""}
-                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="phone" placeholder="Mobile No." defaultValue={selectedEmployee?.phone || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
                                 </div>
                             </div>
 
@@ -390,8 +353,7 @@ const Employees = () => {
 
                                 <div>
                                     <label className={labelClasses}>Joining Date</label>
-                                    <input type="date" name="joiningDate" defaultValue={selectedEmployee?.joiningDate || ""}
-                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input type="date" name="joiningDate" defaultValue={selectedEmployee?.joiningDate || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
                                 </div>
                             </div>
 
@@ -400,13 +362,7 @@ const Employees = () => {
                             </h2>
                             <div className="flex flex-col items-center md:items-start">
                                 <label className={`${labelClasses} mb-1`}>Image</label>
-                                <input
-                                    type="file"
-                                    name="image"
-                                    accept="image/*"
-                                    onChange={handleImageChange}
-                                    className="block text-sm text-slate-700 dark:text-slate-200"
-                                />
+                                <input type="file" name="image" accept="image/*" onChange={handleImageChange} className="block text-sm text-slate-700 dark:text-slate-200" />
                                 {preview && (
                                     <img src={preview} alt="Preview" className="mt-2 w-20 h-20 rounded-lg object-cover" />
                                 )}

@@ -138,20 +138,51 @@ const ShortLeaves = () => {
 
             {/* Table */}
             <div className="relative w-full overflow-auto [scrollbar-width:_thin]">
-                <table className="table">
-                    <thead className="table-header">
+                <table className="table w-full text-left text-sm">
+                    <thead className="table-header bg-gradient-to-r from-red-700 to-black text-white 
+        dark:bg-slate-800 dark:text-slate-200
+        sticky top-0 z-10 shadow-sm">
                         <tr className="table-row">
-                            <th className="table-head">ID</th>
-                            <th className="table-head">Name</th>
-                            <th className="table-head">Leaves Type</th>
-                            <th className="table-head">From</th>
-                            <th className="table-head">To</th>
-                            <th className="table-head">Remaining Days</th>
-                            <th className="table-head">Status</th>
-                            <th className="table-head">Action</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">ID</th>
+                            <th className="table-head  px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Name</th>
+                            <th className="table-head  px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Leaves Type</th>
+                            <th className="table-head  px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">From</th>
+                            <th className="table-head  px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">To</th>
+                            <th className="table-head  px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Remaining Days</th>
+                            <th className="table-head  px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Status</th>
+                            <th className="table-head  px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Action</th>
                         </tr>
                     </thead>
-                    <tbody className="table-body">
+                    <tbody className="table-body
+            divide-y divide-red-100 
+            dark:divide-slate-800
+
+            [&>*:nth-child(even)]:bg-red-50/40 
+            dark:[&>*:nth-child(even)]:bg-transparent">
                         {ShortLeave.map((shortleave) => (
                             <tr key={shortleave.number} className="table-row">
                                 <td className="table-cell">{shortleave.number}</td>
