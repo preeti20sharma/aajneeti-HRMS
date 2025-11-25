@@ -48,6 +48,11 @@ export const navbarLinks = [
                 icon: FileClock,
                 path: "/short-leaves",
             },
+            {
+                label: "Shift Timing",
+                icon: Clock10,
+                path: "/shift-timing",
+            },
         ],
     },
     {

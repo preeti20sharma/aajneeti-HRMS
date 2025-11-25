@@ -69,13 +69,13 @@ const DashboardPage = () => {
                 </div>
                 <div className="relative hidden sm:inline">
                     <div className="
-      rounded-xl p-5 shadow-lg border border-red-900
-      bg-gradient-to-br from-black via-red-800 to-black
-      text-white backdrop-blur-md
-      transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl
-      after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-br after:from-red-600/20 after:to-black/20 after:-z-10
-      animate-[float_4s_ease-in-out_infinite]
-  ">
+                            rounded-xl p-5 shadow-lg border border-red-900
+                            bg-gradient-to-br from-black via-red-800 to-black
+                            text-white backdrop-blur-md
+                            transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl
+                            after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-br after:from-red-600/20 after:to-black/20 after:-z-10
+                            animate-[float_4s_ease-in-out_infinite]
+                        ">
                         <div className="card-header flex flex-col items-center">
 
                             {/* Profile Image */}

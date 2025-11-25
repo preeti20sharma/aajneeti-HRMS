@@ -19,6 +19,7 @@ import Empdashboard from "./routes/dashboard/Empdashboard";
 import EditProfile from "./routes/EditProfile";
 import AdminProfile from "./routes/AdminProfile";
 import Attendance from "./routes/Attendance";
+import Shift from "./routes/Shift";
 
 function App() {
     const router = createBrowserRouter([
@@ -83,6 +84,18 @@ function App() {
                 {
                     path: "attendance-report",
                     element: <Attendance />,
+                },
+                {
+                    path: "shift-timing",
+                    element: <Shift />
+                },
+                {
+                    path: "achievements",
+                    element: <Shift />
+                },
+                {
+                    path: "shift-timing",
+                    element: <Shift />
                 },
                 {
                     path: "remote-work",
