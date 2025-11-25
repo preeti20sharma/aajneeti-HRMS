@@ -89,7 +89,7 @@ const CompanyHolidays = () => {
     };
 
     return (
-        <div className="w-full mx-auto  bg-white dark:bg-slate-900   text-slate-800 dark:text-slate-100">
+        <div className="w-full mx-auto rounded-2xl bg-white dark:bg-slate-900   text-slate-800 dark:text-slate-100">
             {/* Header */}
             <div className="flex items-center justify-between mb-8 sm:px-4 px-1 pt-6">
                 <div className="flex flex-col">
@@ -142,7 +142,7 @@ const CompanyHolidays = () => {
                             ([month, holidays]) => (
                                 <React.Fragment key={month}>
                                     {/* Month Row */}
-                                    <tr className="bg-red-50 dark:bg-slate-600">
+                                    <tr className="bg-red-50 dark:bg-slate-800">
                                         <td
                                             colSpan="4"
                                             className="text-left px-4 py-2 font-bold text-red-700 dark:text-slate-200"
@@ -155,7 +155,7 @@ const CompanyHolidays = () => {
                                     {holidays.map((holiday) => (
                                         <tr
                                             key={holiday.id}
-                                            className="hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-sm"
+                                            className="hover:bg-red-200 dark:hover:bg-slate-700 transition-colors text-sm"
                                         >
                                             <td className=" px-4 py-2 font-medium">
                                                 {holiday.name}
@@ -172,7 +172,7 @@ const CompanyHolidays = () => {
                                                         onClick={() =>
                                                             openForm(holiday)
                                                         }
-                                                        className="text-blue-500 dark:text-blue-400 hover:scale-110 transition"
+                                                        className="text-red-500 dark:text-blue-400 hover:scale-110 transition"
                                                     >
                                                         <PencilLine size={18} />
                                                     </button>

@@ -1,5 +1,4 @@
 import { PencilLine, Trash, PlusSquare, HomeIcon, SlidersHorizontal, ArrowDownWideNarrow } from "lucide-react";
-import { Footer } from "@/layouts/footer";
 import { allEmployees } from "@/constants";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -381,7 +380,6 @@ const Employees = () => {
                     </div>
                 </div>
             )}
-            <Footer />
         </div>
     );
 };

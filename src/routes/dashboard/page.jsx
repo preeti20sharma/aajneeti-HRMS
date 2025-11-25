@@ -27,42 +27,42 @@ const DashboardPage = () => {
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 <div className="card h-[200px]">
                     <div className="card-header">
-                        <div className="w-fit rounded-lg bg-red-500/20 p-2 text-red-800 transition-colors dark:bg-red-600/20 dark:text-red-800">
+                        <div className="w-fit rounded-lg bg-red-500/20 p-2 text-red-800 transition-colors dark:bg-red-100 dark:text-red-800">
                             <Users size={26} />
                         </div>
                         <p className="card-title">Present Employees</p>
                     </div>
                     <div className="card-body bg-red-50 transition-colors dark:bg-slate-950">
                         <p className="text-3xl font-bold text-slate-900 transition-colors dark:text-slate-50">40</p>
-                        <span className="flex w-fit items-center gap-x-2 rounded-full border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-800 dark:text-red-800">
+                        <span className="flex w-fit items-center gap-x-2 rounded-full border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
                             view
                         </span>
                     </div>
                 </div>
                 <div className="card h-[200px]">
                     <div className="card-header">
-                        <div className="rounded-lg bg-red-500/20 p-2 text-red-800 transition-colors dark:bg-red-600/20 dark:text-red-800">
+                        <div className="rounded-lg bg-red-500/20 p-2 text-red-800 transition-colors dark:bg-red-100 dark:text-red-800">
                             <Users size={26} />
                         </div>
                         <p className="card-title">On Leaves</p>
                     </div>
                     <div className="card-body bg-red-50 transition-colors dark:bg-slate-950">
                         <p className="text-3xl font-bold text-slate-900 transition-colors dark:text-slate-50">04</p>
-                        <span className="flex w-fit items-center gap-x-2 rounded-full border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-800 dark:text-red-800">
+                        <span className="flex w-fit items-center gap-x-2 rounded-full border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
                             view
                         </span>
                     </div>
                 </div>
                 <div className="card h-[200px]">
                     <div className="card-header">
-                        <div className="rounded-lg bg-red-500/20 p-2 text-red-800 transition-colors dark:bg-red-600/20 dark:text-red-800">
+                        <div className="rounded-lg bg-red-500/20 p-2 text-red-800 transition-colors dark:bg-red-100 dark:text-red-800">
                             <Users size={26} />
                         </div>
                         <p className="card-title">Work From Home</p>
                     </div>
                     <div className="card-body bg-red-50 transition-colors dark:bg-slate-950">
                         <p className="text-3xl font-bold text-slate-900 transition-colors dark:text-slate-50">10</p>
-                        <span className="flex w-fit items-center gap-x-2 rounded-full border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-800 dark:text-red-800">
+                        <span className="flex w-fit items-center gap-x-2 rounded-full border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
                             view
                         </span>
                     </div>

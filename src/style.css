@@ -1,0 +1,93 @@
+/* ===========================
+   BASE SELECT (Light + Dark)
+   ===========================*/
+.custom-select {
+    padding: 8px 14px;
+    background: var(--select-bg);
+    border: 1px solid var(--select-border);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--select-text);
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    transition: all 0.25s ease;
+    box-shadow: var(--select-shadow);
+}
+
+
+
+
+/* ===========================
+   OPTION LIST DESIGN
+   ===========================*/
+.custom-select option {
+    background: var(--option-bg);
+    border-radius: 12px;
+    color: var(--option-text);
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--option-divider);
+}
+
+.custom-select option:hover {
+    background: var(--option-hover-bg) !important;
+    color: var(--option-hover-text) !important;
+}
+
+/* Selected option */
+.custom-select option:checked {
+    background: var(--option-selected-bg) !important;
+    color: var(--option-selected-text) !important;
+    font-weight: 600;
+}
+
+
+/* ===========================
+   LIGHT MODE THEME VARIABLES
+   ===========================*/
+:root {
+    --select-bg: #ffffff;
+    --select-border: #fecaca;
+    --select-hover-border: #fca5a5;
+    --select-focus-border: #ef4444;
+    --select-text: #1f2937;
+    --select-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --select-hover-shadow: 0 2px 5px rgba(239, 68, 68, 0.15);
+    --select-focus-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25);
+
+    --option-bg: #ffffff;
+    --option-text: #374151;
+    --option-divider: #f3f4f6;
+
+    --option-hover-bg: #fee2e2 !important;
+    --option-hover-text: #b91c1c;
+
+    --option-selected-bg: #fecaca;
+    --option-selected-text: #991b1b;
+}
+
+
+/* ===========================
+   DARK MODE THEME VARIABLES
+   ===========================*/
+.dark {
+    --select-bg: #1e293b;
+    --select-border: #334155;
+    --select-hover-border: #475569;
+    --select-focus-border: #ef4444;
+    --select-text: #e2e8f0;
+    --select-shadow: none;
+    --select-hover-shadow: none;
+    --select-focus-shadow: 0 0 0 3px rgba(239, 68, 68, 0.4);
+
+    --option-bg: #1e293b;
+    --option-text: #e2e8f0;
+    --option-divider: #334155;
+
+    --option-hover-bg: #ef4444;
+    --option-hover-text: #ffffff;
+
+    --option-selected-bg: #334155;
+    --option-selected-text: #f8fafc;
+}
