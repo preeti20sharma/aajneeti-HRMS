@@ -20,6 +20,7 @@ import EditProfile from "./routes/EditProfile";
 import AdminProfile from "./routes/AdminProfile";
 import Attendance from "./routes/Attendance";
 import Shift from "./routes/Shift";
+import TeamDashboard from "./routes/dashboard/TeamDashboard";
 
 function App() {
     const router = createBrowserRouter([
@@ -48,6 +49,10 @@ function App() {
                 {
                     path: "employees-dashboard",
                     element: <Empdashboard />,
+                },
+                {
+                    path: "team-dashboard",
+                    element: <TeamDashboard />,
                 },
                 {
                     path: "all-employees",

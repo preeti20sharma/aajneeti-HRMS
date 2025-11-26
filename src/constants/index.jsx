@@ -18,6 +18,16 @@ export const navbarLinks = [
                 path: "/employees-dashboard",
             },
             {
+                label: "Team Dashboard",
+                icon: Home,
+                path: "/team-dashboard",
+            },
+        ],
+    },
+    {
+        title: "Updates",
+        links: [
+            {
                 label: "Employees",
                 icon: UsersRound,
                 path: "/all-employees",
@@ -27,12 +37,6 @@ export const navbarLinks = [
                 icon: UsersRound,
                 path: "/attendance-report",
             },
-
-        ],
-    },
-    {
-        title: "Updates",
-        links: [
             {
                 label: "Holiday",
                 icon: CalendarCog,
