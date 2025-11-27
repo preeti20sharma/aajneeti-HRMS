@@ -111,11 +111,11 @@ const DashboardPage = () => {
             </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-6">
                 <div className=" card col-span-1 md:col-span-2 lg:col-span-3  rounded-xl  bg-white dark:bg-slate-900  transition-all duration-300  shadow-md 
-  shadow-red-500/20 
-  hover:shadow-red-500/20
-  border border-red-100  dark:border-slate-700
-  dark:shadow-none 
-  dark:hover:shadow-none">
+                    shadow-red-500/20 
+                    hover:shadow-red-500/20
+                    border border-red-100  dark:border-slate-700
+                    dark:shadow-none 
+                    dark:hover:shadow-none">
                     <div className="card-header px-4 py-3  rounded-t-xl  font-semibold tracking-wide dark:bg-none dark:text-red-300 ">
                         <p className="card-title">UpComing Leaves</p>
                     </div>
@@ -125,12 +125,12 @@ const DashboardPage = () => {
 
                             <table className="table w-full">
                                 <thead className="
-                    table-header
-                   bg-red-50
-                    text-slate-800 
-                
-                    dark:bg-none dark:text-red-300
-                ">
+                                    table-header
+                                bg-red-50
+                                    text-slate-800 
+                                
+                                    dark:bg-none dark:text-red-300
+                                ">
                                     <tr className="table-row">
                                         <th className="table-head">Name</th>
                                         <th className="table-head">From</th>

@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { CalendarDays, ClipboardList } from "lucide-react";
+import { CalendarDays, ClipboardList, Clock10, FileClock, Wifi } from "lucide-react";
 import ProfileImage from "@/assets/profile-image.jpg";
 import { Link } from "react-router-dom";
+import DateFilter from "./DateFilter";
+import { Users } from "lucide-react";
 
 const Empdashboard = () => {
     const [employee] = useState({
@@ -20,10 +22,22 @@ const Empdashboard = () => {
         ],
         leavesTaken: [
             { date: "25-09-2025", type: "Sick", duration: "Full leave", days: "1", status: "Approved", approvedBy: "Manager" },
-            { date: "04-08-2025", type: "Casual", duration: "Short leave", days: "1", status: "Rejected", approvedBy: "HR" },
             { date: "23-09-2025", type: "Sick", duration: "Full leave", days: "1", status: "Approved", approvedBy: "Manager" },
             { date: "08-08-2025", type: "Sick", duration: "Half leave", days: "1", status: "Approved", approvedBy: "Manager" },
+            { date: "03-06-2025", type: "Sick", duration: "Half leave", days: "1", status: "Approved", approvedBy: "Manager" },
 
+        ],
+        CalenderStatus: [
+            { date: "25-09-2025", duration: "Full leave", days: "1", status: "Approved" },
+            { date: "04-08-2025", duration: "Short leave", days: "1", status: "Rejected" },
+            { date: "23-09-2025", duration: "Full leave", days: "1", status: "Approved" },
+            { date: "08-08-2025", duration: "Half leave", days: "1", status: "Approved" },
+            { date: "03-06-2025", duration: "Half leave", days: "1", status: "Approved" },
+        ],
+        shortLeaves: [
+            { date: "25-09-2025", startTime: "4:30 PM", endTime: "6:30 PM", totalHours: "02", reason: "Urgent work", approvedBy: "Manager" },
+            { date: "24-08-2025", startTime: "9:00 AM", endTime: "10:00 AM", totalHours: "01", reason: "healthh issue", approvedBy: "HR" },
+            { date: "25-09-2025", startTime: "4:34 PM", endTime: "8:32 PM", totalHours: "04", reason: "other reason", approvedBy: "Manager" },
         ],
         saturdayStatus: [
             { date: "16-08-2025", status: "from office" },
@@ -53,11 +67,44 @@ const Empdashboard = () => {
         halfLeave: employee.leavesTaken.filter(l => l.duration === "Half Day").length,
         workingDays: 30 - employee.leavesTaken.length,
     };
+    const [selectedMonth, setSelectedMonth] = useState("");
+
+
+
+    // Filter Leaves Used Section
+    const filteredLeaves = employee.leavesTaken.filter((leave) => {
+        if (!selectedMonth) return true;
+
+        const [d, m, y] = leave.date.split("-"); // DD-MM-YYYY
+        return `${y}-${m}` === selectedMonth;
+    });
+    const monthlyFilteredLeaves = filteredLeaves;
+
+    const filteredWFH = employee.remoteWork.filter((r) => {
+        if (!selectedMonth) return true;
+
+        const [d, m, y] = r.from.split("-");
+        return `${y}-${m}` === selectedMonth;
+    });
+    const monthlyFilteredWFH = filteredWFH;
+
+    const filteredExtraWorkingHr = employee.extraWorkingHours.filter((r) => {
+        if (!selectedMonth) return true;
+
+        const [d, m, y] = r.date.split("-");
+        return `${y}-${m}` === selectedMonth;
+    });
+    const monthlyFilteredExtrawork = filteredExtraWorkingHr;
+
+    const filteredShortLeave = employee.shortLeaves.filter((r) => {
+        if (!selectedMonth) return true;
+        const [d, m, y] = r.date.split("-");
+        return `${y}-${m}` === selectedMonth;
+    });
+    const monthlyFilteredShortLeave = filteredShortLeave;
 
     const [currentMonth, setCurrentMonth] = useState(new Date());
-
     const saturdayAttendance = {};
-
     employee.saturdayStatus?.forEach(a => {
         const [d, m, y] = a.date.split("-");
         const dt = new Date(y, m - 1, d);
@@ -99,10 +146,11 @@ const Empdashboard = () => {
     const leaveStatusMap = {};
 
     // Full Leave or Half Leave
-    employee.leavesTaken.forEach(l => {
+    employee.CalenderStatus.forEach(l => {
+        //  Skip rejected or unapproved leaves
+        if (l.status !== "Approved") return;
         const [day, mon, yr] = l.date.split("-");
         const dateKey = `${yr}-${mon}-${day}`;
-
         if (l.duration === "Full leave") leaveStatusMap[dateKey] = "FL";
         if (l.duration === "Short leave") leaveStatusMap[dateKey] = "SL";
         if (l.duration === "Half leave") leaveStatusMap[dateKey] = "HL";
@@ -147,17 +195,14 @@ const Empdashboard = () => {
     //  FINAL CALENDAR ARRAY WITH REMARKS
     const calendarDates = rawDates.map(date => {
         if (!date) return null;
-
         const key = date.toISOString().split("T")[0];
-
         let remark = leaveStatusMap[key] || null;
-
-        // ★ 1: Default Saturday = WFH
+        //  1: Default Saturday = WFH
         if (!remark && date.getDay() === 6) {
             remark = "WFH";
         }
 
-        // ★ 2: Compensation Saturday only if:
+        //  2: Compensation Saturday only if:
         //    a) weekday WFH happened
         //    b) employee was PRESENT on that Saturday
         const monthKey = `${date.getFullYear()}-${date.getMonth()}`;
@@ -373,10 +418,10 @@ const Empdashboard = () => {
             </div>
 
             {/* Leaves Info */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div>
                 {/* Leaves Utilized */}
                 <div className="
-                    bg-white lg:col-span-2 
+                    bg-white 
                     px-4 sm:px-6 py-6 
                     rounded-xl  
                     overflow-auto  transition-all duration-300   shadow-md 
@@ -385,18 +430,24 @@ const Empdashboard = () => {
                     dark:shadow-none 
                     dark:hover:shadow-none hover:border-red-700 dark:hover:border-none
                     dark:bg-slate-800">
-                    <h3 className="text-lg font-semibold flex items-center gap-2 text-slate-900 dark:text-slate-50">
-                        <ClipboardList size={20} className="text-red-700 dark:text-slate-50" />
-                        Leaves Utilized
-                    </h3>
+                    <div className="flex justify-between">
+                        <h3 className="text-lg font-semibold flex items-center gap-2 text-slate-900 dark:text-slate-50">
+                            <ClipboardList size={20} className="text-red-700 dark:text-slate-50" />
+                            Leaves Utilized
+                        </h3>
+                        {/* Monthly Filter */}
+                        <div className="mt-2">
 
+                            <DateFilter selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth} />
+                        </div>
+                    </div>
 
                     {employee.leavesTaken.length === 0 ? (
                         <p className="text-md mt-2 text-slate-700 dark:text-slate-300">No leaves taken yet.</p>
                     ) : (
                         <table className="w-full text-md border-collapse mt-4 rounded-lg overflow-hidden">
                             <thead>
-                                <tr className="
+                                <tr className="text-left
                        bg-red-50
                         dark:bg-slate-700 dark:text-slate-100">
                                     <th className=" px-3 py-2 ">Date</th>
@@ -408,7 +459,7 @@ const Empdashboard = () => {
                                 </tr>
                             </thead>
                             <tbody className="text-slate-900 dark:text-slate-200">
-                                {employee.leavesTaken.map((leave, idx) => (
+                                {monthlyFilteredLeaves.map((leave, idx) => (
                                     <tr key={idx} className="
                             hover:bg-red-50/60 
                             dark:hover:bg-slate-800
@@ -434,12 +485,12 @@ const Empdashboard = () => {
                     )}
                 </div>
                 {/* Leave Status */}
-                <div className="bg-white lg:col-span-1 dark:bg-slate-800 p-6 rounded-xl  shadow-md 
-  shadow-red-500/20 
-  hover:shadow-red-500/20
-  
-  dark:shadow-none 
-  dark:hover:shadow-none">
+                {/* <div className="bg-white lg:col-span-1 dark:bg-slate-800 p-6 rounded-xl  shadow-md 
+                    shadow-red-500/20 
+                    hover:shadow-red-500/20
+                    
+                    dark:shadow-none 
+                    dark:hover:shadow-none">
                     <h3 className="text-lg font-semibold flex items-center gap-2  border-b border-slate-200 dark:border-slate-700 pb-2">
                         <ClipboardList size={20} /> Leaves Status
                     </h3>
@@ -449,132 +500,193 @@ const Empdashboard = () => {
                         <p><span className="font-semibold me-2">Half Leave:</span> {leavesStatus.halfLeave}</p>
                         <p><span className="font-semibold me-2">Working days:</span> {leavesStatus.workingDays}</p>
                     </div>
-                </div>
+                </div> */}
             </div>
 
 
-            {/* Availability Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
+            {/* Credit Summary */}
+            <div>
                 <div
                     className="
-      bg-white dark:bg-slate-800
-      p-6 rounded-xl overflow-auto
-      transition-all duration-300
-      shadow-md shadow-red-500/20 hover:shadow-red-600/30
-      border border-transparent dark:shadow-none
-       
-    "
+            bg-white dark:bg-slate-800
+            p-6 rounded-xl overflow-auto
+            transition-all duration-300
+            shadow-md shadow-red-500/20 hover:shadow-red-600/30
+            border border-transparent dark:shadow-none
+        "
                 >
-                    <h3 className="text-lg font-semibold flex items-center gap-2 text-red-700 dark:text-white mb-5">
-                        <ClipboardList size={20} /> Availability Overview
-                    </h3>
+                    <div className="flex justify-between">
+                        <h3 className="text-lg font-semibold flex items-center gap-2 text-red-700 dark:text-white mb-6">
+                            <ClipboardList size={20} /> Credit summary
+                        </h3>
+                        {/* Monthly Filter */}
+                        <div className="mt-2 mb-4">
 
+                            <DateFilter selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth} />
+                        </div>
+                    </div>
                     {/* Stats Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-6">
 
-                        {/* Full Leave */}
-                        <div className="
-        p-4 rounded-xl
-        bg-gradient-to-br from-black to-red-600
-        text-white 
-        transition-all duration-300
-      ">
-                            <h4 className="text-sm font-medium">Full Leave</h4>
-                            <p className="text-2xl font-bold mt-1">03</p>
-                            <p className="text-xs text-red-100/80 mt-1">Available to Use</p>
-                        </div>
+                        {/* Cards Array */}
+                        {[
+                            { label: "Full Leave", value: 40, icon: CalendarDays },
+                            { label: "Half Leave", value: 32, icon: FileClock },
+                            { label: "Short Leave", value: 5, icon: Clock10 },
+                            { label: "Work From Home", value: 3, icon: Wifi },
+                            { label: "Over Time", value: 3, icon: Clock10 },
+                        ].map((card, i) => (
+                            <div
+                                key={i}
+                                className="
+                        flex flex-col justify-between 
+                        border border-red-100 dark:border-slate-700 
+                        bg-white dark:bg-slate-800 
+                        shadow-lg rounded-xl 
+                        transition-all 
+                        hover:shadow-red-600/30 
+                        p-4
+                    "
+                            >
+                                {/* Card Icon & Title */}
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-fit rounded-lg bg-red-500/20 p-2 text-red-800 dark:bg-red-100 dark:text-red-900">
+                                        <Users size={26} />
+                                    </div>
+                                    <p className="text-md font-semibold text-slate-900 dark:text-slate-100">
+                                        {card.label}
+                                    </p>
+                                </div>
 
-                        {/* Half Leave */}
-                        <div className="
-        p-4 rounded-xl
-       bg-gradient-to-br from-black to-red-600 text-white
-        
-        dark:border-slate-600
-         hover:shadow-none
-        transition-all duration-300
-      ">
-                            <h4 className="text-sm font-medium ">Half Leaves</h4>
-                            <p className="text-2xl font-bold mt-1">02</p>
-                            <p className="text-xs text-red-100/80  mt-1">Available to Use</p>
-                        </div>
+                                {/* Value Display */}
+                                <div className="bg-red-50 dark:bg-slate-900 rounded-lg p-3 text-center">
+                                    <p className="text-3xl font-bold text-slate-900 dark:text-slate-50">
+                                        {card.value}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
 
-
-                        {/* Work From Home */}
-                        <div className="
-        p-4 rounded-xl
-        bg-gradient-to-br from-black to-red-600
-        text-white dark:bg-slate-700
-        transition-all duration-300
-      ">
-                            <h4 className="text-sm font-medium">Work From Home</h4>
-                            <p className="text-2xl font-bold mt-1">06</p>
-                            <p className="text-xs text-red-100/80 mt-1">Available to Use</p>
-                        </div>
                     </div>
                 </div>
             </div>
 
-
-            {/* short leave availability */}
-            <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
+            {/* Leaves Balance Summary */}
+            <div>
                 <div
                     className="
-      bg-white dark:bg-slate-800
-      p-6 rounded-xl overflow-auto
-      transition-all duration-300
-      shadow-md shadow-red-500/20 hover:shadow-red-600/30
-      border border-transparent dark:shadow-none
-       dark:hover:shadow-none
-    "
+            bg-white dark:bg-slate-800
+            p-6 rounded-xl overflow-auto
+            transition-all duration-300
+            shadow-md shadow-red-500/20 hover:shadow-red-600/30
+            border border-transparent dark:shadow-none
+        "
                 >
-                    <h3 className="text-lg font-semibold flex items-center gap-2  text-red-700 dark:text-white mb-5">
-                        <ClipboardList size={20} /> Short Leave Overview
-                    </h3>
+                    <div className="flex justify-between">
+                        <h3 className="text-lg font-semibold flex items-center gap-2 text-red-700 dark:text-white mb-6">
+                            <ClipboardList size={20} /> Leaves Balance Summary
+                        </h3>
+                        {/* Monthly Filter */}
+                        <div className="mt-2 mb-4">
 
+                            <DateFilter selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth} />
+                        </div>
+                    </div>
                     {/* Stats Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
 
+                        {/* Cards Array */}
+                        {[
+                            { label: "Full Leave", value: 4, icon: CalendarDays },
+                            { label: "Half Leave", value: 2, icon: FileClock },
+                            { label: "Short Leave", value: 1, icon: Clock10 },
 
-                        {/* short leave Used */}
-                        <div className="
-        p-4 rounded-xl
-         bg-gradient-to-br from-black to-red-600 text-white
-        dark:bg-slate-800
-        dark:border-slate-600
-        hover:shadow-lg dark:hover:shadow-none
-        transition-all duration-300
-      ">
-                            <h4 className="text-sm font-medium">Short Leaves already taken</h4>
-                            <p className="text-2xl font-bold  mt-1">02</p>
-                            <p className="text-xs text-red-100/80  mt-1">Already Used</p>
-                        </div>
-                        {/* Short Leave available */}
-                        <div className="
-        p-4 rounded-xl
-        bg-gradient-to-br from-black to-red-600 text-white
-        transition-all duration-300
-      ">
-                            <h4 className="text-sm font-medium">Short Leaves available</h4>
-                            <p className="text-2xl font-bold  mt-1">03</p>
-                            <p className="text-xs text-red-100/80 mt-1">Available to Use</p>
-                        </div>
+                        ].map((card, i) => (
+                            <div
+                                key={i}
+                                className="
+                        flex flex-col justify-between 
+                        border border-red-100 dark:border-slate-700 
+                        bg-white dark:bg-slate-800 
+                        shadow-lg rounded-xl 
+                        transition-all 
+                        hover:shadow-red-600/30 
+                        p-4
+                    "
+                            >
+                                {/* Card Icon & Title */}
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-fit rounded-lg bg-red-500/20 p-2 text-red-800 dark:bg-red-100 dark:text-red-900">
+                                        <card.icon size={26} />
+                                    </div>
+                                    <p className="text-md font-semibold text-slate-900 dark:text-slate-100">
+                                        {card.label}
+                                    </p>
+                                </div>
 
-                        {/* Work From Home */}
-                        {/* <div className="
-        p-4 rounded-xl
-        bg-gradient-to-br from-black to-red-600
-        text-white
-        border border-red-500
-        hover:shadow-lg hover:shadow-red-600/40
-        transition-all duration-300
-      ">
-                        <h4 className="text-sm font-medium">Work From Home</h4>
-                        <p className="text-2xl font-bold mt-1">06</p>
-                        <p className="text-xs text-red-100/80 mt-1">Available to Use</p>
-                    </div> */}
-
+                                {/* Value Display */}
+                                <div className="bg-red-50 dark:bg-slate-900 rounded-lg p-3 text-center">
+                                    <p className="text-3xl font-bold text-slate-900 dark:text-slate-50">
+                                        {card.value}
+                                    </p>
+                                    {/* New Label */}
+                                    <p className="text-xs mt-1 text-red-700 dark:text-slate-300 font-medium">
+                                        Available to Use
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
 
                     </div>
+                </div>
+            </div>
+
+            {/*Short Leave Overview*/}
+            <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
+                <div className="bg-white dark:bg-slate-800 p-6 rounded-xl  shadow-md 
+                    shadow-red-500/20 
+                    hover:shadow-red-500/20
+                    
+                    dark:shadow-none 
+                    dark:hover:shadow-none overflow-auto">
+                    <div className="flex justify-between">
+                        <h3 className="text-lg font-semibold flex items-center gap-2">
+                            <ClipboardList size={20} /> Short Leave
+                        </h3>
+                        {/* Monthly Filter */}
+                        <div className="mt-2">
+
+                            <DateFilter selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth} />
+                        </div>
+                    </div>
+                    {employee.shortLeaves.length === 0 ? (
+                        <p className="text-md mt-2">No extra working record yet. </p>
+                    ) : (
+                        <table className="w-full text-md border-collapse mt-3">
+                            <thead>
+                                <tr className="bg-red-50 dark:bg-slate-700">
+                                    <th className="border border-red-100 px-2 py-1">Date</th>
+                                    <th className="border border-red-100 px-2 py-1">Start Time</th>
+                                    <th className="border border-red-100 px-2 py-1">End Time</th>
+                                    <th className="border border-red-100 px-2 py-1">Total Hours</th>
+                                    <th className="border border-red-100 px-2 py-1">Reason</th>
+                                    <th className="border border-red-100 px-2 py-1">Approved By</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {monthlyFilteredShortLeave.map((shortLeave, idx) => (
+                                    <tr key={idx} className="hover:bg-red-50 dark:hover:bg-slate-800 text-center  transition-all duration-300">
+                                        <td className="border border-red-100 px-2 py-1">{shortLeave.date}</td>
+                                        <td className="border border-red-100 px-2 py-1">{shortLeave.startTime}</td>
+                                        <td className="border border-red-100 px-2 py-1">{shortLeave.endTime}</td>
+                                        <td className="border border-red-100 px-2 py-1">{shortLeave.totalHours}</td>
+                                        <td className="border border-red-100 px-2 py-1">{shortLeave.reason}</td>
+                                        <td className="border border-red-100 px-2 py-1">{shortLeave.approvedBy}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    )}
                 </div>
             </div>
 
@@ -619,14 +731,21 @@ const Empdashboard = () => {
             {/* Work from home */}
             <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
                 <div className="bg-white dark:bg-slate-800 p-6 rounded-xl  overflow-auto transition-all duration-300   shadow-md 
-  shadow-red-500/20 
-  hover:shadow-red-500/20
-  
-  dark:shadow-none 
-  dark:hover:shadow-none hover:border-red-700 dark:hover:border-none">
-                    <h3 className="text-lg font-semibold flex items-center gap-2">
-                        <ClipboardList size={20} /> Work From Home
-                    </h3>
+                    shadow-red-500/20 
+                    hover:shadow-red-500/20
+                    
+                        dark:shadow-none 
+                        dark:hover:shadow-none hover:border-red-700 dark:hover:border-none">
+                    <div className="flex justify-between" >
+                        <h3 className="text-lg font-semibold flex items-center gap-2">
+                            <ClipboardList size={20} /> Work From Home
+                        </h3>
+                        {/* Monthly Filter */}
+                        <div className="mt-2">
+
+                            <DateFilter selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth} />
+                        </div>
+                    </div>
                     {employee.remoteWork.length === 0 ? (
                         <p className="text-md mt-2">No remote work records yet.</p>
                     ) : (
@@ -642,7 +761,7 @@ const Empdashboard = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {employee.remoteWork.map((work, idx) => (
+                                {monthlyFilteredWFH.map((work, idx) => (
                                     <tr key={idx} className="hover:bg-red-50 dark:hover:bg-slate-800 text-center  transition-all duration-300">
                                         <td className="border border-red-100 px-2 py-1">{work.from}</td>
                                         <td className="border border-red-100 px-2 py-1">{work.to}</td>
@@ -660,14 +779,21 @@ const Empdashboard = () => {
             {/* Extra Working Hours */}
             <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
                 <div className="bg-white dark:bg-slate-800 p-6 rounded-xl  shadow-md 
-  shadow-red-500/20 
-  hover:shadow-red-500/20
-  
-  dark:shadow-none 
-  dark:hover:shadow-none overflow-auto">
-                    <h3 className="text-lg font-semibold flex items-center gap-2">
-                        <ClipboardList size={20} /> Extra Working Hours
-                    </h3>
+                    shadow-red-500/20 
+                    hover:shadow-red-500/20
+                    
+                    dark:shadow-none 
+                    dark:hover:shadow-none overflow-auto">
+                    <div className="flex justify-between">
+                        <h3 className="text-lg font-semibold flex items-center gap-2">
+                            <ClipboardList size={20} /> Extra Working Hours
+                        </h3>
+                        {/* Monthly Filter */}
+                        <div className="mt-2">
+
+                            <DateFilter selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth} />
+                        </div>
+                    </div>
                     {employee.extraWorkingHours.length === 0 ? (
                         <p className="text-md mt-2">No extra working record yet. </p>
                     ) : (
@@ -685,7 +811,7 @@ const Empdashboard = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {employee.extraWorkingHours.map((work, idx) => (
+                                {monthlyFilteredExtrawork.map((work, idx) => (
                                     <tr key={idx} className="hover:bg-red-50 dark:hover:bg-slate-800 text-center  transition-all duration-300">
                                         <td className="border border-red-100 px-2 py-1">{work.date}</td>
                                         <td className="border border-red-100 px-2 py-1">{work.inTime}</td>
@@ -705,11 +831,11 @@ const Empdashboard = () => {
             {/* Salary Details */}
             <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
                 <div className="bg-white dark:bg-slate-800 p-6 rounded-xl  shadow-md 
-  shadow-red-500/20 
-  hover:shadow-red-500/20
-  
-  dark:shadow-none 
-  dark:hover:shadow-none overflow-auto">
+                shadow-red-500/20 
+                hover:shadow-red-500/20
+                
+                dark:shadow-none 
+                dark:hover:shadow-none overflow-auto">
                     <h3 className="text-lg font-semibold flex items-center gap-2">
                         <ClipboardList size={20} /> Salary Details
                     </h3>
