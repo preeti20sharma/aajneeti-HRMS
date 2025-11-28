@@ -24,74 +24,123 @@ const DashboardPage = () => {
         <div className="flex flex-col gap-y-4">
             <h5 className="title">Admin Dashboard</h5>
             <p className="text-slate-900 dark:text-slate-50">Welcome back! Preeti</p>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                <div className="card h-[200px]">
-                    <div className="card-header">
-                        <div className="w-fit rounded-lg bg-red-500/20 p-2 text-red-800 transition-colors dark:bg-red-100 dark:text-red-800">
-                            <Users size={26} />
+            <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
+
+                {/* LEFT SIDE — 4 CARDS (2x2 GRID) */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:col-span-2 xl:col-span-3">
+
+                    {/* CARD 1 */}
+                    <div className="card h-[160px]">
+                        <div className="card-header">
+                            <div className="w-fit rounded-lg bg-red-500/20 p-2 text-red-800 dark:bg-red-100 dark:text-red-800">
+                                <Users size={26} />
+                            </div>
+                            <p className="card-title">Present Employees</p>
                         </div>
-                        <p className="card-title">Present Employees</p>
-                    </div>
-                    <div className="card-body bg-red-50 transition-colors dark:bg-slate-950">
-                        <p className="text-3xl font-bold text-slate-900 transition-colors dark:text-slate-50">40</p>
-                        <span className="flex w-fit items-center gap-x-2 rounded-full border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
-                            view
-                        </span>
-                    </div>
-                </div>
-                <div className="card h-[200px]">
-                    <div className="card-header">
-                        <div className="rounded-lg bg-red-500/20 p-2 text-red-800 transition-colors dark:bg-red-100 dark:text-red-800">
-                            <Users size={26} />
+                        <div className="card-body bg-red-50 dark:bg-slate-950">
+                            <div className="flex justify-between">
+                                <p className="text-3xl font-bold text-slate-900 dark:text-slate-50">40</p>
+                                <span className="flex w-fit items-center gap-x-2 rounded-lg border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
+                                    view
+                                </span>
+                            </div>
                         </div>
-                        <p className="card-title">On Leaves</p>
                     </div>
-                    <div className="card-body bg-red-50 transition-colors dark:bg-slate-950">
-                        <p className="text-3xl font-bold text-slate-900 transition-colors dark:text-slate-50">04</p>
-                        <span className="flex w-fit items-center gap-x-2 rounded-full border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
-                            view
-                        </span>
-                    </div>
-                </div>
-                <div className="card h-[200px]">
-                    <div className="card-header">
-                        <div className="rounded-lg bg-red-500/20 p-2 text-red-800 transition-colors dark:bg-red-100 dark:text-red-800">
-                            <Users size={26} />
+
+                    {/* CARD 2 */}
+                    <div className="card h-[160px]">
+                        <div className="card-header">
+                            <div className="rounded-lg bg-red-500/20 p-2 text-red-800 dark:bg-red-100 dark:text-red-800">
+                                <Users size={26} />
+                            </div>
+                            <p className="card-title">On Full Leaves</p>
                         </div>
-                        <p className="card-title">Work From Home</p>
+                        <div className="card-body bg-red-50 dark:bg-slate-950">
+                            <div className="flex justify-between">
+                                <p className="text-3xl font-bold text-slate-900 dark:text-slate-50">04</p>
+                                <span className="flex w-fit items-center gap-x-2 rounded-lg border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
+                                    view
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                    <div className="card-body bg-red-50 transition-colors dark:bg-slate-950">
-                        <p className="text-3xl font-bold text-slate-900 transition-colors dark:text-slate-50">10</p>
-                        <span className="flex w-fit items-center gap-x-2 rounded-full border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
-                            view
-                        </span>
+
+                    {/* CARD 3 */}
+                    <div className="card h-[160px]">
+                        <div className="card-header">
+                            <div className="rounded-lg bg-red-500/20 p-2 text-red-800 dark:bg-red-100 dark:text-red-800">
+                                <Users size={26} />
+                            </div>
+                            <p className="card-title">On Half Leave</p>
+                        </div>
+                        <div className="card-body bg-red-50 dark:bg-slate-950">
+                            <div className="flex justify-between">
+                                <p className="text-3xl font-bold text-slate-900 dark:text-slate-50">10</p>
+                                <span className="flex w-fit items-center gap-x-2 rounded-lg border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
+                                    view
+                                </span>
+                            </div>
+                        </div>
                     </div>
+
+                    {/* CARD 4 */}
+                    <div className="card h-[160px]">
+                        <div className="card-header">
+                            <div className="rounded-lg bg-red-500/20 p-2 text-red-800 dark:bg-red-100 dark:text-red-800">
+                                <Users size={26} />
+                            </div>
+                            <p className="card-title">On Short Leave</p>
+                        </div>
+                        <div className="card-body bg-red-50 dark:bg-slate-950">
+                            <div className="flex justify-between">
+                                <p className="text-3xl font-bold text-slate-900 dark:text-slate-50">10</p>
+                                <span className="flex w-fit items-center gap-x-2 rounded-lg border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
+                                    view
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    {/* CARD 4 */}
+                    <div className="card h-[160px]">
+                        <div className="card-header">
+                            <div className="rounded-lg bg-red-500/20 p-2 text-red-800 dark:bg-red-100 dark:text-red-800">
+                                <Users size={26} />
+                            </div>
+                            <p className="card-title">Work From Home</p>
+                        </div>
+                        <div className="card-body bg-red-50 dark:bg-slate-950">
+                            <div className="flex justify-between">
+                                <p className="text-3xl font-bold text-slate-900 dark:text-slate-50">10</p>
+                                <span className="flex w-fit items-center gap-x-2 rounded-lg border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
+                                    view
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div className="relative hidden sm:inline">
+
+                {/* RIGHT SIDE — PROFILE CARD (ALWAYS ON TOP) */}
+                <div className="md:col-span-1 xl:col-span-1">
                     <div className="
-                            rounded-xl p-5 shadow-lg border border-red-900
-                            bg-gradient-to-br from-black via-red-800 to-black
-                            text-white backdrop-blur-md
-                            transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl
-                            after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-br after:from-red-600/20 after:to-black/20 after:-z-10
-                            animate-[float_4s_ease-in-out_infinite]
-                        ">
+            rounded-xl p-5 shadow-lg border border-red-900
+            bg-gradient-to-br from-black via-red-800 to-black
+            text-white backdrop-blur-md
+            transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl
+        ">
                         <div className="card-header flex flex-col items-center">
 
                             {/* Profile Image */}
-                            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-red-700 shadow-md mb-3 
-                      ring-2 ring-red-400/40">
+                            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-red-700 shadow-md mb-3 ring-2 ring-red-400/40">
                                 <img src={admin.image} alt="Profile" className="w-full h-full object-cover" />
                             </div>
 
                             {/* Name */}
-                            <h2 className="text-xl font-semibold text-red-200 drop-shadow-sm">
-                                {admin.name}
-                            </h2>
+                            <h2 className="text-xl font-semibold text-red-200">{admin.name}</h2>
 
                             {/* Details */}
                             <p className="text-sm text-slate-100">{admin.adminID}</p>
-                            <p className="text-sm text-slate-100 ">{admin.email}</p>
+                            <p className="text-sm text-slate-100">{admin.email}</p>
                             <p className="text-sm text-red-300">{admin.phone}</p>
 
                             {/* Position */}
@@ -101,7 +150,10 @@ const DashboardPage = () => {
 
                             {/* Button */}
                             <Link to="/admin-profile" state={{ admin }}>
-                                <button className="  mt-4 rounded-md px-4 py-1.5 text-sm font-medium bg-gradient-to-r from-red-700 to-red-900 text-white border border-red-700 shadow-md hover:from-red-600 hover:to-red-800 transition-all duration-300 ">
+                                <button className="mt-4 rounded-md px-4 py-1.5 text-sm font-medium 
+                        bg-gradient-to-r from-red-700 to-red-900 
+                        text-white border border-red-700 shadow-md 
+                        hover:from-red-600 hover:to-red-800 transition-all duration-300">
                                     Edit Profile
                                 </button>
                             </Link>

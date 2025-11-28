@@ -251,8 +251,8 @@ const Empdashboard = () => {
                 {/* ================= EMPLOYEE PROFILE (SMALL) ================= */}
                 <div className="
                         bg-white dark:bg-slate-800
-                        p-4 rounded-xl shadow-md border border-red-100
-                        hover:shadow-red-500/20 dark:hover:border-slate-600
+                        p-4 rounded-xl shadow-md border border-red-100 dark:border-slate-700
+                        hover:shadow-red-500/20 dark:hover:shadow-none dark:hover:border-slate-700
                         transition-all duration-300
                     ">
 
@@ -318,8 +318,8 @@ const Empdashboard = () => {
                 {/* ================= CALENDAR (SMALL) ================= */}
                 <div className="
         bg-white dark:bg-slate-800 
-        p-4 rounded-xl shadow-md border border-red-100
-        hover:shadow-red-500/20 transition-all duration-300
+        p-4 rounded-xl shadow-md border border-red-100 dark:border-slate-700 
+        hover:shadow-red-500/20 dark:hover:shadow-none transition-all duration-300
     ">
 
                     {/* Calendar Header */}
@@ -542,7 +542,7 @@ const Empdashboard = () => {
                         bg-white dark:bg-slate-800 
                         shadow-lg rounded-xl 
                         transition-all 
-                        hover:shadow-red-600/30 
+                        hover:shadow-red-600/30 dark:hover:shadow-none
                         p-4
                     "
                             >

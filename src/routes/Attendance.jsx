@@ -1,5 +1,7 @@
 import { Users } from "lucide-react";
 import CustomDropdown from "./CustomDropdown";
+import { Link } from "react-router-dom";
+
 const Attendance = () => {
     return (
 
@@ -16,6 +18,101 @@ const Attendance = () => {
                 </h2>
                 <p className="text-sm text-red-800 dark:text-red-100 mt-1">Track: Late Coming, Half Day, Short Leave, WFH</p>
             </header>
+
+            {/* Employee attendace form */}
+            <div className="bg-white dark:bg-slate-800 p-4 mb-8 rounded-lg shadow-md border border-red-100 dark:border-slate-700">
+
+                {/* Title */}
+                <h2 className="text-md font-semibold text-red-700 dark:text-red-300 mb-3">
+                    Attendance Entry
+                </h2>
+
+                {/* Form */}
+                <form className="grid grid-cols-1 sm:grid-cols-5 gap-3">
+
+                    {/* NAME */}
+                    <div className="col-span-1">
+                        <label className="text-xs font-medium text-slate-700 dark:text-slate-300">Name</label>
+                        <input
+                            type="text"
+                            className="mt-1 p-1.5 text-sm rounded-md border border-red-200 dark:border-slate-600
+            bg-red-50/40 dark:bg-slate-700/40 w-full focus:outline-none focus:border-red-500"
+                        />
+                    </div>
+
+                    {/* DATE */}
+                    <div className="col-span-1">
+                        <label className="text-xs font-medium text-slate-700 dark:text-slate-300">Date</label>
+                        <input
+                            type="date"
+                            className="mt-1 p-1.5 text-sm rounded-md border border-red-200 dark:border-slate-600
+            bg-red-50/40 dark:bg-slate-700/40 w-full focus:outline-none focus:border-red-500"
+                        />
+                    </div>
+
+                    {/* IN TIME */}
+                    <div className="col-span-1">
+                        <label className="text-xs font-medium text-slate-700 dark:text-slate-300">In Time</label>
+                        <input
+                            type="time"
+                            className="mt-1 p-1.5 text-sm rounded-md border border-red-200 dark:border-slate-600
+            bg-red-50/40 dark:bg-slate-700/40 w-full focus:outline-none focus:border-red-500"
+                        />
+                    </div>
+
+                    {/* OUT TIME */}
+                    <div className="col-span-1">
+                        <label className="text-xs font-medium text-slate-700 dark:text-slate-300">Out Time</label>
+                        <input
+                            type="time"
+                            className="mt-1 p-1.5 text-sm rounded-md border border-red-200 dark:border-slate-600
+            bg-red-50/40 dark:bg-slate-700/40 w-full focus:outline-none focus:border-red-500"
+                        />
+                    </div>
+
+                    {/* STATUS */}
+                    <div className="col-span-1">
+                        <label className="text-xs font-medium text-slate-700 dark:text-slate-300">Status</label>
+                        <select
+                            className="mt-1 p-1.5 text-sm rounded-md border border-red-200 dark:border-slate-600
+            bg-red-50/40 dark:bg-slate-700/40 w-full focus:outline-none focus:border-red-500"
+                        >
+                            <option value="">Select</option>
+                            <option>Present</option>
+                            <option>Absent</option>
+                            <option>Half Day</option>
+                            <option>Short Leave</option>
+                            <option>WFH</option>
+                        </select>
+                    </div>
+
+                    {/* REMARKS (FULL WIDTH) */}
+                    <div className="col-span-1 sm:col-span-2">
+                        <label className="text-xs font-medium text-slate-700 dark:text-slate-300">Remarks</label>
+                        <textarea
+                            rows="2"
+                            className="mt-1 p-1.5 text-sm rounded-md border border-red-200 dark:border-slate-600
+            bg-red-50/40 dark:bg-slate-700/40 w-full resize-none focus:outline-none focus:border-red-500"
+                        ></textarea>
+                    </div>
+
+                    {/* BUTTON (aligns right, stays in same grid row) */}
+                    <div className="col-span-1 sm:col-span-5 flex justify-start mt-1">
+                        <button
+                            className="
+                px-6 py-1.5 text-sm font-semibold rounded-md text-white 
+                bg-gradient-to-r from-red-800 to-black
+                hover:from-black hover:to-red-800 transition-all duration-300
+            "
+                        >
+                            Apply
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
 
             {/* Filters Section */}
             <div className="bg-white dark:bg-slate-800 border border-red-100 dark:border-slate-700 text-left p-4 rounded-xl shadow-lg mb-6">
@@ -133,9 +230,19 @@ const Attendance = () => {
                             </div>
                             <p className="card-title">{card.label}</p>
                         </div>
-                        <div className="card-body bg-red-50 transition-colors dark:bg-slate-900">
-                            <p className="text-3xl font-bold text-slate-900 transition-colors dark:text-slate-50">{card.value}</p>
-
+                        <div className="card-body   bg-red-50 transition-colors dark:bg-slate-900">
+                            <div className="flex justify-between">
+                                <p className="text-3xl font-bold text-slate-900 transition-colors dark:text-slate-50">{card.value}</p>
+                                <Link to="/" >
+                                    <button className="
+                                                                px-4 py-1 rounded-lg text-red-800 hover:text-slate-200
+                                                                bg-transparent border border-red-800 hover:bg-red-700 
+                                                                dark:bg-slate-700 dark:hover:bg-slate-600 dark:border-slate-200 dark:text-slate-200
+                                                                transition-all">
+                                        View
+                                    </button>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 ))}
