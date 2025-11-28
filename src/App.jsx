@@ -21,6 +21,7 @@ import AdminProfile from "./routes/AdminProfile";
 import Attendance from "./routes/Attendance";
 import Shift from "./routes/Shift";
 import TeamDashboard from "./routes/dashboard/TeamDashboard";
+import WorkingDays from "./routes/WorkingDays";
 
 function App() {
     const router = createBrowserRouter([
@@ -73,6 +74,10 @@ function App() {
                 {
                     path: "holidays",
                     element: <CompanyHolidays />,
+                },
+                {
+                    path: "working-days-calculation",
+                    element: <WorkingDays />
                 },
                 {
                     path: "leaves",

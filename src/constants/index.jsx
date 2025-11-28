@@ -68,6 +68,11 @@ export const navbarLinks = [
                 path: "/remote-work",
             },
             {
+                label: "Working Days ",
+                icon: CalendarCog,
+                path: "/working-days-calculation",
+            },
+            {
                 label: "Extra Working Hours",
                 icon: Clock10,
                 path: "/extra-working-hours",

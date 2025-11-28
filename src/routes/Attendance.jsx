@@ -54,10 +54,10 @@ const Attendance = () => {
                 <table className="w-full text-sm">
                     <thead>
                         <tr className="bg-gradient-to-r from-red-700 to-black text-white text-center">
-                            <th className="p-3 border-b border-red-100 dark:border-slate-700 text-center">ID</th>
                             <th className="p-3 border-b border-red-100 dark:border-slate-700 text-center">Name</th>
                             <th className="p-3 border-b border-red-100 dark:border-slate-700 text-center">Date</th>
-                            <th className="p-3 border-b border-red-100 dark:border-slate-700 text-center">Entry Time</th>
+                            <th className="p-3 border-b border-red-100 dark:border-slate-700 text-center">In Time</th>
+                            <th className="p-3 border-b border-red-100 dark:border-slate-700 text-center">Out Time</th>
                             <th className="p-3 border-b border-red-100 dark:border-slate-700 text-center">Status</th>
                             <th className="p-3 border-b border-red-100 dark:border-slate-700 text-center">Remarks</th>
                         </tr>
@@ -79,13 +79,13 @@ const Attendance = () => {
                                     key={i}
                                     className="text-center hover:bg-red-50 dark:hover:bg-slate-700 transition border-b border-red-100 dark:border-slate-700"
                                 >
-                                    <td className="p-3">EMP{100 + i}</td>
                                     <td className="p-3">Employee {i + 1}</td>
                                     <td className="p-3">24 Nov 2025</td>
 
-                                    {/*  Actual time  */}
+                                    {/*  in time time  */}
                                     <td className="p-3">{checkInTime}</td>
-
+                                    {/*  out time  */}
+                                    <td className="p-3">{checkInTime}</td>
                                     {/* Status badge: Late / On Time */}
                                     <td className="p-3">
                                         <span
@@ -121,6 +121,10 @@ const Attendance = () => {
                     { label: "Present", value: 32 },
                     { label: "Late Coming", value: 5 },
                     { label: "WFH", value: 3 },
+                    { label: "On Full Leave", value: 7 },
+                    { label: "On Half Leave", value: 2 },
+                    { label: "On Short Leave", value: 6 },
+
                 ].map((card, i) => (
                     <div key={i} className="card border-red-100 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-lg rounded-xl transition-colors hover:shadow-xl">
                         <div className="card-header">

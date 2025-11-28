@@ -246,145 +246,118 @@ const Empdashboard = () => {
             </div>
 
             {/* Employee Info + Calendar */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {/* Employee Details */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+                {/* ================= EMPLOYEE PROFILE (SMALL) ================= */}
                 <div className="
                         bg-white dark:bg-slate-800
-                        sm:p-6 p-3
-                        rounded-2xl 
-                        dark:border-slate-700
-                        shadow-md 
-                    shadow-red-500/20 
-                    hover:shadow-red-500/20
-                    
-                    dark:shadow-none 
-                    dark:hover:shadow-none
+                        p-4 rounded-xl shadow-md border border-red-100
+                        hover:shadow-red-500/20 dark:hover:border-slate-600
                         transition-all duration-300
-
-                        hover:shadow-md 
-                        dark:hover:border-slate-600 
                     ">
 
-                    {/* TOP SECTION */}
+                    {/* Header Section */}
                     <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4 mb-6">
-                            <img src={employee.image} alt={employee.name} className="
-                    size-16 rounded-xl object-cover shadow-md 
-                    border border-red-700/40 
-                    dark:border-slate-700
-                " />
+                        <div className="flex items-center gap-3">
+                            <img
+                                src={employee.image}
+                                alt={employee.name}
+                                className="w-14 h-14 rounded-xl object-cover shadow-md border-2 border-red-100"
+                            />
+
                             <div>
-                                <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-50">
+                                <h3 className="text-xl font-bold text-black dark:text-white leading-tight">
                                     {employee.name}
                                 </h3>
-                                <p className="
-                    text-slate-600 dark:text-slate-400
-                ">
+                                <p className="text-red-800 dark:text-red-400 text-md font-medium">
                                     {employee.designation}
                                 </p>
                             </div>
                         </div>
-
                         {/* BUTTON – Only Light Theme Red */}
                         <Link to="/edit-profile" state={{ employee }}>
                             <button className="
-                px-3 py-2 rounded-lg text-slate-200 
-                bg-red-800 hover:bg-red-900 
-                dark:bg-slate-700 dark:hover:bg-slate-600
-                transition-all">
+                                px-3 py-2 rounded-lg text-slate-200 
+                                bg-red-800 hover:bg-red-900 
+                                dark:bg-slate-700 dark:hover:bg-slate-600
+                                transition-all">
                                 Edit Profile
                             </button>
                         </Link>
                     </div>
 
-                    {/* TABLE */}
-                    <table className="w-full text-md">
-                        <tbody>
-                            <tr className="
-                border-b border-red-100 dark:border-slate-700
-                hover:bg-red-50/70 dark:hover:bg-slate-700/40 transition">
-                                <td className="px-4 py-2 font-semibold text-slate-900 dark:text-slate-300">Employee ID</td>
-                                <td className="px-4 py-2">{employee.empId}</td>
-                            </tr>
+                    {/* Divider */}
+                    <div className="my-3 h-[1px] bg-gradient-to-r from-red-400 to-transparent dark:from-red-300"></div>
 
-                            <tr className="
-                border-b border-red-100 dark:border-slate-700
-                hover:bg-red-50/70 dark:hover:bg-slate-700/40 transition">
-                                <td className="px-4 py-2 font-semibold text-slate-900 dark:text-slate-300">Department</td>
-                                <td className="px-4 py-2">{employee.department}</td>
-                            </tr>
-
-                            <tr className="
-                border-b border-red-100 dark:border-slate-700
-                hover:bg-red-50/70 dark:hover:bg-slate-700/40 transition">
-                                <td className="px-4 py-2 font-semibold text-slate-900 dark:text-slate-300">Designation</td>
-                                <td className="px-4 py-2">{employee.designation}</td>
-                            </tr>
-
-                            <tr className="
-                border-b border-red-100 dark:border-slate-700
-                hover:bg-red-50/70 dark:hover:bg-slate-700/40 transition">
-                                <td className="px-4 py-2 font-semibold text-slate-900 dark:text-slate-300">Email</td>
-                                <td className="px-4 py-2">{employee.email}</td>
-                            </tr>
-
-                            <tr className="
-                border-b border-red-100 dark:border-slate-700
-                hover:bg-red-50/70 dark:hover:bg-slate-700/40 transition ">
-                                <td className="px-4 py-2 font-semibold text-slate-900 dark:text-slate-300">Phone</td>
-                                <td className="px-4 py-2">{employee.phone}</td>
-                            </tr>
-
-                            <tr className="
-                border-b border-red-100 dark:border-slate-700
-                hover:bg-red-50/70 dark:hover:bg-slate-700/40 transition">
-                                <td className="px-4 py-2 font-semibold text-slate-900 dark:text-slate-300">Joining Date</td>
-                                <td className="px-4 py-2">{employee.joiningDate}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    {/* Details Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {[
+                            ["Employee ID", employee.empId],
+                            ["Department", employee.department],
+                            ["Designation", employee.designation],
+                            ["Email", employee.email],
+                            ["Phone", employee.phone],
+                            ["Joining Date", employee.joiningDate]
+                        ].map(([label, value], idx) => (
+                            <div key={idx} className="
+                    bg-red-50/40 dark:bg-slate-700/40
+                    p-2 rounded-lg border border-red-100/60 dark:border-slate-600
+                    hover:bg-red-100/50 dark:hover:bg-slate-700 transition
+                ">
+                                <p className="text-[16px] text-red-800 dark:text-red-300 font-semibold tracking-wide">
+                                    {label}
+                                </p>
+                                <p className="text-sm font-medium text-black dark:text-white mt-1">
+                                    {value}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
+                {/* ================= CALENDAR (SMALL) ================= */}
+                <div className="
+        bg-white dark:bg-slate-800 
+        p-4 rounded-xl shadow-md border border-red-100
+        hover:shadow-red-500/20 transition-all duration-300
+    ">
 
-                {/*  UPDATED DYNAMIC CALENDAR */}
-                <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md 
-                        shadow-red-500/20 hover:shadow-red-500/20
-                        dark:shadow-none dark:hover:shadow-none">
-
-                    {/* Month Navigation */}
-                    <div className="flex justify-between items-center mb-4">
+                    {/* Calendar Header */}
+                    <div className="flex items-center justify-between mb-3">
                         <button
                             onClick={() => setCurrentMonth(new Date(year, month - 1))}
-                            className="px-3 py-1 bg-red-700 text-white rounded-md"
+                            className="px-2 py-1 bg-red-800 hover:bg-red-800 text-white text-md rounded"
                         >
                             Prev
                         </button>
 
-                        <h3 className="text-lg font-semibold flex items-center gap-2">
-                            <CalendarDays size={20} />
-                            {currentMonth.toLocaleString("default", { month: "long", year: "numeric" })}
+                        <h3 className="text-base font-bold text-slate-700 dark:text-white flex items-center gap-1">
+                            <CalendarDays size={18} className="text-red-800" />
+                            {currentMonth.toLocaleString("default", { month: "short", year: "numeric" })}
                         </h3>
 
                         <button
                             onClick={() => setCurrentMonth(new Date(year, month + 1))}
-                            className="px-3 py-1 bg-red-700 text-white rounded-md"
+                            className="px-2 py-1 bg-red-800 hover:bg-red-800 text-white text-md rounded"
                         >
                             Next
                         </button>
                     </div>
 
-                    {/* Weekdays */}
-                    <div className="grid grid-cols-7 gap-1 text-md font-semibold text-center">
+                    {/* Weekdays Row */}
+                    <div className="
+            grid grid-cols-7 text-center font-semibold text-[16px] 
+            text-red-900 dark:text-red-300 mb-1
+        ">
                         {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(day => (
-                            <div key={day}>{day}</div>
+                            <div key={day} className="py-0.5">{day}</div>
                         ))}
                     </div>
 
-                    {/* Dates + Remarks */}
-                    <div className="grid grid-cols-7 gap-1 mt-3 text-md">
-
+                    {/* Calendar Dates */}
+                    <div className="grid grid-cols-7 gap-1 text-[16px]">
                         {calendarDates.map((item, index) => {
-                            if (!item) return <div key={index}></div>;
+                            if (!item) return <div key={index} className="h-10"></div>;
 
                             const { date, remark } = item;
 
@@ -396,17 +369,21 @@ const Empdashboard = () => {
                             return (
                                 <div
                                     key={date.toISOString()}
-                                    className={`h-14 flex flex-col items-center justify-center rounded text-sm
-                        ${getRemarkColor(remark)}
-                        ${isToday ? "ring-2 ring-red-900" : ""}
-                    `}
+                                    className={`
+                            h-12 rounded flex flex-col items-center justify-center
+                            border border-red-100/40 dark:border-slate-600 
+                            ${getRemarkColor(remark)}
+                            ${isToday ? "ring-2 ring-red-900" : ""}
+                            hover:bg-red-100/70 dark:hover:bg-slate-700/40 
+                            transition-all cursor-pointer
+                        `}
                                 >
-                                    {/* Date Number */}
-                                    <span>{date.getDate()}</span>
+                                    {/* Date */}
+                                    <span className="font-bold text-[16px]">{date.getDate()}</span>
 
-                                    {/* FL / SL / WFH */}
+                                    {/* Remark */}
                                     {remark && (
-                                        <span className="text-[10px] font-bold">
+                                        <span className="text-[10px] font-bold mt-0.5 px-1 rounded bg-white/40 dark:bg-black/30">
                                             {remark}
                                         </span>
                                     )}
@@ -414,7 +391,28 @@ const Empdashboard = () => {
                             );
                         })}
                     </div>
+
+                    {/* Legend - Smaller */}
+                    <div className="mt-3 flex flex-wrap gap-2 text-[12px]">
+                        <div className="flex gap-1 items-center">
+                            <span className="w-6 h-6 bg-red-200 rounded"></span> Full Leave
+                        </div>
+                        <div className="flex gap-1 items-center">
+                            <span className="w-6 h-6 bg-yellow-100 rounded"></span> Half Leave
+                        </div>
+                        <div className="flex gap-1 items-center">
+                            <span className="w-6 h-6 bg-green-100 rounded"></span> Short Leave
+                        </div>
+                        <div className="flex gap-1 items-center">
+                            <span className="w-6 h-6 bg-blue-200 rounded"></span> WFH
+                        </div>
+                        <div className="flex gap-1 items-center">
+                            <span className="w-6 h-6 bg-purple-200 rounded"></span> Compensation
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
 
             {/* Leaves Info */}
