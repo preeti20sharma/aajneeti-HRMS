@@ -1,56 +1,59 @@
 import { PencilLine, Trash, SlidersHorizontal, ArrowDownWideNarrow, PlusSquare, X, HomeIcon } from "lucide-react";
 import { Footer } from "@/layouts/footer";
-import { ShortLeave } from "../constants";
+import { leaves } from "../constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ShortLeaves = () => {
+const HalfLeaves = () => {
     const [open, setOpen] = useState(false);
-    const [editShortLeave, seteditShortLeave] = useState(null);
-    const [shortLeaveData, setshortLeaveData] = useState({
+    const [editingLeave, setEditingLeave] = useState(null);
+    const [leaveData, setLeaveData] = useState({
         employees: "",
-        leaveType: "Short Leave",
-        duration: "",
+        id: "",
+        leavestype: "Half Leave",
+        leaveType: "",
+        duration: 0,
         fromTime: "",
-        date: "",
         toTime: "",
         reason: "",
     });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setshortLeaveData({ ...shortLeaveData, [name]: value });
+        setLeaveData({ ...leaveData, [name]: value });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (editShortLeave) {
-            console.log("Edited Leave:", shortLeaveData);
+        if (editingLeave) {
+            console.log("Edited Leave:", leaveData);
             alert("Leave updated!");
         } else {
-            console.log("New Leave:", shortLeaveData);
+            console.log("New Leave:", leaveData);
             alert("Leave added!");
         }
         setOpen(false);
-        seteditShortLeave(null);
-        setshortLeaveData({
+        setEditingLeave(null);
+        setLeaveData({
             employees: "",
-            leaveType: "Short Leave",
-            duration: "",
+            leaveType: "",
+            id: "",
+            leavestype: "Half Leave",
+            duration: 0,
             fromTime: "",
-            date: "",
             toTime: "",
             reason: "",
         });
     };
 
     const handleEdit = (leave) => {
-        seteditShortLeave(leave.number);
-        setshortLeaveData({
+        setEditingLeave(leave.number);
+        setLeaveData({
             employees: leave.name,
-            leaveType: leave.leaveType || "Short Leave",
-            duration: "",
-            date: leave.date,
+            id: leave.number,
+            leavestype: leave.leavestype || "Half Leave",
+            leaveType: leave.leaveType,
+            duration: leave.days || 0,
             fromTime: leave.from,
             toTime: leave.to,
             reason: leave.description || "",
@@ -65,7 +68,7 @@ const ShortLeaves = () => {
                 {/* Left: Title + Breadcrumb */}
                 <div className="flex flex-col">
                     <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
-                        Short Leave
+                        Half Leave
                     </h2>
                     <ul className="flex items-center text-sm mt-2">
                         <li>
@@ -78,28 +81,31 @@ const ShortLeaves = () => {
                             </Link>
                         </li>
                         <li className="px-2 text-slate-500">|</li>
-                        <li className="text-slate-600 dark:text-slate-50">Leave</li>
+                        <li className="text-slate-600 dark:text-slate-50">Half Leave</li>
                     </ul>
                 </div>
+
                 {/* Add New Leave */}
                 <button
                     onClick={() => {
-                        seteditShortLeave(null);
-                        setshortLeaveData({
+                        setEditingLeave(null);
+                        setLeaveData({
                             employees: "",
-                            leaveType: "Full Leave",
+                            id: "",
+                            leavestype: "",
+                            leaveType: "Half Leave",
                             duration: 0,
-                            date: "",
                             fromTime: "",
                             toTime: "",
                             reason: "",
                         });
                         setOpen(true);
                     }}
-                    className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-white text-slate-900 dark:bg-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-blue-900"
+                    className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-white text-slate-900 
+               dark:bg-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-blue-900"
                 >
                     <PlusSquare size={18} />
-                    <span>New  Leave</span>
+                    <span>New Leave</span>
                 </button>
             </div>
 
@@ -142,7 +148,7 @@ const ShortLeaves = () => {
 
             {/* Table */}
             <div className="relative w-full overflow-auto [scrollbar-width:_thin]">
-                <table className="table w-full text-left text-sm">
+                <table className="table">
                     <thead className="table-header bg-gradient-to-r from-red-700 to-black text-white 
         dark:bg-slate-800 dark:text-slate-200
         sticky top-0 z-10 shadow-sm">
@@ -151,80 +157,83 @@ const ShortLeaves = () => {
                  text-white
                 border-none
                 first:rounded-l-lg last:rounded-r-lg">ID</th>
-                            <th className="table-head  px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
                  text-white
                 border-none
                 first:rounded-l-lg last:rounded-r-lg">Name</th>
-                            <th className="table-head  px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
                  text-white
                 border-none
                 first:rounded-l-lg last:rounded-r-lg">Leaves Type</th>
-                            <th className="table-head  px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
                  text-white
                 border-none
-                first:rounded-l-lg last:rounded-r-lg">Date</th>
-                            <th className="table-head  px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                first:rounded-l-lg last:rounded-r-lg">Duration Type</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
                  text-white
                 border-none
                 first:rounded-l-lg last:rounded-r-lg">From</th>
-                            <th className="table-head  px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
                  text-white
                 border-none
                 first:rounded-l-lg last:rounded-r-lg">To</th>
-                            <th className="table-head  px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
                  text-white
                 border-none
-                first:rounded-l-lg last:rounded-r-lg">Total Hours</th>
-                            <th className="table-head  px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                first:rounded-l-lg last:rounded-r-lg">Reason</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
                  text-white
                 border-none
                 first:rounded-l-lg last:rounded-r-lg">Status</th>
-                            <th className="table-head  px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Approved By</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
                  text-white
                 border-none
                 first:rounded-l-lg last:rounded-r-lg">Action</th>
                         </tr>
                     </thead>
-                    <tbody className="table-body
-            divide-y divide-red-100 
+                    <tbody className="table-body  divide-y divide-red-100 
             dark:divide-slate-800
-
             [&>*:nth-child(even)]:bg-red-50/40 
             dark:[&>*:nth-child(even)]:bg-transparent">
-                        {ShortLeave.map((shortleave) => (
-                            <tr key={shortleave.number} className="table-row">
-                                <td className="table-cell">{shortleave.number}</td>
+                        {leaves.map((fullLeaves) => (
+                            <tr key={fullLeaves.number} className="table-row text-sm">
+                                <td className="table-cell">{fullLeaves.number}</td>
                                 <td className="table-cell">
                                     <div className="flex w-max gap-x-4">
                                         <img
-                                            src={shortleave.image}
-                                            alt={shortleave.name}
+                                            src={fullLeaves.image}
+                                            alt={fullLeaves.name}
                                             className="size-14 rounded-lg object-cover"
                                         />
                                         <div className="flex flex-col">
-                                            <p>{shortleave.name}</p>
+                                            <p>{fullLeaves.name}</p>
                                             <p className="font-normal text-slate-600 dark:text-slate-400">
-                                                {shortleave.description}
+                                                {fullLeaves.description}
                                             </p>
                                         </div>
                                     </div>
                                 </td>
-                                <td className="table-cell">{shortleave.leaveType}</td>
-                                <td className="table-cell">{shortleave.date}</td>
-                                <td className="table-cell">{shortleave.from}</td>
-                                <td className="table-cell">{shortleave.to}</td>
-                                <td className="table-cell text-center">{shortleave.totalhours}</td>
-                                <td className="table-cell">{shortleave.status}</td>
+                                <td className="table-cell">{fullLeaves.leaveType}</td>
+                                <td className="table-cell">First Half</td>
+                                <td className="table-cell">{fullLeaves.from}</td>
+                                <td className="table-cell">{fullLeaves.to}</td>
+                                <td className="table-cell">{fullLeaves.remainingDays}</td>
+                                <td className="table-cell">{fullLeaves.status}</td>
+                                <td className="table-cell">{fullLeaves.approvedby}</td>
                                 <td className="table-cell">
                                     <div className="flex items-center gap-x-4">
-                                        {shortleave.status === "approved" ? (
+                                        {fullLeaves.status === "approved" ? (
                                             <button disabled className="text-blue-500 dark:text-blue-600">
                                                 <PencilLine size={20} />
                                             </button>
                                         ) : (
                                             <button
                                                 className="text-blue-500 dark:text-blue-600"
-                                                onClick={() => handleEdit(shortleave)}
+                                                onClick={() => handleEdit(fullLeaves)}
                                             >
                                                 <PencilLine size={20} />
                                             </button>
@@ -247,7 +256,7 @@ const ShortLeaves = () => {
                         <button
                             onClick={() => {
                                 setOpen(false);
-                                seteditShortLeave(null);
+                                setEditingLeave(null);
                             }}
                             className="absolute top-3 right-3 text-slate-600 dark:text-slate-300 hover:text-slate-900"
                         >
@@ -255,66 +264,64 @@ const ShortLeaves = () => {
                         </button>
 
                         <h2 className="text-xl font-semibold mb-4 text-slate-800 dark:text-slate-100">
-                            {editShortLeave ? "Edit Short Leave" : "Add New Short Leave"}
+                            {editingLeave ? "Edit Leave" : "Add New Leave"}
                         </h2>
 
                         <form onSubmit={handleSubmit} className="space-y-4">
+                            <div>
+                                <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
+                                    Employee Name
+                                </label>
+                                <input
+                                    type="text"
+                                    name="employees"
+                                    value={leaveData.employees}
+                                    onChange={handleChange}
+                                    placeholder="Employee Name"
+                                    className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
+                                />
+                            </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-                                        Employee Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="employees"
-                                        value={shortLeaveData.employees}
-                                        onChange={handleChange}
-                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
-                                    />
-                                </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
                                         Employee ID
                                     </label>
                                     <input
                                         type="text"
-                                        name="employees"
-                                        value={shortLeaveData.number}
+                                        name="id"
+                                        value={leaveData.number}
                                         onChange={handleChange}
+                                        placeholder="Employee ID"
+                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
+                                        Leave Type
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="leavestype"
+                                        onChange={handleChange}
+                                        disabled
+                                        defaultValue={"Half Leave"}
                                         className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
                                     />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {/* <div>
-                                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-                                        Leave Type
-                                    </label>
-                                    <select
-                                        name="leaveType"
-                                        value={shortLeaveData.leaveType}
-                                        onChange={handleChange}
-                                        className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
-                                    >
-                                        <option value="">Select</option>
-                                        <option value="firstHalf">Casual Leave</option>
-                                        <option value="secondHalf">Sick Leave</option>
-                                    </select>
-                                </div> */}
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
-                                        Duration
+                                        Duration Type
                                     </label>
                                     <select
-                                        name="duration"
-                                        value={shortLeaveData.duration}
-                                        onChange={handleChange}
                                         className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
+                                        defaultValue=""
                                     >
-                                        <option value="">Select</option>
-                                        <option value="firstHalf">First Half</option>
-                                        <option value="secondHalf">Second Half</option>
+                                        <option value="" disabled>Leave Type</option>
+                                        <option value="firsthalf">First Half</option>
+                                        <option value="secondhalf">Second Half</option>
                                     </select>
                                 </div>
                                 <div>
@@ -324,10 +331,9 @@ const ShortLeaves = () => {
                                     <input
                                         type="date"
                                         name="date"
-                                        value={shortLeaveData.date}
+                                        value={leaveData.date}
                                         onChange={handleChange}
                                         className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
-                                        required
                                     />
                                 </div>
                             </div>
@@ -340,7 +346,7 @@ const ShortLeaves = () => {
                                     <input
                                         type="time"
                                         name="fromTime"
-                                        value={shortLeaveData.fromTime}
+                                        value={leaveData.fromTime}
                                         onChange={handleChange}
                                         className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
                                         required
@@ -353,21 +359,20 @@ const ShortLeaves = () => {
                                     <input
                                         type="time"
                                         name="toTime"
-                                        value={shortLeaveData.toTime}
+                                        value={leaveData.toTime}
                                         onChange={handleChange}
                                         className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
                                         required
                                     />
                                 </div>
                             </div>
-
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
                                     Reason
                                 </label>
                                 <textarea
                                     name="reason"
-                                    value={shortLeaveData.reason}
+                                    value={leaveData.reason}
                                     onChange={handleChange}
                                     className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
                                 ></textarea>
@@ -378,7 +383,7 @@ const ShortLeaves = () => {
                                     type="button"
                                     onClick={() => {
                                         setOpen(false);
-                                        seteditShortLeave(null);
+                                        setEditingLeave(null);
                                     }}
                                     className="px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800"
                                 >
@@ -388,7 +393,7 @@ const ShortLeaves = () => {
                                     type="submit"
                                     className="px-4 py-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700"
                                 >
-                                    {editShortLeave ? "Update Leave" : "Add Leave"}
+                                    {editingLeave ? "Update Leave" : "Add Leave"}
                                 </button>
                             </div>
                         </form>
@@ -400,4 +405,4 @@ const ShortLeaves = () => {
     );
 };
 
-export default ShortLeaves;
+export default HalfLeaves;

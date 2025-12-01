@@ -293,7 +293,7 @@ const Leaves = () => {
                                     </label>
                                     <input
                                         type="text"
-                                        name="number"
+                                        name="id"
                                         value={leaveData.number}
                                         onChange={handleChange}
                                         placeholder="Employee ID"

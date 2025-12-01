@@ -22,6 +22,11 @@ import Attendance from "./routes/Attendance";
 import Shift from "./routes/Shift";
 import TeamDashboard from "./routes/dashboard/TeamDashboard";
 import WorkingDays from "./routes/WorkingDays";
+import HalfLeaves from "./routes/HalfLeave";
+import Department from "./routes/Department";
+import Warnings from "./routes/Warnings";
+import Achievements from "./routes/Achievements";
+import Notifications from "./routes/Notification";
 
 function App() {
     const router = createBrowserRouter([
@@ -60,6 +65,22 @@ function App() {
                     element: <Employees />,
                 },
                 {
+                    path: "department",
+                    element: <Department />
+                },
+                {
+                    path: "warnings",
+                    element: <Warnings />,
+                },
+                {
+                    path: "achievements",
+                    element: <Achievements />,
+                },
+                {
+                    path: "notifications",
+                    element: <Notifications />,
+                },
+                {
                     path: "edit-profile",
                     element: <EditProfile />
                 },
@@ -82,6 +103,10 @@ function App() {
                 {
                     path: "leaves",
                     element: <Leaves />,
+                },
+                {
+                    path: "half-leaves",
+                    element: <HalfLeaves />
                 },
                 {
                     path: "short-leaves",

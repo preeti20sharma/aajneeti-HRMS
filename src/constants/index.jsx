@@ -1,4 +1,4 @@
-import { CalendarCog, CalendarDays, Clock10, FileClock, Home, IndianRupeeIcon, LogIn, LogOutIcon, UserPlus2, UsersRound, Wifi } from "lucide-react";
+import { CalendarCog, CalendarDays, Clock10, FileClock, Home, IndianRupeeIcon, LogIn, LogOutIcon, Trophy, UserPlus2, UsersRound, Wifi, AlertTriangle, Bell } from "lucide-react";
 
 import ProfileImage from "@/assets/profile-image.jpg";
 // import ProductImage from "@/assets/product-image.jpg";
@@ -33,6 +33,11 @@ export const navbarLinks = [
                 path: "/all-employees",
             },
             {
+                label: "Departments",
+                icon: UsersRound,
+                path: "/department",
+            },
+            {
                 label: "Attendance Report",
                 icon: UsersRound,
                 path: "/attendance-report",
@@ -46,6 +51,11 @@ export const navbarLinks = [
                 label: "Leaves",
                 icon: CalendarDays,
                 path: "/leaves",
+            },
+            {
+                label: "Half Leaves",
+                icon: FileClock,
+                path: "/half-leaves",
             },
             {
                 label: "Short Leaves",
@@ -81,6 +91,21 @@ export const navbarLinks = [
                 label: "Salary Details",
                 icon: IndianRupeeIcon,
                 path: "/employees-salary",
+            },
+            {
+                label: "Warnings",
+                icon: AlertTriangle,
+                path: "/warnings",
+            },
+            {
+                label: "Achievements",
+                icon: Trophy,
+                path: "/achievements",
+            },
+            {
+                label: "Notifications",
+                icon: Bell,
+                path: "/notifications",
             },
         ],
     },
@@ -632,10 +657,11 @@ export const ShortLeave = [
         image: ProfileImage,
         description: "Frontend Developer ",
         leaveType: "Short leave",
+        date: "12 sep 2025",
         from: "12:45 PM",
         to: "2:00 AM",
         duration: "First Half",
-        remainingDays: "20",
+        totalhours: "02",
         status: "approved",
 
 
@@ -645,11 +671,12 @@ export const ShortLeave = [
         name: "Preeti Sharma",
         image: ProfileImage,
         description: "Frontend Developer ",
+        date: "12 sep 2025",
         leaveType: "Short leave",
         from: "12:45 PM",
         to: "2:00 AM",
         duration: "First Half",
-        remainingDays: "20",
+        totalhours: "02",
         status: "pending",
 
 
@@ -659,11 +686,12 @@ export const ShortLeave = [
         name: "Preeti Sharma",
         image: ProfileImage,
         description: "Frontend Developer ",
+        date: "12 sep 2025",
         leaveType: "Short leave",
         from: "12:45 PM",
         to: "2:00 AM",
         duration: "First Half",
-        remainingDays: "20",
+        totalhours: "02",
         status: "approved",
 
 
@@ -673,11 +701,12 @@ export const ShortLeave = [
         name: "Preeti Sharma",
         image: ProfileImage,
         description: "Frontend Developer ",
+        date: "12 sep 2025",
         leaveType: "Short leave",
         from: "12:45 PM",
         to: "2:00 AM",
         duration: "First Half",
-        remainingDays: "20",
+        totalhours: "02",
         status: "pending",
 
 
@@ -687,11 +716,12 @@ export const ShortLeave = [
         name: "Preeti Sharma",
         image: ProfileImage,
         description: "Frontend Developer ",
+        date: "12 sep 2025",
         leaveType: "Short leave",
         from: "12:45 PM",
         to: "2:00 AM",
         duration: "First Half",
-        remainingDays: "20",
+        totalhours: "02",
         status: "approved",
 
 
@@ -701,11 +731,12 @@ export const ShortLeave = [
         name: "Preeti Sharma",
         image: ProfileImage,
         description: "Frontend Developer ",
+        date: "12 sep 2025",
         leaveType: "Short leave",
         from: "12:45 PM",
         to: "2:00 AM",
         duration: "First Half",
-        remainingDays: "20",
+        totalhours: "02",
         status: "approved",
 
 
@@ -715,11 +746,12 @@ export const ShortLeave = [
         name: "Preeti Sharma",
         image: ProfileImage,
         description: "Frontend Developer ",
+        date: "12 sep 2025",
         leaveType: "Short leave",
         from: "12:45 PM",
         to: "2:00 AM",
         duration: "First Half",
-        remainingDays: "20",
+        totalhours: "02",
         status: "pending",
 
 
@@ -729,43 +761,17 @@ export const ShortLeave = [
         name: "Preeti Sharma",
         image: ProfileImage,
         description: "Frontend Developer ",
+        date: "12 sep 2025",
         leaveType: "Short leave",
         from: "12:45 PM",
         to: "2:00 AM",
         duration: "First Half",
-        remainingDays: "20",
+        totalhours: "02",
         status: "approved",
 
 
     },
-    {
-        number: 9,
-        name: "Preeti Sharma",
-        image: ProfileImage,
-        description: "Frontend Developer ",
-        leaveType: "Short leave",
-        from: "12:45 PM",
-        to: "2:00 AM",
-        duration: "First Half",
-        remainingDays: "20",
-        status: "approved",
 
-
-    },
-    {
-        number: 10,
-        name: "Preeti Sharma",
-        image: ProfileImage,
-        description: "Frontend Developer ",
-        leaveType: "Short leave",
-        from: "12:45 PM",
-        to: "2:00 AM",
-        duration: "First Half",
-        remainingDays: "20",
-        status: "approved",
-
-
-    }
 ];
 
 export const WorkingHour = [
