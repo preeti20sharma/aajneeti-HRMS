@@ -5,6 +5,7 @@ import { Bell, ChevronsLeft, Moon, Search, Sun } from "lucide-react";
 import profileImg from "@/assets/profile-image.jpg";
 
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export const Header = ({ collapsed, setCollapsed }) => {
     const { theme, setTheme } = useTheme();
@@ -46,9 +47,11 @@ export const Header = ({ collapsed, setCollapsed }) => {
                         className="hidden dark:block"
                     />
                 </button>
-                <button className="btn-ghost size-10">
-                    <Bell size={20} />
-                </button>
+                <Link to="/notifications">
+                    <button className="btn-ghost size-10">
+                        <Bell size={20} />
+                    </button>
+                </Link>
                 <button className="size-10 overflow-hidden rounded-full">
                     <img
                         src={profileImg}
