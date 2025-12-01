@@ -74,12 +74,10 @@ const Notifications = () => {
                                     <Clock size={14} /> {n.time}
                                 </span>
                             </div>
-
                         </div>
                     </div>
                 ))}
             </div>
-
         </div>
     );
 };

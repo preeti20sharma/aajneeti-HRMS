@@ -390,12 +390,12 @@ const WorkingDays = () => {
             {/* total working days calculation */}
             <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
                 <div className="
-        bg-white dark:bg-slate-800 
-        p-6 rounded-2xl shadow-xl
-        shadow-red-300/20 dark:shadow-none
-        border border-red-100 dark:border-slate-700
-        transition-all duration-300
-    ">
+                        bg-white dark:bg-slate-800 
+                        p-6 rounded-2xl shadow-xl
+                        shadow-red-300/20 dark:shadow-none
+                        border border-red-100 dark:border-slate-700
+                        transition-all duration-300
+                    ">
 
                     {/* HEADER */}
                     <h3 className="text-xl font-semibold flex items-center gap-2 
@@ -469,6 +469,7 @@ const WorkingDays = () => {
                     </div>
                 </div>
             </div>
+
             {/* Monthly Leaves and OverTime Details */}
             <div>
                 <div

@@ -415,6 +415,89 @@ const Empdashboard = () => {
 
             </div>
 
+            {/* total working days calculation */}
+            <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
+                <div className="
+                                    bg-white dark:bg-slate-800 
+                                    p-6 rounded-2xl shadow-xl
+                                    shadow-red-300/20 dark:shadow-none
+                                    border border-red-100 dark:border-slate-700
+                                    transition-all duration-300
+                                ">
+
+                    {/* HEADER */}
+                    <h3 className="text-xl font-semibold flex items-center gap-2 
+                        text-red-700 dark:text-red-300 mb-6 tracking-wide">
+                        <ClipboardList size={22} /> Payable Working Days Calculation Slip
+                    </h3>
+
+                    {/* SLIP BOX */}
+                    <div className="
+                                        relative overflow-hidden
+                                        rounded-2xl p-6 
+                                        bg-white
+                                        dark:bg-gradient-to-br dark:from-slate-700 dark:via-slate-800 dark:to-slate-900
+                                        border border-red-200 dark:border-slate-600
+                                        shadow-inner
+                                    ">
+
+                        {/* Decorative Shine */}
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r 
+                            from-transparent via-red-400/50 to-transparent dark:via-red-200/40">
+                        </div>
+
+                        <div className="space-y-4 text-md font-medium">
+
+                            {/* ROW TEMPLATE */}
+                            <div className="flex justify-between pb-2 border-b border-red-200/60 dark:border-slate-600">
+                                <span>Total Days in Month</span>
+                                <span className="font-semibold text-slate-900 dark:text-white">30</span>
+                            </div>
+
+                            <div className="flex justify-between pb-2 border-b border-red-200/60 dark:border-slate-600">
+                                <span>Present Days</span>
+                                <span className="font-semibold text-green-700 dark:text-green-300">24</span>
+                            </div>
+
+                            <div className="flex justify-between pb-2 border-b border-red-200/60 dark:border-slate-600">
+                                <span>Full Leaves</span>
+                                <span className="font-semibold text-red-700 dark:text-red-300">2</span>
+                            </div>
+
+                            <div className="flex justify-between pb-2 border-b border-red-200/60 dark:border-slate-600">
+                                <span>Half Leaves (0.5 × count)</span>
+                                <span className="font-semibold text-yellow-700 dark:text-yellow-300">1.0</span>
+                            </div>
+
+                            <div className="flex justify-between pb-2 border-b border-red-200/60 dark:border-slate-600">
+                                <span>Short Leaves (hrs converted)</span>
+                                <span className="font-semibold text-green-700 dark:text-green-300">0.5</span>
+                            </div>
+
+                            <div className="flex justify-between pb-2 border-b border-red-200/60 dark:border-slate-600">
+                                <span>Extra Working Hours (converted)</span>
+                                <span className="font-semibold text-purple-700 dark:text-purple-300">1.0</span>
+                            </div>
+
+                            {/* PAYABLE DAYS */}
+                            <div className="flex justify-between mt-4 pt-4 
+                                            border-t border-red-300 dark:border-slate-500">
+                                <span className="text-base font-bold tracking-wide">Payable Working Days</span>
+                                <div>
+                                    <span className="text-xl font-extrabold text-green-700 dark:text-green-300">
+                                        26.5
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Decorative bottom shine */}
+                        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r 
+                                    from-transparent via-red-400/30 to-transparent dark:via-red-200/30">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* Leaves Info */}
             <div>
                 {/* Leaves Utilized */}
