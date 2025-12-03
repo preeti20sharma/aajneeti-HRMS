@@ -950,6 +950,10 @@ export const allEmployees = [
         email: "preetiaajneeti@gmail.com",
         experience: "fresher",
         phone: 6396634822,
+        workMode: "office",
+        office: "Noida",
+        reportingTo: "Prashant Sir",
+        employmentStatus: "Active"
     },
     {
         number: 2,
@@ -970,6 +974,10 @@ export const allEmployees = [
         email: "preetiaajneeti@gmail.com",
         experience: "fresher",
         phone: 6396634822,
+        workMode: "office",
+        office: "Noida",
+        reportingTo: "Prashant Sir",
+        employmentStatus: "Active"
     },
     {
         number: 3,
@@ -990,6 +998,10 @@ export const allEmployees = [
         email: "preetiaajneeti@gmail.com",
         experience: "fresher",
         phone: 6396634822,
+        workMode: "office",
+        office: "Noida",
+        reportingTo: "Prashant Sir",
+        employmentStatus: "Active"
     },
     {
         number: 4,
@@ -1010,6 +1022,10 @@ export const allEmployees = [
         email: "preetiaajneeti@gmail.com",
         experience: "fresher",
         phone: 6396634822,
+        workMode: "office",
+        office: "Noida",
+        reportingTo: "Prashant Sir",
+        employmentStatus: "Active"
     },
     {
         number: 5,
@@ -1030,6 +1046,10 @@ export const allEmployees = [
         email: "preetiaajneeti@gmail.com",
         experience: "fresher",
         phone: 6396634822,
+        workMode: "office",
+        office: "Noida",
+        reportingTo: "Prashant Sir",
+        employmentStatus: "Active"
     },
     {
         number: 6,
@@ -1050,6 +1070,10 @@ export const allEmployees = [
         email: "preetiaajneeti@gmail.com",
         experience: "fresher",
         phone: 6396634822,
+        workMode: "office",
+        office: "Noida",
+        reportingTo: "Prashant Sir",
+        employmentStatus: "Active"
     },
     {
         number: 7,
@@ -1070,6 +1094,10 @@ export const allEmployees = [
         email: "preetiaajneeti@gmail.com",
         experience: "fresher",
         phone: 6396634822,
+        workMode: "office",
+        office: "Noida",
+        reportingTo: "Prashant Sir",
+        employmentStatus: "Active"
     },
     {
         number: 8,
@@ -1090,6 +1118,10 @@ export const allEmployees = [
         email: "preetiaajneeti@gmail.com",
         experience: "fresher",
         phone: 6396634822,
+        workMode: "office",
+        office: "Noida",
+        reportingTo: "Prashant Sir",
+        employmentStatus: "Active"
     },
     {
         number: 9,
@@ -1110,6 +1142,10 @@ export const allEmployees = [
         email: "preetiaajneeti@gmail.com",
         experience: "fresher",
         phone: 6396634822,
+        workMode: "office",
+        office: "Noida",
+        reportingTo: "Prashant Sir",
+        employmentStatus: "Active"
     },
     {
         number: 10,
@@ -1130,6 +1166,10 @@ export const allEmployees = [
         email: "preetiaajneeti@gmail.com",
         experience: "fresher",
         phone: 6396634822,
+        workMode: "office",
+        office: "Noida",
+        reportingTo: "Prashant Sir",
+        employmentStatus: "Active"
     }
 ];
 

@@ -27,6 +27,7 @@ import Department from "./routes/Department";
 import Warnings from "./routes/Warnings";
 import Achievements from "./routes/Achievements";
 import Notifications from "./routes/Notification";
+import EmployeeBankDetails from "./routes/EmployeeBankdetails";
 
 function App() {
     const router = createBrowserRouter([
@@ -79,6 +80,10 @@ function App() {
                 {
                     path: "notifications",
                     element: <Notifications />,
+                },
+                {
+                    path: "bank-details",
+                    element: <EmployeeBankDetails/>,
                 },
                 {
                     path: "edit-profile",

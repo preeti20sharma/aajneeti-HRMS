@@ -204,6 +204,31 @@ const Employees = () => {
                             <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide 
                  text-white border-none last:rounded-r-lg
             ">
+                                Bank Details
+                            </th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide 
+                 text-white border-none last:rounded-r-lg
+            ">
+                                Work Mode
+                            </th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide 
+                 text-white border-none last:rounded-r-lg
+            ">
+                                Employment Status
+                            </th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide 
+                 text-white border-none last:rounded-r-lg
+            ">
+                                Reporting To
+                            </th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide 
+                 text-white border-none last:rounded-r-lg
+            ">
+                                Office
+                            </th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide 
+                 text-white border-none last:rounded-r-lg
+            ">
                                 Action
                             </th>
                         </tr>
@@ -274,6 +299,25 @@ const Employees = () => {
                                 <td className="table-cell px-4 py-3 border-none text-sm text-slate-700 dark:text-slate-100">
                                     {Employee.joiningDate}
                                 </td>
+                                <td className="table-cell px-4 py-3 border-none text-sm text-slate-700 dark:text-slate-100">
+                                    <button>
+                                        <Link to="/bank-details" >
+                                            <SlidersHorizontal size={20} className="text-green-600 hover:text-red-700" />
+                                        </Link>
+                                    </button>
+                                </td>
+                                <td className="table-cell px-4 py-3 border-none text-sm text-slate-700 dark:text-slate-100">
+                                    {Employee.workMode}
+                                </td>
+                                <td className="table-cell px-4 py-3 border-none text-sm text-slate-700 dark:text-slate-100">
+                                    {Employee.employmentStatus}
+                                </td>
+                                <td className="table-cell px-4 py-3 border-none text-sm text-slate-700 dark:text-slate-100">
+                                    {Employee.reportingTo}
+                                </td>
+                                <td className="table-cell px-4 py-3 border-none text-sm text-slate-700 dark:text-slate-100">
+                                    {Employee.office}
+                                </td>
 
                                 <td className="table-cell px-4 py-3 border-none">
                                     <div className="flex items-center gap-x-4">
@@ -285,13 +329,14 @@ const Employees = () => {
                                         <button className="text-red-600 hover:text-black">
                                             <Trash size={20} />
                                         </button>
+
                                     </div>
                                 </td>
+
                             </tr>
                         ))}
                     </tbody>
                 </table>
-
             </div>
 
             {/* Popup Form */}
