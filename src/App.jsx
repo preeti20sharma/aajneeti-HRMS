@@ -28,6 +28,7 @@ import Warnings from "./routes/Warnings";
 import Achievements from "./routes/Achievements";
 import Notifications from "./routes/Notification";
 import EmployeeBankDetails from "./routes/EmployeeBankdetails";
+import AttendanceInsights from "./routes/AttendanceInsights";
 
 function App() {
     const router = createBrowserRouter([
@@ -83,11 +84,15 @@ function App() {
                 },
                 {
                     path: "bank-details",
-                    element: <EmployeeBankDetails/>,
+                    element: <EmployeeBankDetails />,
                 },
                 {
                     path: "edit-profile",
                     element: <EditProfile />
+                },
+                {
+                    path: "attendance-insights",
+                    element: <AttendanceInsights />
                 },
                 {
                     path: "admin-profile",

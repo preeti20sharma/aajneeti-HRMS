@@ -1,10 +1,14 @@
-import { PencilLine, Trash, SlidersHorizontal, ArrowDownWideNarrow, PlusSquare, X, HomeIcon } from "lucide-react";
+import { PencilLine, Trash, PlusSquare, X, HomeIcon } from "lucide-react";
 import { Footer } from "@/layouts/footer";
 import { ShortLeave } from "../constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const ShortLeaves = () => {
+    const [filterOpen, setFilterOpen] = useState();
+    const [selectedFilter, setSelectedFilter] = useState()
+    const [sortByOpen, setsortByOpen] = useState();
+    const [selectedsortBy, setSelectedsortBy] = useState();
     const [open, setOpen] = useState(false);
     const [editShortLeave, seteditShortLeave] = useState(null);
     const [shortLeaveData, setshortLeaveData] = useState({
@@ -105,37 +109,92 @@ const ShortLeaves = () => {
 
             {/* Action Buttons */}
             <div className="flex items-center gap-3 pb-4 mt-4 justify-end sm:px-4">
-                {/* Filter Select */}
-                <div className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-white 
-                  dark:bg-slate-800 text-slate-900 dark:text-slate-200">
-                    <SlidersHorizontal size={18} />
-                    <select
-                        className="bg-white 
-                              dark:bg-slate-800 text-slate-900 dark:text-slate-200 focus:outline-none text-sm"
-                        defaultValue=""
-                    >
-                        <option value="" disabled>Filter</option>
-                        <option value="active">Active</option>
-                        <option value="inactive">Inactive</option>
-                        <option value="invited">Invited</option>
-                    </select>
+
+                {/* FILTER DROPDOWN */}
+                <div className="relative flex items-center  border rounded-md px-1 py-2 text-sm
+    bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
+    border-red-100 dark:border-slate-600">
+
+                    {/* CUSTOM DROPDOWN */}
+                    <div className="relative w-40">
+                        <div
+                            onClick={() => setFilterOpen(!filterOpen)}
+                            className="cursor-pointer flex justify-evenly items-center bg-transparent"
+                        >
+                            <span>{selectedFilter || "Select status"}</span>
+                            <span className="text-xs">▼</span>
+                        </div>
+
+                        {filterOpen && (
+                            <div className="absolute  w-40 mt-3 bg-white dark:bg-slate-800 
+                            border border-gray-300 dark:border-slate-600 
+                            rounded-md shadow-lg z-20 text-sm">
+
+                                {[
+                                    "Approved",
+                                    "Rejected",
+                                    "pending",
+
+                                ].map((opt, i) => (
+                                    <div
+                                        key={i}
+                                        onClick={() => {
+                                            setSelectedFilter(opt);
+                                            setFilterOpen(false);
+                                        }}
+                                        className="px-3 py-2 cursor-pointer 
+                                   hover:bg-red-800 hover:text-white dark:hover:bg-slate-700"
+                                    >
+                                        {opt}
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
                 </div>
 
-                {/* Sort Select */}
-                <div className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-white 
-                  dark:bg-slate-800 text-slate-900 dark:text-slate-200">
-                    <ArrowDownWideNarrow size={18} />
-                    <select
-                        className="bg-white 
-                              dark:bg-slate-800 text-slate-900 dark:text-slate-200 focus:outline-none text-sm"
-                        defaultValue=""
-                    >
-                        <option value="" disabled>Sort by</option>
-                        <option value="newest">Newest First</option>
-                        <option value="oldest">Oldest First</option>
-                        <option value="az">A–Z</option>
-                        <option value="za">Z–A</option>
-                    </select>
+
+                {/* SORT DROPDOWN */}
+                <div className="relative flex items-center  border rounded-md px-1 py-2 text-sm
+                    bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
+                    border-red-100 dark:border-slate-600">
+
+                    {/* CUSTOM DROPDOWN */}
+                    <div className="relative w-40">
+                        <div
+                            onClick={() => setsortByOpen(!sortByOpen)}
+                            className="cursor-pointer flex justify-evenly items-center bg-transparent"
+                        >
+                            <span>{selectedsortBy || "Sort By Date"}</span>
+                            <span className="text-xs">▼</span>
+                        </div>
+
+                        {sortByOpen && (
+                            <div className="absolute  w-40 mt-3 bg-white dark:bg-slate-800 
+                            border border-gray-300 dark:border-slate-600 
+                            rounded-md shadow-lg z-20 text-sm">
+
+                                {[
+                                    "Today",
+                                    "yesterday",
+                                    "Last 7 days",
+                                    "This Month",
+                                ].map((opt, i) => (
+                                    <div
+                                        key={i}
+                                        onClick={() => {
+                                            setSelectedsortBy(opt);
+                                            setsortByOpen(false);
+                                        }}
+                                        className="px-3 py-2 cursor-pointer 
+                                   hover:bg-red-800 hover:text-white dark:hover:bg-slate-700"
+                                    >
+                                        {opt}
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
 

@@ -49,9 +49,15 @@ const TeamDashboard = () => {
                         <div className="card-body bg-red-50 dark:bg-slate-950">
                             <div className="flex justify-between">
                                 <p className="text-3xl font-bold text-slate-900 dark:text-slate-50">40</p>
-                                <span className="flex w-fit items-center gap-x-2 rounded-lg border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
-                                    view
-                                </span>
+                                <Link to="/attendance-insights" >
+                                    <button className="
+                                                                px-4 py-1 rounded-lg text-red-800 hover:text-slate-200
+                                                                bg-transparent border border-red-800 hover:bg-red-700 
+                                                                dark:bg-slate-700 dark:hover:bg-slate-600 dark:border-slate-200 dark:text-slate-200
+                                                                transition-all">
+                                        View
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -67,9 +73,15 @@ const TeamDashboard = () => {
                         <div className="card-body bg-red-50 dark:bg-slate-950">
                             <div className="flex justify-between">
                                 <p className="text-3xl font-bold text-slate-900 dark:text-slate-50">04</p>
-                                <span className="flex w-fit items-center gap-x-2 rounded-lg border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
-                                    view
-                                </span>
+                                <Link to="/attendance-insights" >
+                                    <button className="
+                                                                px-4 py-1 rounded-lg text-red-800 hover:text-slate-200
+                                                                bg-transparent border border-red-800 hover:bg-red-700 
+                                                                dark:bg-slate-700 dark:hover:bg-slate-600 dark:border-slate-200 dark:text-slate-200
+                                                                transition-all">
+                                        View
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -85,9 +97,15 @@ const TeamDashboard = () => {
                         <div className="card-body bg-red-50 dark:bg-slate-950">
                             <div className="flex justify-between">
                                 <p className="text-3xl font-bold text-slate-900 dark:text-slate-50">10</p>
-                                <span className="flex w-fit items-center gap-x-2 rounded-lg border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
-                                    view
-                                </span>
+                                <Link to="/attendance-insights" >
+                                    <button className="
+                                                                px-4 py-1 rounded-lg text-red-800 hover:text-slate-200
+                                                                bg-transparent border border-red-800 hover:bg-red-700 
+                                                                dark:bg-slate-700 dark:hover:bg-slate-600 dark:border-slate-200 dark:text-slate-200
+                                                                transition-all">
+                                        View
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -103,9 +121,15 @@ const TeamDashboard = () => {
                         <div className="card-body bg-red-50 dark:bg-slate-950">
                             <div className="flex justify-between">
                                 <p className="text-3xl font-bold text-slate-900 dark:text-slate-50">10</p>
-                                <span className="flex w-fit items-center gap-x-2 rounded-lg border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
-                                    view
-                                </span>
+                                <Link to="/attendance-insights" >
+                                    <button className="
+                                                                px-4 py-1 rounded-lg text-red-800 hover:text-slate-200
+                                                                bg-transparent border border-red-800 hover:bg-red-700 
+                                                                dark:bg-slate-700 dark:hover:bg-slate-600 dark:border-slate-200 dark:text-slate-200
+                                                                transition-all">
+                                        View
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -120,9 +144,15 @@ const TeamDashboard = () => {
                         <div className="card-body bg-red-50 dark:bg-slate-950">
                             <div className="flex justify-between">
                                 <p className="text-3xl font-bold text-slate-900 dark:text-slate-50">10</p>
-                                <span className="flex w-fit items-center gap-x-2 rounded-lg border border-red-800 px-6 py-1 font-medium text-red-800 dark:border-red-100 dark:text-red-200">
-                                    view
-                                </span>
+                                <Link to="/attendance-insights" >
+                                    <button className="
+                                                                px-4 py-1 rounded-lg text-red-800 hover:text-slate-200
+                                                                bg-transparent border border-red-800 hover:bg-red-700 
+                                                                dark:bg-slate-700 dark:hover:bg-slate-600 dark:border-slate-200 dark:text-slate-200
+                                                                transition-all">
+                                        View
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -168,7 +198,6 @@ const TeamDashboard = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-6">
@@ -235,24 +264,24 @@ const TeamDashboard = () => {
                 </div>
 
                 <div className="
-    card h-[380px] col-span-1 md:col-span-2 lg:col-span-3
-    rounded-xl  border border-red-100
-    bg-white dark:bg-slate-900 
-    shadow-md shadow-red-500/20 
-  hover:shadow-red-500/20
- dark:border-slate-700
-  dark:shadow-none 
-  dark:hover:shadow-none
-    transition-all duration-300 
-">
+                        card h-[380px] col-span-1 md:col-span-2 lg:col-span-3
+                        rounded-xl  border border-red-100
+                        bg-white dark:bg-slate-900 
+                        shadow-md shadow-red-500/20 
+                    hover:shadow-red-500/20
+                    dark:border-slate-700
+                    dark:shadow-none 
+                    dark:hover:shadow-none
+                        transition-all duration-300 
+                    ">
                     {/* Header */}
                     <div className="
-        card-header px-4 py-3
-       
-        rounded-t-xl text-white 
-        font-semibold tracking-wide
-        dark:bg-none dark:text-red-300
-    ">
+                        card-header px-4 py-3
+                    
+                        rounded-t-xl text-white 
+                        font-semibold tracking-wide
+                        dark:bg-none dark:text-red-300
+                    ">
                         <p className="card-title">Today</p>
                     </div>
 

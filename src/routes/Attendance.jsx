@@ -214,13 +214,13 @@ const Attendance = () => {
             {/* Summary Cards */}
             <div className="grid sm:grid-cols-4 grid-cols-2 gap-4 mt-8">
                 {[
-                    { label: "Total Employees", value: 40 },
-                    { label: "Present", value: 32 },
-                    { label: "Late Coming", value: 5 },
-                    { label: "WFH", value: 3 },
-                    { label: "On Full Leave", value: 7 },
-                    { label: "On Half Leave", value: 2 },
-                    { label: "On Short Leave", value: 6 },
+                    { label: "Total Employees", value: 40, },
+                    { label: "Present", value: 32, path: "/attendance-insights" },
+                    { label: "Late Coming", value: 5, path: "/attendance-insights" },
+                    { label: "WFH", value: 3, path: "/attendance-insights" },
+                    { label: "On Full Leave", value: 7, path: "/attendance-insights" },
+                    { label: "On Half Leave", value: 2, path: "/attendance-insights" },
+                    { label: "On Short Leave", value: 6, path: "/attendance-insights" },
 
                 ].map((card, i) => (
                     <div key={i} className="card border-red-100 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-lg rounded-xl transition-colors hover:shadow-xl">
@@ -233,7 +233,7 @@ const Attendance = () => {
                         <div className="card-body   bg-red-50 transition-colors dark:bg-slate-900">
                             <div className="flex justify-between">
                                 <p className="text-3xl font-bold text-slate-900 transition-colors dark:text-slate-50">{card.value}</p>
-                                <Link to="/" >
+                                <Link to={card.path} >
                                     <button className="
                                                                 px-4 py-1 rounded-lg text-red-800 hover:text-slate-200
                                                                 bg-transparent border border-red-800 hover:bg-red-700 

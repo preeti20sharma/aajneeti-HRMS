@@ -61,15 +61,13 @@ const Empdashboard = () => {
         ]
     });
 
-    const leavesStatus = {
-        total: employee.leavesTaken.length,
-        fullLeave: employee.leavesTaken.filter(l => l.duration === "Full Day").length,
-        halfLeave: employee.leavesTaken.filter(l => l.duration === "Half Day").length,
-        workingDays: 30 - employee.leavesTaken.length,
-    };
+    // const leavesStatus = {
+    //     total: employee.leavesTaken.length,
+    //     fullLeave: employee.leavesTaken.filter(l => l.duration === "Full Day").length,
+    //     halfLeave: employee.leavesTaken.filter(l => l.duration === "Half Day").length,
+    //     workingDays: 30 - employee.leavesTaken.length,
+    // };
     const [selectedMonth, setSelectedMonth] = useState("");
-
-
 
     // Filter Leaves Used Section
     const filteredLeaves = employee.leavesTaken.filter((leave) => {
@@ -270,7 +268,6 @@ const Empdashboard = () => {
                                 alt={employee.name}
                                 className="w-14 h-14 rounded-xl object-cover shadow-md border-2 border-red-100"
                             />
-
                             <div>
                                 <h3 className="text-xl font-bold text-black dark:text-white leading-tight">
                                     {employee.name}
@@ -721,7 +718,6 @@ const Empdashboard = () => {
                                 </div>
                             </div>
                         ))}
-
                     </div>
                 </div>
             </div>
@@ -735,7 +731,7 @@ const Empdashboard = () => {
                     dark:shadow-none 
                     dark:hover:shadow-none overflow-auto">
                     <div className="flex justify-between">
-                        <h3 className="text-lg font-semibold flex items-center gap-2">
+                        <h3 className="text-lg font-medium flex items-center gap-2 text-red-800 dark:text-slate-200">
                             <ClipboardList size={20} /> Short Leave
                         </h3>
                         {/* Monthly Filter */}
@@ -749,7 +745,7 @@ const Empdashboard = () => {
                     ) : (
                         <table className="w-full text-md border-collapse mt-3">
                             <thead>
-                                <tr className="bg-red-50 dark:bg-slate-700">
+                                <tr className="bg-red-100 text-red-800 dark:text-slate-200 dark:bg-slate-700">
                                     <th className="border border-red-100 px-2 py-1">Date</th>
                                     <th className="border border-red-100 px-2 py-1">Start Time</th>
                                     <th className="border border-red-100 px-2 py-1">End Time</th>
@@ -783,12 +779,12 @@ const Empdashboard = () => {
   
   dark:shadow-none 
   dark:hover:shadow-none hover:border-red-700 dark:hover:border-none">
-                    <h3 className="text-lg font-semibold flex items-center gap-2">
+                    <h3 className="text-lg font-semibold flex items-center gap-2 text-red-800 dark:text-slate-200">
                         <ClipboardList size={20} /> Leaves Policy
                     </h3>
                     <table className="w-full text-md border-collapse mt-3">
                         <thead>
-                            <tr className="bg-red-50 dark:bg-slate-700  transition-all duration-300">
+                            <tr className="bg-red-50 text-red-800 dark:text-slate-200 dark:bg-slate-700  transition-all duration-300">
                                 <th className="border border-red-100 px-2 py-1">Category</th>
                                 <th className="border border-red-100 px-2 py-1">Month</th>
                                 <th className="border border-red-100 px-2 py-1">Full day leave</th>
@@ -822,7 +818,7 @@ const Empdashboard = () => {
                         dark:shadow-none 
                         dark:hover:shadow-none hover:border-red-700 dark:hover:border-none">
                     <div className="flex justify-between" >
-                        <h3 className="text-lg font-semibold flex items-center gap-2">
+                        <h3 className="text-lg font-semibold flex items-center gap-2 text-red-800 dark:text-slate-200">
                             <ClipboardList size={20} /> Work From Home
                         </h3>
                         {/* Monthly Filter */}
@@ -836,7 +832,7 @@ const Empdashboard = () => {
                     ) : (
                         <table className="w-full text-md border-collapse mt-3">
                             <thead>
-                                <tr className="bg-red-50 dark:bg-slate-700 border border-red-100">
+                                <tr className="bg-red-50 text-red-800 dark:text-slate-200 dark:bg-slate-700 border border-red-100">
                                     <th className="border border-red-100 px-2 py-1">From Date</th>
                                     <th className="border border-red-100 px-2 py-1">To Date</th>
                                     <th className="border border-red-100 px-2 py-1">Days</th>
@@ -870,7 +866,7 @@ const Empdashboard = () => {
                     dark:shadow-none 
                     dark:hover:shadow-none overflow-auto">
                     <div className="flex justify-between">
-                        <h3 className="text-lg font-semibold flex items-center gap-2">
+                        <h3 className="text-lg font-semibold flex items-center gap-2 text-red-800 dark:text-slate-200">
                             <ClipboardList size={20} /> Extra Working Hours
                         </h3>
                         {/* Monthly Filter */}
@@ -884,7 +880,7 @@ const Empdashboard = () => {
                     ) : (
                         <table className="w-full text-md border-collapse mt-3">
                             <thead>
-                                <tr className="bg-red-50 dark:bg-slate-700">
+                                <tr className="bg-red-50 text-red-800 dark:text-slate-200 dark:bg-slate-700">
                                     <th className="border border-red-100 px-2 py-1">Date</th>
                                     <th className="border border-red-100 px-2 py-1">In Time</th>
                                     <th className="border border-red-100 px-2 py-1">Out Time</th>
@@ -921,12 +917,12 @@ const Empdashboard = () => {
                 
                 dark:shadow-none 
                 dark:hover:shadow-none overflow-auto">
-                    <h3 className="text-lg font-semibold flex items-center gap-2">
+                    <h3 className="text-lg font-semibold flex items-center gap-2 text-red-800 dark:text-slate-200">
                         <ClipboardList size={20} /> Salary Details
                     </h3>
                     <table className="w-full text-md border-collapse mt-3">
                         <thead>
-                            <tr className="bg-red-50 dark:bg-slate-700">
+                            <tr className="bg-red-50 text-red-800 dark:text-slate-200 dark:bg-slate-700">
                                 <th className="border border-red-100 px-2 py-1">Basic</th>
                                 <th className="border border-red-100 px-2 py-1">HRA</th>
                                 <th className="border border-red-100 px-2 py-1">Allowance</th>
