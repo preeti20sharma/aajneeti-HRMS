@@ -135,20 +135,46 @@ const RemoteWork = () => {
             {/* Table */}
             <div className="relative w-full overflow-auto [scrollbar-width:_thin]">
                 <table className="table">
-                    <thead className="table-header">
+                    <thead className="table-header bg-gradient-to-r from-red-700 to-black text-white 
+                        dark:bg-slate-800 dark:text-slate-200
+                        sticky top-0 z-10 shadow-sm">
                         <tr className="table-row">
-                            <th className="table-head">ID</th>
-                            <th className="table-head">Name</th>
-                            <th className="table-head">From</th>
-                            <th className="table-head">To</th>
-                            <th className="table-head">Days</th>
-                            <th className="table-head">Status</th>
-                            <th className="table-head">Action</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">ID</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Name</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">From</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">To</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Days</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Status</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Action</th>
                         </tr>
                     </thead>
-                    <tbody className="table-body">
+                    <tbody className=" table-body divide-y divide-red-100 
+            dark:divide-slate-800
+            [&>*:nth-child(even)]:bg-red-50/40 
+            dark:[&>*:nth-child(even)]:bg-transparent">
                         {remoteWork.map((remoteWorks) => (
-                            <tr key={remoteWorks.number} className="table-row">
+                            <tr key={remoteWorks.number} className="table-row text-sm">
                                 <td className="table-cell">{remoteWorks.number}</td>
                                 <td className="table-cell">
                                     <div className="flex w-max gap-x-4">
@@ -307,7 +333,7 @@ const RemoteWork = () => {
                                 </button>
                                 <button
                                     type="submit"
-                                    className="px-4 py-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700"
+                                    className="px-4 py-2 rounded-lg bg-gradient-to-r from-red-800 to-black text-white hover:from-black hover:to-red-800"
                                 >
                                     {editForm ? "Update Leave" : "Add Leave"}
                                 </button>

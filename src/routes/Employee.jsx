@@ -428,5 +428,4 @@ const Employees = () => {
         </div>
     );
 };
-
 export default Employees;

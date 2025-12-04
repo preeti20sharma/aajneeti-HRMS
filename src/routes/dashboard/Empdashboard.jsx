@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CalendarDays, ClipboardList, Clock10, FileClock, Wifi } from "lucide-react";
+import { CalendarDays, ClipboardList, Clock10, FileClock, Wifi, Home } from "lucide-react";
 import ProfileImage from "@/assets/profile-image.jpg";
 import { Link } from "react-router-dom";
 import DateFilter from "./DateFilter";
@@ -240,11 +240,17 @@ const Empdashboard = () => {
         <div className="p-2 md:p-2 bg-slate-50 dark:bg-slate-900 min-h-screen text-slate-800 dark:text-slate-100 space-y-6">
 
             {/* Welcome Section */}
-            <div>
-                <h2 className="text-2xl font-bold">Employee Dashboard</h2>
-                <p className="mt-2">Welcome back! {employee.name}</p>
+            <div className="flex flex-col p-2">
+                <div className="flex items-center gap-2">
+                    <Home size={24} className="text-red-800 dark:text-red-600" />
+                    <h2 className="text-2xl font-bold 
+                    bg-gradient-to-r from-red-800 to-slate-900 
+                    bg-clip-text text-transparent 
+                    animate-gradient-slide
+                    dark:text-slate-100">Employee Dashboard</h2>
+                </div>
+                <p className="mt-2 ml-8 text-red-800 dark:text-white">Welcome back! {employee.name}</p>
             </div>
-
             {/* Employee Info + Calendar */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
@@ -607,15 +613,13 @@ const Empdashboard = () => {
                         </div>
                     </div>
                     {/* Stats Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-6">
-
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
                         {/* Cards Array */}
                         {[
                             { label: "Full Leave", value: 40, icon: CalendarDays },
                             { label: "Half Leave", value: 32, icon: FileClock },
                             { label: "Short Leave", value: 5, icon: Clock10 },
                             { label: "Work From Home", value: 3, icon: Wifi },
-                            { label: "Over Time", value: 3, icon: Clock10 },
                         ].map((card, i) => (
                             <div
                                 key={i}

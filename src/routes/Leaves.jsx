@@ -397,7 +397,7 @@ const Leaves = () => {
                                 </button>
                                 <button
                                     type="submit"
-                                    className="px-4 py-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700"
+                                    className="px-4 py-2 rounded-lg bg-gradient-to-r from-red-800 to-black text-white hover:from-black hover:to-red-800"
                                 >
                                     {editingLeave ? "Update Leave" : "Add Leave"}
                                 </button>

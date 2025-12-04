@@ -83,7 +83,7 @@ export const navbarLinks = [
                 path: "/working-days-calculation",
             },
             {
-                label: "Extra Working Hours",
+                label: "Short Leave Credit",
                 icon: Clock10,
                 path: "/extra-working-hours",
             },

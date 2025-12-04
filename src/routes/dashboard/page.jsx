@@ -2,7 +2,7 @@
 import { recentSalesData, topProducts } from "@/constants";
 
 import { Footer } from "@/layouts/footer";
-
+import { Home } from "lucide-react";
 import profileImg from "@/assets/profile-image.jpg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -21,9 +21,18 @@ const DashboardPage = () => {
     })
 
     return (
-        <div className="flex flex-col gap-y-4">
-            <h5 className="title">Admin Dashboard</h5>
-            <p className="text-slate-900 dark:text-slate-50">Welcome back! Preeti</p>
+        <div className="p-2 md:p-2 bg-slate-50 dark:bg-slate-900 min-h-screen text-slate-800 dark:text-slate-100 space-y-6">
+            <div className="flex flex-col p-2">
+                <div className="flex items-center gap-2">
+                    <Home size={24} className="text-red-800 dark:text-red-600" />
+                    <h2 className="text-2xl font-bold 
+            bg-gradient-to-r from-red-800 to-slate-900 
+            bg-clip-text text-transparent 
+            animate-gradient-slide
+            dark:text-slate-100">Admin Dashboard</h2>
+                </div>
+                <p className="ml-8 text-red-800 dark:text-slate-50">Welcome back! Preeti</p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
 
                 {/* LEFT SIDE — 4 CARDS (2x2 GRID) */}

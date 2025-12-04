@@ -96,7 +96,7 @@ const WorkingHours = () => {
                 {/* Left: Title + Breadcrumb */}
                 <div className="flex flex-col">
                     <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
-                        Extra Working Hours
+                        Short Leave Credit
                     </h2>
                     <ul className="flex items-center text-sm mt-2">
                         <li>
@@ -109,7 +109,7 @@ const WorkingHours = () => {
                             </Link>
                         </li>
                         <li className="px-2 text-slate-500">|</li>
-                        <li className="text-slate-600 dark:text-slate-50">Extra Working Hours </li>
+                        <li className="text-slate-600 dark:text-slate-50">Short Leave Credit</li>
                     </ul>
                 </div>
 
@@ -179,25 +179,66 @@ const WorkingHours = () => {
             {/* ---------- Table Section ---------- */}
             <div className="relative w-full overflow-auto [scrollbar-width:_thin]">
                 <table className="table">
-                    <thead className="table-header">
+                    <thead className="table-header bg-gradient-to-r from-red-700 to-black text-white 
+        dark:bg-slate-800 dark:text-slate-200
+        sticky top-0 z-10 shadow-sm">
                         <tr className="table-row">
-                            <th className="table-head">ID</th>
-                            <th className="table-head">Name</th>
-                            <th className="table-head">Date</th>
-                            <th className="table-head">In-Time</th>
-                            <th className="table-head">Out-Time</th>
-                            <th className="table-head">Total Hours</th>
-                            <th className="table-head">Working Place</th>
-                            <th className="table-head">Reason</th>
-                            <th className="table-head">ApprovedBy</th>
-                            <th className="table-head">Compensation Type</th>
-                            <th className="table-head">Status</th>
-                            <th className="table-head">Action</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">ID</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Name</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Date</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">In-Time</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Out-Time</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Total Hours</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Working Place</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Reason</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">ApprovedBy</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Compensation Type</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Status</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
+                first:rounded-l-lg last:rounded-r-lg">Action</th>
                         </tr>
                     </thead>
-                    <tbody className="table-body">
+                    <tbody className="table-body divide-y divide-red-100 
+            dark:divide-slate-800
+            [&>*:nth-child(even)]:bg-red-50/40 
+            dark:[&>*:nth-child(even)]:bg-transparent">
                         {WorkingHour.map((details) => (
-                            <tr key={details.number} className="table-row">
+                            <tr key={details.number} className="table-row text-sm">
                                 {/* ID */}
                                 <td className="table-cell">{details.number}</td>
 
@@ -476,7 +517,7 @@ const WorkingHours = () => {
                                 </button>
                                 <button
                                     type="submit"
-                                    className="px-4 py-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700"
+                                    className="px-4 py-2 rounded-lg bg-gradient-to-r from-red-800 to-black text-white hover:from-black hover:to-red-800"
                                 >
                                     {editForm ? "Update Details" : "Add Details"}
                                 </button>
