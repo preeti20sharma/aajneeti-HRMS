@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HomeIcon } from "lucide-react";
+import { Clock10, HomeIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import profileimage from "@/assets/profile-image.jpg";
 
@@ -49,15 +49,10 @@ const Shift = () => {
             {/* Header */}
             <div className="flex flex-row sm:p-4 items-center justify-between mb-6 ">
                 <div className="flex flex-col">
-                    <h2 className="
-                        text-2xl font-bold 
-                        bg-gradient-to-r from-red-800 to-slate-900 
-                        bg-clip-text text-transparent 
-                        animate-gradient-slide
-                        dark:text-slate-100
-                    ">
-                        Shift Timing Management
-                    </h2>
+                    <div className="flex items-center gap-2">
+                        <Clock10 size={24} className="text-red-600" />
+                        <h2 className="sm:text-2xl text-md font-bold">Shift Timing</h2>
+                    </div>
 
                     <ul className="flex items-center text-sm mt-2">
                         <li>

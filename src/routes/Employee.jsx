@@ -1,4 +1,4 @@
-import { PencilLine, Trash, PlusSquare, HomeIcon, SlidersHorizontal } from "lucide-react";
+import { PencilLine, Trash, PlusSquare, HomeIcon, SlidersHorizontal, UsersRound } from "lucide-react";
 import { allEmployees } from "@/constants";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -87,15 +87,10 @@ const Employees = () => {
             {/* Header */}
             <div className="flex flex-row sm:p-4 items-center justify-between mb-6 ">
                 <div className="flex flex-col">
-                    <h2 className="
-            text-3xl font-bold 
-            bg-gradient-to-r from-red-800 to-slate-900 
-            bg-clip-text text-transparent 
-            animate-gradient-slide
-            dark:text-slate-100
-        ">
-                        Employees
-                    </h2>
+                    <div className="flex items-center gap-2">
+                        <UsersRound size={24} className="text-red-600" />
+                        <h2 className="sm:text-2xl text-md font-bold">Employees</h2>
+                    </div>
 
                     <ul className="flex items-center text-sm mt-2">
                         <li>

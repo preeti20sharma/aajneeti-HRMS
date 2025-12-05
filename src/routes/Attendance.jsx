@@ -1,4 +1,4 @@
-import { Users } from "lucide-react";
+import { Users, UsersRound } from "lucide-react";
 import CustomDropdown from "./CustomDropdown";
 import { Link } from "react-router-dom";
 
@@ -8,14 +8,10 @@ const Attendance = () => {
         <div className="w-full mx-auto  bg-slate-50 dark:bg-slate-900 rounded-2xl shadow-lg text-slate-800 dark:text-slate-100 p-2">
             {/* Header */}
             <header className="mx-5 my-5">
-                <h2 className="
-            text-2xl font-bold 
-            bg-gradient-to-r from-red-800 to-black
-            bg-clip-text text-transparent 
-            dark:text-slate-100
-        ">
-                    Daily Attendance Report
-                </h2>
+                <div className="flex items-center gap-2">
+                    <UsersRound size={24} className="text-red-600" />
+                    <h2 className="sm:text-2xl text-md font-bold">Daily Attendance Report</h2>
+                </div>
                 <p className="text-sm text-red-800 dark:text-red-100 mt-1">Track: Late Coming, Half Day, Short Leave, WFH</p>
             </header>
 

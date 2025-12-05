@@ -1,4 +1,4 @@
-import { PencilLine, Trash, PlusSquare, X, HomeIcon } from "lucide-react";
+import { PencilLine, Trash, PlusSquare, X, HomeIcon, FileClock } from "lucide-react";
 import { Footer } from "@/layouts/footer";
 import { ShortLeave } from "../constants";
 import { useState } from "react";
@@ -68,9 +68,10 @@ const ShortLeaves = () => {
             <div className="flex items-center justify-between mb-6 sm:p-4">
                 {/* Left: Title + Breadcrumb */}
                 <div className="flex flex-col">
-                    <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
-                        Short Leave
-                    </h2>
+                    <div className="flex items-center gap-2">
+                        <FileClock size={24} className="text-red-600" />
+                        <h2 className="sm:text-2xl text-md font-bold">Short Leave</h2>
+                    </div>
                     <ul className="flex items-center text-sm mt-2">
                         <li>
                             <Link

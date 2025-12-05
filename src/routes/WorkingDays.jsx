@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CalendarDays, ClipboardList, Clock10, FileClock } from "lucide-react";
+import { CalendarDays, ClipboardList, Clock10, FileClock, CalendarCog } from "lucide-react";
 import ProfileImage from "@/assets/profile-image.jpg";
 import DateFilter from "./dashboard/DateFilter";
 import CustomDropdown from "./CustomDropdown";
@@ -189,8 +189,10 @@ const WorkingDays = () => {
 
             {/* Welcome Section */}
             <div>
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-red-700 to-black bg-clip-text text-transparent">Working Days calculation</h2>
-                <p className="mt-2">Welcome back! {employee.name}</p>
+                <div className="flex items-center gap-2">
+                    <CalendarCog size={24} className="text-red-600" />
+                    <h2 className="sm:text-2xl text-md font-bold">Working Days Calculation</h2>
+                </div>                <p className="mt-2">Welcome back! {employee.name}</p>
             </div>
 
             {/* Filters Section */}
