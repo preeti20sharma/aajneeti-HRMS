@@ -230,6 +230,10 @@ const HalfLeaves = () => {
                             <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
                  text-white
                 border-none
+                first:rounded-l-lg last:rounded-r-lg">date</th>
+                            <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
+                 text-white
+                border-none
                 first:rounded-l-lg last:rounded-r-lg">From</th>
                             <th className="table-head px-4 py-3 text-xs font-semibold uppercase tracking-wide
                  text-white
@@ -277,6 +281,7 @@ const HalfLeaves = () => {
                                 </td>
                                 <td className="table-cell">{fullLeaves.leaveType}</td>
                                 <td className="table-cell">First Half</td>
+                                <td className="table-cell">{fullLeaves.date}</td>
                                 <td className="table-cell">{fullLeaves.from}</td>
                                 <td className="table-cell">{fullLeaves.to}</td>
                                 <td className="table-cell">{fullLeaves.remainingDays}</td>
