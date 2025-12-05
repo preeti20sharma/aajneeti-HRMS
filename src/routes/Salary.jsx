@@ -210,8 +210,8 @@ const EmployeeSalary = () => {
 
             {/* Modal Form */}
             {isOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-                    <div className="bg-white dark:bg-slate-900 p-6 rounded-xl w-full max-w-lg shadow-xl">
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 animate-fadeIn">
+                    <div className="bg-white dark:bg-slate-900 p-6 rounded-xl w-full max-w-lg shadow-xl animate-scaleIn">
                         <div className="flex justify-between items-center mb-4">
                             <h3 className="text-xl font-bold">
                                 {editingEmployee ? "Edit Salary Details" : "Add Salary Details"}

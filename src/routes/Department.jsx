@@ -161,8 +161,8 @@ const Department = () => {
 
             {/* Modal Form */}
             {isOpen && (
-                <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
-                    <div className="bg-white dark:bg-slate-900 p-6 rounded-xl w-full max-w-md shadow-xl">
+                <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 animate-fadeIn">
+                    <div className="bg-white dark:bg-slate-900 p-6 rounded-xl w-full max-w-md shadow-xl animate-scaleIn">
                         <div className="flex justify-between mb-4">
                             <h3 className="text-xl font-bold">
                                 {editing ? "Edit Department" : "Add New Department"}

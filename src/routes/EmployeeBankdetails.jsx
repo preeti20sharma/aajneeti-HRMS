@@ -254,8 +254,8 @@ const EmployeeBankdetails = () => {
 
             {/* EDIT MODAL */}
             {isEditOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-                    <div className="bg-white dark:bg-slate-900 rounded-xl p-6 w-full max-w-lg shadow-lg">
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 animate-fadeIn">
+                    <div className="bg-white dark:bg-slate-900 rounded-xl p-6 w-full max-w-lg shadow-lg animate-scaleIn ">
                         {/* Modal Header */}
                         <div className="flex items-center justify-between mb-4">
                             <h2 className="text-lg font-semibold text-red-800 dark:text-slate-200">
@@ -511,8 +511,8 @@ const EmployeeBankdetails = () => {
             </div>
             {/* EDIT MODAL */}
             {isPersonalModalOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-                    <div className="bg-white dark:bg-slate-900 rounded-xl p-6 w-full max-w-lg shadow-lg">
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 animate-fadeIn">
+                    <div className="bg-white dark:bg-slate-900 rounded-xl p-6 w-full max-w-lg shadow-lg animate-scaleIn">
                         {/* Modal Header */}
                         <div className="flex items-center justify-between mb-4">
                             <h2 className="text-lg font-semibold text-red-800 dark:text-slate-200">

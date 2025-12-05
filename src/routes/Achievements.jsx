@@ -194,9 +194,9 @@ const Achievements = () => {
 
             {/* ======= MODAL ======= */}
             {isOpen && (
-                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center p-4 z-50">
+                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center p-4 z-50 animate-fadeIn">
 
-                    <div className="bg-white dark:bg-slate-900 rounded-2xl w-full max-w-lg shadow-2xl p-6 border dark:border-none">
+                    <div className="bg-white dark:bg-slate-900 rounded-2xl w-full max-w-lg shadow-2xl p-6 border dark:border-none animate-scaleIn">
 
                         <div className="flex justify-between items-center mb-4">
                             <h3 className="text-xl font-semibold dark:text-slate-200">
@@ -253,7 +253,6 @@ const Achievements = () => {
                                     className="w-full p-2 mt-1 text-sm rounded-lg text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border dark:border-slate-700"
                                 />
                             </div>
-
                             {/* DETAILS */}
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">Details</label>
@@ -265,7 +264,6 @@ const Achievements = () => {
                                     className="w-full p-2 mt-1 text-sm rounded-lg text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border dark:border-slate-700"
                                 ></textarea>
                             </div>
-
                             <div className="flex justify-end gap-3">
                                 <button
                                     type="button"
@@ -285,11 +283,9 @@ const Achievements = () => {
                                 </button>
                             </div>
                         </form>
-
                     </div>
                 </div>
             )}
-
         </div>
     );
 };

@@ -193,9 +193,9 @@ const Warnings = () => {
 
             {/* ======= MODAL ======= */}
             {isOpen && (
-                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center p-4 z-50">
+                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center p-4 z-50 animate-fadeIn">
 
-                    <div className="bg-white dark:bg-slate-900 rounded-2xl w-full max-w-lg shadow-2xl p-6 border dark:border-none">
+                    <div className="bg-white dark:bg-slate-900 rounded-2xl w-full max-w-lg shadow-2xl p-6 border dark:border-none animate-scaleIn">
 
                         <div className="flex justify-between items-center mb-4">
                             <h3 className="text-xl font-semibold dark:text-slate-200">

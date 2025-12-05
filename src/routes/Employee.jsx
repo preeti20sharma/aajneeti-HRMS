@@ -109,7 +109,7 @@ const Employees = () => {
                     </ul>
                 </div>
                 {/* Add Employee */}
-                <button onClick={handleAdd} className="flex items-center gap-2 px-2 sm:px-4 py-2 border rounded-lg bg-white text-slate-900 dark:bg-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-blue-900">
+                <button onClick={handleAdd} className="flex items-center gap-2 px-2 sm:px-4 py-2 border rounded-lg bg-gradient-to-r from-red-700 to-black text-white">
                     <PlusSquare size={18} />
                     <span>Add Employee</span>
                 </button>
@@ -405,8 +405,8 @@ const Employees = () => {
 
             {/* Popup Form */}
             {isOpen && (
-                <div className="fixed inset-0 z-50 bg-black bg-opacity-50 overflow-auto">
-                    <div className="bg-white dark:bg-slate-800 px-6 py-2 rounded-lg relative my-8 mx-auto shadow-lg w-full max-w-xl  ">
+                <div className="fixed inset-0 z-50 bg-black bg-opacity-50 overflow-auto animate-fadeIn">
+                    <div className="bg-white dark:bg-slate-800 px-6 py-2 rounded-lg relative my-8 mx-auto shadow-lg w-full max-w-xl animate-scaleIn ">
                         <h2 className="text-xl font-bold mb-4">
                             {selectedEmployee ? "Edit Employee" : "Add Employee"}
                         </h2>

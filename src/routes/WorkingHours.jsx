@@ -134,8 +134,7 @@ const WorkingHours = () => {
                         });
                         setOpen(true);
                     }}
-                    className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-white text-slate-900 
-                        dark:bg-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-blue-900"
+                    className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-gradient-to-r from-red-700 to-black text-white"
                 >
                     <PlusSquare size={18} />
                     <span>New Details</span>
@@ -355,8 +354,8 @@ const WorkingHours = () => {
 
             {/* ---------- Modal Section ---------- */}
             {open && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-                    <div className="bg-white dark:bg-slate-900 rounded-xl shadow-xl w-full max-w-lg p-6 relative">
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-fadeIn">
+                    <div className="bg-white dark:bg-slate-900 rounded-xl shadow-xl w-full max-w-lg p-6 relative animate-scaleIn">
 
                         {/* Close Button */}
                         <button
