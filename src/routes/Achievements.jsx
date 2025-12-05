@@ -13,6 +13,10 @@ import ProfileImage from "@/assets/profile-image.jpg";
 
 
 const Achievements = () => {
+    const [filterOpen, setFilterOpen] = useState();
+    const [selectedFilter, setSelectedFilter] = useState()
+    const [sortByOpen, setsortByOpen] = useState();
+    const [selectedsortBy, setSelectedsortBy] = useState();
 
     // ======== INITIAL achievements DATA =========
     const [achievements, setachievements] = useState([
@@ -134,6 +138,97 @@ const Achievements = () => {
                     <span className="text-sm">Add Achievements</span>
                 </button>
             </div>
+            {/* Action Buttons */}
+            <div className="flex items-center gap-3 pb-4 mt-4 justify-end sm:px-4">
+
+                {/* FILTER DROPDOWN */}
+                <div className="relative flex items-center  border rounded-md px-1 py-2 text-sm
+    bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
+    border-red-100 dark:border-slate-600">
+
+                    {/* CUSTOM DROPDOWN */}
+                    <div className="relative w-40">
+                        <div
+                            onClick={() => setFilterOpen(!filterOpen)}
+                            className="cursor-pointer flex justify-evenly items-center bg-transparent"
+                        >
+                            <span>{selectedFilter || "Select status"}</span>
+                            <span className="text-xs">▼</span>
+                        </div>
+
+                        {filterOpen && (
+                            <div className="absolute  w-40 mt-3 bg-white dark:bg-slate-800 
+                            border border-gray-300 dark:border-slate-600 
+                            rounded-md shadow-lg z-20 text-sm">
+
+                                {[
+                                    "Approved",
+                                    "Rejected",
+                                    "pending",
+
+                                ].map((opt, i) => (
+                                    <div
+                                        key={i}
+                                        onClick={() => {
+                                            setSelectedFilter(opt);
+                                            setFilterOpen(false);
+                                        }}
+                                        className="px-3 py-2 cursor-pointer 
+                                   hover:bg-red-800 hover:text-white dark:hover:bg-slate-700"
+                                    >
+                                        {opt}
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+
+                {/* SORT DROPDOWN */}
+                <div className="relative flex items-center  border rounded-md px-1 py-2 text-sm
+                    bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
+                    border-red-100 dark:border-slate-600">
+
+                    {/* CUSTOM DROPDOWN */}
+                    <div className="relative w-40">
+                        <div
+                            onClick={() => setsortByOpen(!sortByOpen)}
+                            className="cursor-pointer flex justify-evenly items-center bg-transparent"
+                        >
+                            <span>{selectedsortBy || "Sort By Date"}</span>
+                            <span className="text-xs">▼</span>
+                        </div>
+
+                        {sortByOpen && (
+                            <div className="absolute  w-40 mt-3 bg-white dark:bg-slate-800 
+                            border border-gray-300 dark:border-slate-600 
+                            rounded-md shadow-lg z-20 text-sm">
+
+                                {[
+                                    "Today",
+                                    "yesterday",
+                                    "Last 7 days",
+                                    "This Month",
+                                ].map((opt, i) => (
+                                    <div
+                                        key={i}
+                                        onClick={() => {
+                                            setSelectedsortBy(opt);
+                                            setsortByOpen(false);
+                                        }}
+                                        className="px-3 py-2 cursor-pointer 
+                                   hover:bg-red-800 hover:text-white dark:hover:bg-slate-700"
+                                    >
+                                        {opt}
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </div>
+
 
             {/* ======= CARD GRID ======= */}
             <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 gap-4">

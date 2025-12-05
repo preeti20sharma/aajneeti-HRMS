@@ -39,7 +39,7 @@ const DashboardPage = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:col-span-2 xl:col-span-3">
 
                     {/* CARD 1 */}
-                    <div className="card h-[160px]">
+                    <div className="card h-[160px] border border-red-100">
                         <div className="card-header">
                             <div className="w-fit rounded-lg bg-red-500/20 p-2 text-red-800 dark:bg-red-100 dark:text-red-800">
                                 <Users size={26} />
@@ -63,7 +63,7 @@ const DashboardPage = () => {
                     </div>
 
                     {/* CARD 2 */}
-                    <div className="card h-[160px]">
+                    <div className="card h-[160px] border border-red-100">
                         <div className="card-header">
                             <div className="rounded-lg bg-red-500/20 p-2 text-red-800 dark:bg-red-100 dark:text-red-800">
                                 <Users size={26} />
@@ -87,7 +87,7 @@ const DashboardPage = () => {
                     </div>
 
                     {/* CARD 3 */}
-                    <div className="card h-[160px]">
+                    <div className="card h-[160px] border border-red-100">
                         <div className="card-header">
                             <div className="rounded-lg bg-red-500/20 p-2 text-red-800 dark:bg-red-100 dark:text-red-800">
                                 <Users size={26} />
@@ -111,7 +111,7 @@ const DashboardPage = () => {
                     </div>
 
                     {/* CARD 4 */}
-                    <div className="card h-[160px]">
+                    <div className="card h-[160px] border border-red-100">
                         <div className="card-header">
                             <div className="rounded-lg bg-red-500/20 p-2 text-red-800 dark:bg-red-100 dark:text-red-800">
                                 <Users size={26} />
@@ -134,7 +134,7 @@ const DashboardPage = () => {
                         </div>
                     </div>
                     {/* CARD 4 */}
-                    <div className="card h-[160px]">
+                    <div className="card h-[160px] border border-red-100">
                         <div className="card-header">
                             <div className="rounded-lg bg-red-500/20 p-2 text-red-800 dark:bg-red-100 dark:text-red-800">
                                 <Users size={26} />
@@ -156,7 +156,6 @@ const DashboardPage = () => {
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 {/* RIGHT SIDE — PROFILE CARD (ALWAYS ON TOP) */}

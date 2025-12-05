@@ -29,6 +29,7 @@ import Achievements from "./routes/Achievements";
 import Notifications from "./routes/Notification";
 import EmployeeBankDetails from "./routes/EmployeeBankdetails";
 import AttendanceInsights from "./routes/AttendanceInsights";
+import PendingRequest from "./routes/PendingRequest";
 
 function App() {
     const router = createBrowserRouter([
@@ -129,6 +130,10 @@ function App() {
                 {
                     path: "attendance-report",
                     element: <Attendance />,
+                },
+                {
+                    path: "pending-request",
+                    element: <PendingRequest />
                 },
                 {
                     path: "shift-timing",

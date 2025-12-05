@@ -107,6 +107,11 @@ export const navbarLinks = [
                 icon: Bell,
                 path: "/notifications",
             },
+            {
+                label: "pending Request",
+                icon: Bell,
+                path: "/pending-request",
+            },
         ],
     },
 
