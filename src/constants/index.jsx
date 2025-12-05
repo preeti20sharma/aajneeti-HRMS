@@ -1,4 +1,4 @@
-import { CalendarCog, CalendarDays, Clock10, FileClock, Home, IndianRupeeIcon, LogIn, LogOutIcon, Trophy, UserPlus2, UsersRound, Wifi, AlertTriangle, Bell } from "lucide-react";
+import { CalendarCog, CalendarDays, Clock10, FileClock, Home, IndianRupeeIcon, LogIn, LogOutIcon, Trophy, UsersRound, Wifi, AlertTriangle, Bell } from "lucide-react";
 
 import ProfileImage from "@/assets/profile-image.jpg";
 // import ProductImage from "@/assets/product-image.jpg";
@@ -118,11 +118,6 @@ export const navbarLinks = [
     {
         title: "Authentication",
         links: [
-            {
-                label: "Register",
-                icon: UserPlus2,
-                path: "/register",
-            },
             {
                 label: "Login",
                 icon: LogIn,

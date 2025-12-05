@@ -12,7 +12,6 @@ import CompanyHolidays from "./routes/Holiday";
 import RemoteWork from "./routes/RemoteWork";
 import EmployeeSalary from "./routes/Salary";
 import WorkingHours from "./routes/WorkingHours";
-import Register from "./routes/register/Register";
 import Login from "./routes/login/Login";
 import Logout from "./routes/logout/Logout";
 import Empdashboard from "./routes/dashboard/Empdashboard";
@@ -33,10 +32,7 @@ import PendingRequest from "./routes/PendingRequest";
 
 function App() {
     const router = createBrowserRouter([
-        {
-            path: "register",
-            element: <Register />
-        },
+
         {
             path: "login",
             element: <Login />
@@ -134,14 +130,6 @@ function App() {
                 {
                     path: "pending-request",
                     element: <PendingRequest />
-                },
-                {
-                    path: "shift-timing",
-                    element: <Shift />
-                },
-                {
-                    path: "achievements",
-                    element: <Shift />
                 },
                 {
                     path: "shift-timing",

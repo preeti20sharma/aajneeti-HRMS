@@ -42,8 +42,8 @@ const AdminProfile = () => {
     };
 
     return (
-        <div className="p-4 md:p-6 bg-slate-50 dark:bg-slate-900 min-h-screen text-slate-800 dark:text-slate-100">
-            <h2 className="text-2xl font-bold mb-4">Edit Admin Profile</h2>
+        <div className="p-4 md:p-6 bg-slate-50 dark:bg-slate-900 min-h-screen  dark:text-slate-100">
+            <h2 className="text-2xl font-semibold mb-4 bg-gradient-to-r from-red-800 to-black bg-clip-text text-transparent dark:bg-none dark:text-slate-200">Edit Admin Profile</h2>
 
             <form
                 onSubmit={handleSubmit}
@@ -72,62 +72,70 @@ const AdminProfile = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {/* Name */}
                     <div>
-                        <label className="block font-semibold mb-1">Name</label>
+                        <label className="block mb-1 font-semibold text-lg bg-gradient-to-r from-red-800 to-black bg-clip-text text-transparent dark:text-slate-200">
+                            Name
+                        </label>
                         <input
                             type="text"
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full px-3 py-2 border rounded-lg bg-transparent focus:outline-none focus:ring focus:ring-blue-500"
+                            className="w-full px-3 py-2 border border-red-100 rounded-lg bg-transparent focus:outline-red-800 "
                         />
                     </div>
                     {/* Admin ID */}
                     <div>
-                        <label className="block font-semibold mb-1">Admin ID</label>
+                        <label className="block mb-1 font-semibold text-lg bg-gradient-to-r from-red-800 to-black bg-clip-text text-transparent dark:text-slate-200">
+                            Admin ID
+                        </label>
                         <input
                             type="text"
                             name="adminID"
                             value={formData.adminID}
                             onChange={handleChange}
-                            className="w-full px-3 py-2 border rounded-lg bg-transparent focus:outline-none focus:ring focus:ring-blue-500"
+                            className="w-full px-3 py-2 border border-red-100 rounded-lg bg-transparent focus:outline-red-800 "
                         />
                     </div>
                     {/* Designation */}
                     <div>
-                        <label className="block font-semibold mb-1">Designation</label>
+                        <label className="block mb-1 font-semibold text-lg bg-gradient-to-r from-red-800 to-black bg-clip-text text-transparent dark:text-slate-200">
+                            Designation
+                        </label>
                         <input
                             type="text"
                             name="position"
                             value={formData.position}
                             onChange={handleChange}
-                            className="w-full px-3 py-2 border rounded-lg bg-transparent focus:outline-none focus:ring focus:ring-blue-500"
+                            className="w-full px-3 py-2 border border-red-100 rounded-lg bg-transparent focus:outline-red-800 "
                         />
                     </div>
-
-
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
                     {/* Email */}
                     <div>
-                        <label className="block font-semibold mb-1">Email</label>
+                        <label className="block mb-1 font-semibold text-lg bg-gradient-to-r from-red-800 to-black bg-clip-text text-transparent dark:text-slate-200">
+                            Email
+                        </label>
                         <input
                             type="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full px-3 py-2 border rounded-lg bg-transparent focus:outline-none focus:ring focus:ring-blue-500"
+                            className="w-full px-3 py-2 border border-red-100 rounded-lg bg-transparent focus:outline-red-800 "
                         />
                     </div>
                     {/* Phone */}
                     <div>
-                        <label className="block font-semibold mb-1">Phone</label>
+                        <label className="block mb-1 font-semibold text-lg bg-gradient-to-r from-red-800 to-black bg-clip-text text-transparent dark:text-slate-200">
+                            Phone
+                        </label>
                         <input
                             type="text"
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            className="w-full px-3 py-2 border rounded-lg bg-transparent focus:outline-none focus:ring focus:ring-blue-500"
+                            className="w-full px-3 py-2 border border-red-100 rounded-lg bg-transparent focus:outline-red-800 "
                         />
                     </div>
                 </div>
@@ -139,14 +147,14 @@ const AdminProfile = () => {
                         <button
                             type="submit"
                             onClick={() => navigate(-1)}
-                            className="bg-blue-700 text-white px-4 py-1 rounded-lg hover:bg-blue-800"
+                            className=" text-white px-4 py-1 rounded-lg bg-gradient-to-r from-red-800 to-black hover:from-black hover:to-red-800"
                         >
                             Save Changes
                         </button>
                         <button
                             type="button"
                             onClick={() => navigate(-1)}
-                            className="bg-gray-300 text-gray-800 px-4 py-1 rounded-lg hover:bg-gray-400"
+                            className="bg-white border border-red-800 text-red-800 px-4 py-1 rounded-lg hover:bg-red-800 hover:text-white"
                         >
                             Cancel
                         </button>
