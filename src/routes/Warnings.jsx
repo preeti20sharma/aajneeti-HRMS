@@ -129,7 +129,7 @@ const Warnings = () => {
                     </ul>
                 </div>
                 {/* Add Employee */}
-                <button onClick={() => openForm()} className="flex  items-center gap-2 px-2 mt-3 sm:mt-0 sm:px-2 py-2  rounded-lg bg-gradient-to-r from-red-800 to-black  text-slate-200   hover:bg-slate-100 dark:hover:bg-blue-900">
+                <button onClick={() => openForm()} className="flex justify-center w-full sm:w-auto  items-center gap-2 px-2 mt-3 sm:mt-0 sm:px-2 py-2  rounded-lg bg-gradient-to-r from-red-800 to-black  text-slate-200   hover:bg-slate-100 dark:hover:bg-blue-900">
                     <PlusSquare size={16} />
                     <span className="text-sm">Add warnings</span>
                 </button>

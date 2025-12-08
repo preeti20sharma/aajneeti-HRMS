@@ -6,9 +6,11 @@ import {
     Bell,
     Calendar,
     X,
-    MessageCircle
+    MessageCircle,
+    HomeIcon,
 } from "lucide-react";
 import ProfileImage from "@/assets/profile-image.jpg";
+import { Link } from "react-router-dom";
 
 const PendingRequest = () => {
     const [filterOpen, setFilterOpen] = useState();
@@ -136,62 +138,75 @@ const PendingRequest = () => {
 
     return (
         <div className="w-full mx-auto rounded-2xl bg-slate-50 dark:bg-slate-900 min-h-screen p-4">
-
             {/* ======= HEADER ======= */}
-            <div className="flex flex-wrap sm:flex-row items-center justify-between mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 px-1 sm:px-4 ">
 
-                <h2 className="
-                    text-3xl font-bold 
-                    bg-gradient-to-r from-red-800 to-black 
-                    bg-clip-text text-transparent 
-                    dark:text-slate-100">
-                    <Bell size={25} className="inline-block sm:mr-1 text-red-800 dark:text-red-600" />
-                    Pending Requests
-                </h2>
+                {/* LEFT — Title */}
+                <div className="flex flex-col">
 
-                <button onClick={() => openForm()}
-                    className="flex items-center gap-2 px-3 py-2 mt-3 sm:mt-0 rounded-lg bg-gradient-to-r from-red-800 to-black text-white">
-                    <PlusSquare size={17} /> Add Request
+                    <h2 className="
+           text-lg sm:text-2xl font-bold dark:text-slate-200
+        ">
+                        <span>
+                            <Bell size={25} className="inline-block sm:mr-1 text-red-600 dark:text-red-600" />
+                        </span> Pending Request
+                    </h2>
+
+                    <ul className="flex items-center text-sm mt-2">
+                        <li>
+                            <Link to="/" className="flex items-center text-slate-900 dark:text-slate-200 hover:underline">
+                                <HomeIcon size={15} />
+                                <span className="pl-2">Home</span>
+                            </Link>
+                        </li>
+                        <li className="px-2 text-slate-500">|</li>
+                        <li className="text-slate-600 dark:text-slate-50">Pending Request</li>
+                    </ul>
+                </div>
+
+                {/* RIGHT — Add Button */}
+                <button
+                    onClick={() => openForm()}
+                    className="flex items-center justify-center w-full sm:w-auto mt-4 sm:mt-0 
+                   gap-2 px-2 py-2 rounded-lg bg-gradient-to-r from-red-800 to-black text-white"
+                >
+                    <PlusSquare size={17} />
+                    <span>Add Request</span>
                 </button>
             </div>
 
+
             {/* Action Buttons */}
-            <div className="flex items-center gap-3 pb-4 mt-4 justify-end sm:px-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end gap-3 mt-4 pb-4 px-1 sm:px-4">
 
                 {/* FILTER DROPDOWN */}
-                <div className="relative flex items-center  border rounded-md px-1 py-2 text-sm
-    bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
-    border-red-100 dark:border-slate-600">
+                <div className="relative w-full sm:w-auto flex items-center border rounded-md px-2 py-2 text-sm
+        bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
+        border-red-100 dark:border-slate-600">
 
-                    {/* CUSTOM DROPDOWN */}
-                    <div className="relative w-40">
+                    <div className="relative w-full sm:w-40">
                         <div
                             onClick={() => setFilterOpen(!filterOpen)}
-                            className="cursor-pointer flex justify-evenly items-center bg-transparent"
+                            className="cursor-pointer flex justify-between items-center"
                         >
                             <span>{selectedFilter || "Select status"}</span>
                             <span className="text-xs">▼</span>
                         </div>
 
                         {filterOpen && (
-                            <div className="absolute  w-40 mt-3 bg-white dark:bg-slate-800 
-                            border border-gray-300 dark:border-slate-600 
-                            rounded-md shadow-lg z-20 text-sm">
+                            <div className="absolute w-full sm:w-40 mt-3 bg-white dark:bg-slate-800
+                    border border-gray-300 dark:border-slate-600 
+                    rounded-md shadow-lg z-20 text-sm">
 
-                                {[
-                                    "Approved",
-                                    "Rejected",
-                                    "pending",
-
-                                ].map((opt, i) => (
+                                {["Approved", "Rejected", "Pending"].map((opt, i) => (
                                     <div
                                         key={i}
                                         onClick={() => {
                                             setSelectedFilter(opt);
                                             setFilterOpen(false);
                                         }}
-                                        className="px-3 py-2 cursor-pointer 
-                                   hover:bg-red-800 hover:text-white dark:hover:bg-slate-700"
+                                        className="px-3 py-2 cursor-pointer hover:bg-red-800 hover:text-white 
+                                dark:hover:bg-slate-700"
                                     >
                                         {opt}
                                     </div>
@@ -201,41 +216,34 @@ const PendingRequest = () => {
                     </div>
                 </div>
 
-
                 {/* SORT DROPDOWN */}
-                <div className="relative flex items-center  border rounded-md px-1 py-2 text-sm
-                    bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
-                    border-red-100 dark:border-slate-600">
+                <div className="relative w-full sm:w-auto flex items-center border rounded-md px-2 py-2 text-sm
+        bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
+        border-red-100 dark:border-slate-600">
 
-                    {/* CUSTOM DROPDOWN */}
-                    <div className="relative w-40">
+                    <div className="relative w-full sm:w-40">
                         <div
                             onClick={() => setsortByOpen(!sortByOpen)}
-                            className="cursor-pointer flex justify-evenly items-center bg-transparent"
+                            className="cursor-pointer flex justify-between items-center"
                         >
                             <span>{selectedsortBy || "Sort By Date"}</span>
                             <span className="text-xs">▼</span>
                         </div>
 
                         {sortByOpen && (
-                            <div className="absolute  w-40 mt-3 bg-white dark:bg-slate-800 
-                            border border-gray-300 dark:border-slate-600 
-                            rounded-md shadow-lg z-20 text-sm">
+                            <div className="absolute w-full sm:w-40 mt-3 bg-white dark:bg-slate-800
+                    border border-gray-300 dark:border-slate-600 
+                    rounded-md shadow-lg z-20 text-sm">
 
-                                {[
-                                    "Today",
-                                    "yesterday",
-                                    "Last 7 days",
-                                    "This Month",
-                                ].map((opt, i) => (
+                                {["Today", "Yesterday", "Last 7 days", "This Month"].map((opt, i) => (
                                     <div
                                         key={i}
                                         onClick={() => {
                                             setSelectedsortBy(opt);
                                             setsortByOpen(false);
                                         }}
-                                        className="px-3 py-2 cursor-pointer 
-                                   hover:bg-red-800 hover:text-white dark:hover:bg-slate-700"
+                                        className="px-3 py-2 cursor-pointer hover:bg-red-800 hover:text-white 
+                                dark:hover:bg-slate-700"
                                     >
                                         {opt}
                                     </div>
@@ -244,7 +252,9 @@ const PendingRequest = () => {
                         )}
                     </div>
                 </div>
+
             </div>
+
 
             {/* ======= CARD GRID ======= */}
             <div className="grid grid-cols-1 gap-4">

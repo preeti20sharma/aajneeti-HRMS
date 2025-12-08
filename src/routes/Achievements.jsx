@@ -103,28 +103,34 @@ const Achievements = () => {
     };
 
     return (
-        <div className="w-full mx-auto rounded-2xl bg-slate-50 dark:bg-slate-900 min-h-screen p-4">
+        <div className="w-full mx-auto rounded-2xl bg-slate-50 dark:bg-slate-900 min-h-screen p-2 md:p-4">
 
             {/* ======= HEADER ======= */}
-            <div className="flex flex-row sm:p-3 items-center justify-between mb-6 ">
-                <div className="flex flex-col">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6  pt-4">
 
-                    <h2 className="
-            text-3xl font-bold 
+                {/* LEFT — Title + Breadcrumb */}
+                <div className="flex flex-col">
+                    <h2
+                        className="text-2xl sm:text-3xl font-bold 
             bg-gradient-to-r from-red-800 to-slate-900 
-            bg-clip-text text-transparent 
-            animate-gradient-slide
-            dark:text-slate-100
-        ">
-                        <span>
-                            <Trophy size={25} className="inline-block mr-1 text-red-800 dark:text-red-600" />
-                        </span> Achievements
+            bg-clip-text text-transparent animate-gradient-slide
+            dark:text-slate-100"
+                    >
+                        <Trophy
+                            size={25}
+                            className="inline-block mr-1 text-red-800 dark:text-red-500"
+                        />
+                        Achievements
                     </h2>
 
-                    <ul className="flex items-center text-sm mt-2">
+                    {/* Breadcrumb */}
+                    <ul className="flex items-center text-xs sm:text-sm mt-2">
                         <li>
-                            <Link to="/" className="flex items-center text-slate-900 dark:text-slate-200 hover:underline">
-                                <HomeIcon size={15} />
+                            <Link
+                                to="/"
+                                className="flex items-center text-slate-900 dark:text-slate-200 hover:underline"
+                            >
+                                <HomeIcon size={14} />
                                 <span className="pl-2">Home</span>
                             </Link>
                         </li>
@@ -132,49 +138,50 @@ const Achievements = () => {
                         <li className="text-slate-600 dark:text-slate-50">Achievements</li>
                     </ul>
                 </div>
-                {/* Add Employee */}
-                <button onClick={() => openForm()} className="flex items-center gap-2 px-2 sm:px-2 py-2  rounded-lg bg-gradient-to-r from-red-800 to-black  text-slate-200   hover:bg-slate-100 dark:hover:bg-blue-900">
+
+                {/* RIGHT — Add Achievement Button */}
+                <button
+                    onClick={() => openForm()}
+                    className="flex items-center justify-center w-full sm:w-auto mt-4 sm:mt-0 
+                   gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-red-800 to-black 
+                   text-slate-200 hover:opacity-90 dark:hover:bg-blue-900"
+                >
                     <PlusSquare size={16} />
                     <span className="text-sm">Add Achievements</span>
                 </button>
             </div>
+
             {/* Action Buttons */}
-            <div className="flex items-center gap-3 pb-4 mt-4 justify-end sm:px-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end gap-3 mt-4 pb-4 px-1 sm:px-4">
 
                 {/* FILTER DROPDOWN */}
-                <div className="relative flex items-center  border rounded-md px-1 py-2 text-sm
-    bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
-    border-red-100 dark:border-slate-600">
+                <div className="relative w-full sm:w-auto flex items-center border rounded-md px-2 py-2 text-sm
+        bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200 
+        border-red-100 dark:border-slate-600">
 
-                    {/* CUSTOM DROPDOWN */}
-                    <div className="relative w-40">
+                    <div className="relative w-full sm:w-40">
                         <div
                             onClick={() => setFilterOpen(!filterOpen)}
-                            className="cursor-pointer flex justify-evenly items-center bg-transparent"
+                            className="cursor-pointer flex justify-between items-center"
                         >
                             <span>{selectedFilter || "Select status"}</span>
                             <span className="text-xs">▼</span>
                         </div>
 
                         {filterOpen && (
-                            <div className="absolute  w-40 mt-3 bg-white dark:bg-slate-800 
-                            border border-gray-300 dark:border-slate-600 
-                            rounded-md shadow-lg z-20 text-sm">
+                            <div className="absolute w-full sm:w-40 mt-3 bg-white dark:bg-slate-800
+                    border border-gray-300 dark:border-slate-600 
+                    rounded-md shadow-lg z-20 text-sm">
 
-                                {[
-                                    "Approved",
-                                    "Rejected",
-                                    "pending",
-
-                                ].map((opt, i) => (
+                                {["Approved", "Rejected", "Pending"].map((opt, i) => (
                                     <div
                                         key={i}
                                         onClick={() => {
                                             setSelectedFilter(opt);
                                             setFilterOpen(false);
                                         }}
-                                        className="px-3 py-2 cursor-pointer 
-                                   hover:bg-red-800 hover:text-white dark:hover:bg-slate-700"
+                                        className="px-3 py-2 cursor-pointer hover:bg-red-800 hover:text-white 
+                                dark:hover:bg-slate-700"
                                     >
                                         {opt}
                                     </div>
@@ -184,41 +191,34 @@ const Achievements = () => {
                     </div>
                 </div>
 
-
                 {/* SORT DROPDOWN */}
-                <div className="relative flex items-center  border rounded-md px-1 py-2 text-sm
-                    bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
-                    border-red-100 dark:border-slate-600">
+                <div className="relative w-full sm:w-auto flex items-center border rounded-md px-2 py-2 text-sm
+        bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
+        border-red-100 dark:border-slate-600">
 
-                    {/* CUSTOM DROPDOWN */}
-                    <div className="relative w-40">
+                    <div className="relative w-full sm:w-40">
                         <div
                             onClick={() => setsortByOpen(!sortByOpen)}
-                            className="cursor-pointer flex justify-evenly items-center bg-transparent"
+                            className="cursor-pointer flex justify-between items-center"
                         >
                             <span>{selectedsortBy || "Sort By Date"}</span>
                             <span className="text-xs">▼</span>
                         </div>
 
                         {sortByOpen && (
-                            <div className="absolute  w-40 mt-3 bg-white dark:bg-slate-800 
-                            border border-gray-300 dark:border-slate-600 
-                            rounded-md shadow-lg z-20 text-sm">
+                            <div className="absolute w-full sm:w-40 mt-3 bg-white dark:bg-slate-800
+                    border border-gray-300 dark:border-slate-600 
+                    rounded-md shadow-lg z-20 text-sm">
 
-                                {[
-                                    "Today",
-                                    "yesterday",
-                                    "Last 7 days",
-                                    "This Month",
-                                ].map((opt, i) => (
+                                {["Today", "Yesterday", "Last 7 days", "This Month"].map((opt, i) => (
                                     <div
                                         key={i}
                                         onClick={() => {
                                             setSelectedsortBy(opt);
                                             setsortByOpen(false);
                                         }}
-                                        className="px-3 py-2 cursor-pointer 
-                                   hover:bg-red-800 hover:text-white dark:hover:bg-slate-700"
+                                        className="px-3 py-2 cursor-pointer hover:bg-red-800 hover:text-white 
+                                dark:hover:bg-slate-700"
                                     >
                                         {opt}
                                     </div>
@@ -227,7 +227,9 @@ const Achievements = () => {
                         )}
                     </div>
                 </div>
+
             </div>
+
 
 
             {/* ======= CARD GRID ======= */}
