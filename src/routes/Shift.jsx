@@ -47,7 +47,7 @@ const Shift = () => {
     return (
         <div className="w-full mx-auto  bg-slate-50 dark:bg-slate-900 rounded-2xl shadow-lg text-slate-800 dark:text-slate-100 ">
             {/* Header */}
-            <div className="flex flex-row sm:p-4 items-center justify-between mb-6 ">
+            <div className="flex flex-row sm:p-4 items-center justify-between mb-6 p-4">
                 <div className="flex flex-col">
                     <div className="flex items-center gap-2">
                         <Clock10 size={24} className="text-red-600" />

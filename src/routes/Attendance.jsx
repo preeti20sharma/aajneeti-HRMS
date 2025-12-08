@@ -227,11 +227,11 @@ const Attendance = () => {
                             <p className="card-title">{card.label}</p>
                         </div>
                         <div className="card-body   bg-red-50 transition-colors dark:bg-slate-900">
-                            <div className="flex justify-between">
-                                <p className="text-3xl font-bold text-slate-900 transition-colors dark:text-slate-50">{card.value}</p>
+                            <div className="flex justify-between gap-4">
+                                <p className=" text-xl sm:text-3xl font-bold text-slate-900 transition-colors dark:text-slate-50">{card.value}</p>
                                 <Link to={card.path} >
                                     <button className="
-                                                                px-4 py-1 rounded-lg text-red-800 hover:text-slate-200
+                                                                px-3 sm:px-4 py-1 rounded-lg text-red-800 hover:text-slate-200
                                                                 bg-transparent border border-red-800 hover:bg-red-700 
                                                                 dark:bg-slate-700 dark:hover:bg-slate-600 dark:border-slate-200 dark:text-slate-200
                                                                 transition-all">

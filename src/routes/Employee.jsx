@@ -85,17 +85,22 @@ const Employees = () => {
     return (
         <div className="w-full mx-auto  bg-slate-50 dark:bg-slate-900 rounded-2xl shadow-lg text-slate-800 dark:text-slate-100">
             {/* Header */}
-            <div className="flex flex-row sm:p-4 items-center justify-between mb-6 ">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 px-2 sm:px-4 pt-4">
+
+                {/* LEFT SIDE - Title & Breadcrumb */}
                 <div className="flex flex-col">
                     <div className="flex items-center gap-2">
                         <UsersRound size={24} className="text-red-600" />
-                        <h2 className="sm:text-2xl text-md font-bold">Employees</h2>
+                        <h2 className="text-lg sm:text-2xl font-bold">Employees</h2>
                     </div>
 
-                    <ul className="flex items-center text-sm mt-2">
+                    <ul className="flex items-center text-xs sm:text-sm mt-2">
                         <li>
-                            <Link to="/" className="flex items-center text-slate-900 dark:text-slate-200 hover:underline">
-                                <HomeIcon size={15} />
+                            <Link
+                                to="/"
+                                className="flex items-center text-slate-900 dark:text-slate-200 hover:underline"
+                            >
+                                <HomeIcon size={14} />
                                 <span className="pl-2">Home</span>
                             </Link>
                         </li>
@@ -103,16 +108,22 @@ const Employees = () => {
                         <li className="text-slate-600 dark:text-slate-50">Employees</li>
                     </ul>
                 </div>
-                {/* Add Employee */}
-                <button onClick={handleAdd} className="flex items-center gap-2 px-2 sm:px-4 py-2 border rounded-lg bg-gradient-to-r from-red-700 to-black text-white">
+
+                {/* RIGHT SIDE – Add Employee Button */}
+                <button
+                    onClick={handleAdd}
+                    className="flex items-center justify-center w-full sm:w-auto mt-4 sm:mt-0 gap-2 px-4 py-2 rounded-lg 
+                   bg-gradient-to-r from-red-700 to-black text-white"
+                >
                     <PlusSquare size={18} />
                     <span>Add Employee</span>
                 </button>
             </div>
+
             {/* Action Buttons */}
-            <div className="flex items-center gap-3 pb-4 mt-4 justify-end sm:px-4">
+            <div className="flex items-center gap-3 pb-4 mt-4 justify-end  sm:px-4">
                 {/* FILTER DROPDOWN */}
-                <div className="relative flex items-center  border rounded-md px-1 py-2 text-sm
+                <div className="relative flex items-center  border rounded-md  py-2 text-sm
     bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
     border-red-100 dark:border-slate-600">
 
@@ -157,7 +168,7 @@ const Employees = () => {
                 </div>
 
                 {/* Sort Select */}
-                <div className="relative flex items-center  border rounded-md px-1 py-2 text-sm
+                <div className="relative flex items-center  border rounded-md mr-1 py-2 text-sm
     bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
     border-red-100 dark:border-slate-600">
 

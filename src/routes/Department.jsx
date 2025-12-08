@@ -84,19 +84,24 @@ const Department = () => {
         <div className="w-full mx-auto rounded-2xl bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">
 
             {/* Header */}
-            <div className="flex items-center justify-between mb-8 sm:px-4 px-1 pt-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 px-2 sm:px-4 pt-6">
+
+                {/* LEFT SIDE - Title & Breadcrumb */}
                 <div className="flex flex-col">
+                    {/* Title */}
                     <div className="flex items-center gap-2">
                         <Building2 size={24} className="text-red-600" />
-                        <h2 className="sm:text-2xl text-md font-bold">Department</h2>
+                        <h2 className="text-lg sm:text-2xl font-bold">Department</h2>
                     </div>
-                    <ul className="flex items-center text-sm mt-2">
+
+                    {/* Breadcrumb */}
+                    <ul className="flex items-center text-xs sm:text-sm mt-2">
                         <li>
                             <Link
                                 to="/"
                                 className="flex items-center text-slate-900 dark:text-slate-200 hover:underline"
                             >
-                                <HomeIcon size={15} />
+                                <HomeIcon size={14} />
                                 <span className="pl-2">Home</span>
                             </Link>
                         </li>
@@ -105,14 +110,16 @@ const Department = () => {
                     </ul>
                 </div>
 
-                {/* Add Department Button */}
+                {/* RIGHT SIDE – Add Department Button */}
                 <button
                     onClick={() => openForm()}
-                    className="flex items-center gap-2 bg-gradient-to-r from-red-700 to-black text-white px-4 py-2 rounded-lg"
+                    className="flex items-center justify-center w-full sm:w-auto mt-4 sm:mt-0 gap-2 bg-gradient-to-r from-red-700 to-black text-white px-4 py-2 rounded-lg"
                 >
-                    <PlusSquare size={18} /> Add Department
+                    <PlusSquare size={18} />
+                    Add Department
                 </button>
             </div>
+
 
             {/* Table */}
             <div className="overflow-x-auto">

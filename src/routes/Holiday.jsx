@@ -91,38 +91,42 @@ const CompanyHolidays = () => {
     return (
         <div className="w-full mx-auto rounded-2xl bg-white dark:bg-slate-900   text-slate-800 dark:text-slate-100">
             {/* Header */}
-            <div className="flex items-center justify-between mb-8 sm:px-4 px-1 pt-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 px-2 sm:px-4 pt-6">
+
+                {/* LEFT SIDE – Heading + Breadcrumb */}
                 <div className="flex flex-col">
-                    <div className="flex items-center gap-2 ">
+                    <div className="flex items-center gap-2">
                         <CalendarDays
                             size={24}
                             className="text-red-600 dark:text-red-400"
                         />
-                        <h2 className="sm:text-2xl text-md font-bold">Company Holidays</h2>
+                        <h2 className="text-lg sm:text-2xl font-bold">Company Holidays</h2>
                     </div>
-                    <ul className="flex items-center text-sm mt-2">
+
+                    {/* Breadcrumb */}
+                    <ul className="flex items-center text-xs sm:text-sm mt-2">
                         <li>
                             <Link
                                 to="/"
                                 className="flex items-center text-slate-900 dark:text-slate-200 hover:underline"
                             >
-                                <HomeIcon size={15} />
+                                <HomeIcon size={14} />
                                 <span className="pl-2">Home</span>
                             </Link>
                         </li>
                         <li className="px-2 text-slate-500">|</li>
-                        <li className="text-slate-600 dark:text-slate-50">
-                            Company Holidays
-                        </li>
+                        <li className="text-slate-600 dark:text-slate-50">Company Holidays</li>
                     </ul>
                 </div>
 
-                {/* Add Event Button */}
+                {/* RIGHT SIDE – Add Event Button */}
                 <button
                     onClick={() => openForm()}
-                    className="flex items-center sm:gap-2 gap-1 bg-gradient-to-r from-red-700 to-black hover:bg-red-700 text-white sm:px-4 px-2  py-2 rounded-lg transition"
+                    className="flex items-center justify-center w-full sm:w-auto mt-4 sm:mt-0 gap-2 
+                   bg-gradient-to-r from-red-700 to-black text-white px-4 py-2 rounded-lg transition"
                 >
-                    <PlusSquare size={18} /> Add Event
+                    <PlusSquare size={18} />
+                    <span>Add Event</span>
                 </button>
             </div>
 

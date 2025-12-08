@@ -483,12 +483,12 @@ const WorkingDays = () => {
             border border-transparent dark:shadow-none
         "
                 >
-                    <div className="flex justify-between">
+                    <div className="flex flex-col sm:flex-row  sm:justify-between">
                         <h3 className="text-lg font-semibold flex items-center gap-2 text-red-700 dark:text-white mb-6">
                             <ClipboardList size={20} /> Monthly Leaves and OverTime Details
                         </h3>
                         {/* Monthly Filter */}
-                        <div className="mt-2 mb-4">
+                        <div className="sm:mt-2 mb-4 ">
 
                             <DateFilter selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth} />
                         </div>

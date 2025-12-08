@@ -97,11 +97,11 @@ const EmployeeSalary = () => {
     return (
         <div className="w-full mx-auto  bg-white dark:bg-slate-900 rounded-2xl shadow-lg text-slate-800 dark:text-slate-100">
             {/* Header */}
-            <div className="flex items-center justify-between mb-8 p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 p-2 sm:p-4">
                 <div className="flex flex-col">
                     <div className="flex items-center gap-2">
                         <IndianRupee size={28} className="text-red-800 dark:text-red-600" />
-                        <h2 className="text-2xl font-bold">Employee Salary Details</h2>
+                        <h2 className="text-xl sm:text-2xl font-bold">Employee Salary Details</h2>
                     </div>
                     <div>
                         <ul className="flex items-center text-sm mt-2">
@@ -121,7 +121,7 @@ const EmployeeSalary = () => {
                 </div>
                 <button
                     onClick={() => openForm()}
-                    className="flex items-center gap-2 bg-gradient-to-r from-red-800 to-black hover:from-black hover:to-red-800 text-white  px-4 py-2 rounded-lg transition-all"
+                    className="flex mt-3 sm:mt-0 items-center justify-center gap-2 bg-gradient-to-r from-red-800 to-black hover:from-black hover:to-red-800 text-white  px-2 sm:px-4 py-2 rounded-lg transition-all"
                 >
                     <PlusSquare size={18} /> Add Salary
                 </button>

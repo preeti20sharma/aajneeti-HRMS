@@ -60,7 +60,7 @@ const RemoteWork = () => {
     return (
         <div className="w-full mx-auto  bg-slate-50 dark:bg-slate-900 rounded-2xl shadow-lg text-slate-800 dark:text-slate-100">
             {/* Header */}
-            <div className="flex items-center justify-between mb-6 sm:p-4">
+            <div className="flex flex-col justify-center sm:flex-row sm:items-center sm:justify-between mb-4 p-2 sm:p-4">
                 <div className="flex flex-col">
                     <div className="flex items-center gap-2">
                         <Wifi size={24} className="text-red-600" />
@@ -94,7 +94,7 @@ const RemoteWork = () => {
                         });
                         setOpen(true);
                     }}
-                    className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-gradient-to-r from-red-700 to-black text-white"
+                    className="flex mt-4 sm:mt-0 items-center gap-2 px-3 py-2 border rounded-lg bg-gradient-to-r from-red-700 to-black text-white"
                 >
                     <PlusSquare size={18} />
                     <span>Apply</span>
@@ -105,8 +105,8 @@ const RemoteWork = () => {
 
                 {/* FILTER DROPDOWN */}
                 <div className="relative flex items-center  border rounded-md px-1 py-2 text-sm
-    bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
-    border-red-100 dark:border-slate-600">
+                    bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
+                    border-red-100 dark:border-slate-600">
 
                     {/* CUSTOM DROPDOWN */}
                     <div className="relative w-40">

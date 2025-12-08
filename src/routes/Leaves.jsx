@@ -68,20 +68,23 @@ const Leaves = () => {
     return (
         <div className="w-full mx-auto  bg-slate-50 dark:bg-slate-900 rounded-2xl shadow-lg text-slate-800 dark:text-slate-100">
             {/* Header */}
-            <div className="flex items-center justify-between mb-6 sm:p-4">
-                {/* Left: Title + Breadcrumb */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 px-2 sm:px-4 pt-4">
+
+                {/* LEFT – Title + Breadcrumb */}
                 <div className="flex flex-col">
                     <div className="flex items-center gap-2">
                         <CalendarDays size={24} className="text-red-600" />
-                        <h2 className="sm:text-2xl text-md font-bold">Full Leave</h2>
+                        <h2 className="text-lg sm:text-2xl font-bold">Full Leave</h2>
                     </div>
-                    <ul className="flex items-center text-sm mt-2">
+
+                    {/* Breadcrumb */}
+                    <ul className="flex items-center text-xs sm:text-sm mt-2">
                         <li>
                             <Link
                                 to="/"
                                 className="flex items-center text-slate-900 dark:text-slate-200 hover:underline"
                             >
-                                <HomeIcon size={15} />
+                                <HomeIcon size={14} />
                                 <span className="pl-2">Home</span>
                             </Link>
                         </li>
@@ -90,7 +93,7 @@ const Leaves = () => {
                     </ul>
                 </div>
 
-                {/* Add New Leave */}
+                {/* RIGHT – New Leave Button */}
                 <button
                     onClick={() => {
                         setEditingLeave(null);
@@ -106,42 +109,39 @@ const Leaves = () => {
                         });
                         setOpen(true);
                     }}
-                    className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-gradient-to-r from-red-700 to-black text-white"
+                    className="flex items-center justify-center w-full sm:w-auto mt-4 sm:mt-0 gap-2 
+                   px-4 py-2 rounded-lg bg-gradient-to-r from-red-700 to-black text-white"
                 >
                     <PlusSquare size={18} />
                     <span>New Leave</span>
                 </button>
             </div>
 
+
             {/* Action Buttons */}
-            <div className="flex items-center gap-3 pb-4 mt-4 justify-end sm:px-4">
+            <div className="flex flex-col sm:flex-row sm:justify-end sm:items-center gap-3 mt-4 pb-4 px-2 sm:px-4">
 
                 {/* FILTER DROPDOWN */}
-                <div className="relative flex items-center  border rounded-md px-1 py-2 text-sm
-    bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
-    border-red-100 dark:border-slate-600">
+                <div className="relative w-full sm:w-auto flex items-center border rounded-md py-2 px-2 text-sm
+        bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
+        border-red-100 dark:border-slate-600">
 
                     {/* CUSTOM DROPDOWN */}
-                    <div className="relative w-40">
+                    <div className="relative w-full sm:w-40">
                         <div
                             onClick={() => setFilterOpen(!filterOpen)}
-                            className="cursor-pointer flex justify-evenly items-center bg-transparent"
+                            className="cursor-pointer flex justify-between items-center"
                         >
                             <span>{selectedFilter || "Select status"}</span>
                             <span className="text-xs">▼</span>
                         </div>
 
                         {filterOpen && (
-                            <div className="absolute  w-40 mt-3 bg-white dark:bg-slate-800 
-                            border border-gray-300 dark:border-slate-600 
-                            rounded-md shadow-lg z-20 text-sm">
+                            <div className="absolute w-full sm:w-40 mt-3 bg-white dark:bg-slate-800 
+                    border border-gray-300 dark:border-slate-600 
+                    rounded-md shadow-lg z-20 text-sm">
 
-                                {[
-                                    "Approved",
-                                    "Rejected",
-                                    "pending",
-
-                                ].map((opt, i) => (
+                                {["Approved", "Rejected", "Pending"].map((opt, i) => (
                                     <div
                                         key={i}
                                         onClick={() => {
@@ -149,7 +149,7 @@ const Leaves = () => {
                                             setFilterOpen(false);
                                         }}
                                         className="px-3 py-2 cursor-pointer 
-                                   hover:bg-red-800 hover:text-white dark:hover:bg-slate-700"
+                                hover:bg-red-800 hover:text-white dark:hover:bg-slate-700"
                                     >
                                         {opt}
                                     </div>
@@ -159,33 +159,26 @@ const Leaves = () => {
                     </div>
                 </div>
 
-
                 {/* SORT DROPDOWN */}
-                <div className="relative flex items-center  border rounded-md px-1 py-2 text-sm
-                    bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
-                    border-red-100 dark:border-slate-600">
+                <div className="relative w-full sm:w-auto flex items-center border rounded-md py-2 px-2 text-sm
+        bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
+        border-red-100 dark:border-slate-600">
 
-                    {/* CUSTOM DROPDOWN */}
-                    <div className="relative w-40">
+                    <div className="relative w-full sm:w-40">
                         <div
                             onClick={() => setsortByOpen(!sortByOpen)}
-                            className="cursor-pointer flex justify-evenly items-center bg-transparent"
+                            className="cursor-pointer flex justify-between items-center"
                         >
                             <span>{selectedsortBy || "Sort By Date"}</span>
                             <span className="text-xs">▼</span>
                         </div>
 
                         {sortByOpen && (
-                            <div className="absolute  w-40 mt-3 bg-white dark:bg-slate-800 
-                            border border-gray-300 dark:border-slate-600 
-                            rounded-md shadow-lg z-20 text-sm">
+                            <div className="absolute w-full sm:w-40 mt-3 bg-white dark:bg-slate-800 
+                    border border-gray-300 dark:border-slate-600 
+                    rounded-md shadow-lg z-20 text-sm">
 
-                                {[
-                                    "Today",
-                                    "yesterday",
-                                    "Last 7 days",
-                                    "This Month",
-                                ].map((opt, i) => (
+                                {["Today", "Yesterday", "Last 7 days", "This Month"].map((opt, i) => (
                                     <div
                                         key={i}
                                         onClick={() => {
@@ -193,7 +186,7 @@ const Leaves = () => {
                                             setsortByOpen(false);
                                         }}
                                         className="px-3 py-2 cursor-pointer 
-                                   hover:bg-red-800 hover:text-white dark:hover:bg-slate-700"
+                                hover:bg-red-800 hover:text-white dark:hover:bg-slate-700"
                                     >
                                         {opt}
                                     </div>
@@ -202,6 +195,7 @@ const Leaves = () => {
                         )}
                     </div>
                 </div>
+
             </div>
 
             {/* Table */}
