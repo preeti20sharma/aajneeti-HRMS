@@ -369,7 +369,6 @@ const Warnings = () => {
                     </div>
                 </div>
             )}
-
         </div>
     );
 };

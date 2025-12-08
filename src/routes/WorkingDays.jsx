@@ -192,7 +192,8 @@ const WorkingDays = () => {
                 <div className="flex items-center gap-2">
                     <CalendarCog size={24} className="text-red-600" />
                     <h2 className="sm:text-2xl text-md font-bold">Working Days Calculation</h2>
-                </div>                <p className="mt-2">Welcome back! {employee.name}</p>
+                </div>
+                <p className="mt-2">Welcome back! {employee.name}</p>
             </div>
 
             {/* Filters Section */}

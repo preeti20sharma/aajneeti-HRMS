@@ -213,7 +213,7 @@ const CompanyHolidays = () => {
                             </h3>
                             <button
                                 onClick={() => setIsOpen(false)}
-                                className="text-slate-800 hover:text-red-500"
+                                className="text-slate-200 hover:text-red-500"
                             >
                                 <X size={22} />
                             </button>
