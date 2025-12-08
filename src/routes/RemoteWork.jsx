@@ -94,49 +94,43 @@ const RemoteWork = () => {
                         });
                         setOpen(true);
                     }}
-                    className="flex mt-4 sm:mt-0 items-center gap-2 px-3 py-2 border rounded-lg bg-gradient-to-r from-red-700 to-black text-white"
+                    className="flex mt-4 sm:mt-0 items-center gap-2 px-3 py-2  rounded-lg bg-gradient-to-r from-red-700 to-black text-white"
                 >
                     <PlusSquare size={18} />
                     <span>Apply</span>
                 </button>
             </div>
             {/* Action Buttons */}
-            <div className="flex items-center gap-3 pb-4 mt-4 justify-end sm:px-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end gap-3 mt-4 pb-4 px-2 sm:px-4">
 
                 {/* FILTER DROPDOWN */}
-                <div className="relative flex items-center  border rounded-md px-1 py-2 text-sm
-                    bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
-                    border-red-100 dark:border-slate-600">
+                <div className="relative w-full sm:w-auto flex items-center border rounded-md px-2 py-2 text-sm
+        bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
+        border-red-100 dark:border-slate-600">
 
-                    {/* CUSTOM DROPDOWN */}
-                    <div className="relative w-40">
+                    <div className="relative w-full sm:w-40">
                         <div
                             onClick={() => setFilterOpen(!filterOpen)}
-                            className="cursor-pointer flex justify-evenly items-center bg-transparent"
+                            className="cursor-pointer flex justify-between items-center"
                         >
                             <span>{selectedFilter || "Select status"}</span>
                             <span className="text-xs">▼</span>
                         </div>
 
                         {filterOpen && (
-                            <div className="absolute  w-40 mt-3 bg-white dark:bg-slate-800 
-                            border border-gray-300 dark:border-slate-600 
-                            rounded-md shadow-lg z-20 text-sm">
+                            <div className="absolute w-full sm:w-40 mt-3 bg-white dark:bg-slate-800
+                    border border-gray-300 dark:border-slate-600 
+                    rounded-md shadow-lg z-20 text-sm">
 
-                                {[
-                                    "Approved",
-                                    "Rejected",
-                                    "pending",
-
-                                ].map((opt, i) => (
+                                {["Approved", "Rejected", "Pending"].map((opt, i) => (
                                     <div
                                         key={i}
                                         onClick={() => {
                                             setSelectedFilter(opt);
                                             setFilterOpen(false);
                                         }}
-                                        className="px-3 py-2 cursor-pointer 
-                                   hover:bg-red-800 hover:text-white dark:hover:bg-slate-700"
+                                        className="px-3 py-2 cursor-pointer hover:bg-red-800 hover:text-white
+                                dark:hover:bg-slate-700"
                                     >
                                         {opt}
                                     </div>
@@ -146,41 +140,34 @@ const RemoteWork = () => {
                     </div>
                 </div>
 
-
                 {/* SORT DROPDOWN */}
-                <div className="relative flex items-center  border rounded-md px-1 py-2 text-sm
-                    bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
-                    border-red-100 dark:border-slate-600">
+                <div className="relative w-full sm:w-auto flex items-center border rounded-md px-2 py-2 text-sm
+        bg-white text-red-800 dark:bg-slate-800 dark:text-slate-200
+        border-red-100 dark:border-slate-600">
 
-                    {/* CUSTOM DROPDOWN */}
-                    <div className="relative w-40">
+                    <div className="relative w-full sm:w-40">
                         <div
                             onClick={() => setsortByOpen(!sortByOpen)}
-                            className="cursor-pointer flex justify-evenly items-center bg-transparent"
+                            className="cursor-pointer flex justify-between items-center"
                         >
                             <span>{selectedsortBy || "Sort By Date"}</span>
                             <span className="text-xs">▼</span>
                         </div>
 
                         {sortByOpen && (
-                            <div className="absolute  w-40 mt-3 bg-white dark:bg-slate-800 
-                            border border-gray-300 dark:border-slate-600 
-                            rounded-md shadow-lg z-20 text-sm">
+                            <div className="absolute w-full sm:w-40 mt-3 bg-white dark:bg-slate-800
+                    border border-gray-300 dark:border-slate-600 
+                    rounded-md shadow-lg z-20 text-sm">
 
-                                {[
-                                    "Today",
-                                    "yesterday",
-                                    "Last 7 days",
-                                    "This Month",
-                                ].map((opt, i) => (
+                                {["Today", "Yesterday", "Last 7 days", "This Month"].map((opt, i) => (
                                     <div
                                         key={i}
                                         onClick={() => {
                                             setSelectedsortBy(opt);
                                             setsortByOpen(false);
                                         }}
-                                        className="px-3 py-2 cursor-pointer 
-                                   hover:bg-red-800 hover:text-white dark:hover:bg-slate-700"
+                                        className="px-3 py-2 cursor-pointer hover:bg-red-800 hover:text-white
+                                dark:hover:bg-slate-700"
                                     >
                                         {opt}
                                     </div>
@@ -189,7 +176,9 @@ const RemoteWork = () => {
                         )}
                     </div>
                 </div>
+
             </div>
+
 
 
             {/* Table */}

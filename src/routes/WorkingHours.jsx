@@ -136,7 +136,7 @@ const WorkingHours = () => {
                         });
                         setOpen(true);
                     }}
-                    className="flex items-center justify-center w-full sm:w-auto mt-4 sm:mt-0  gap-2 px-3 py-2 border rounded-lg bg-gradient-to-r from-red-700 to-black text-white"
+                    className="flex items-center justify-center w-full sm:w-auto mt-4 sm:mt-0  gap-2 px-3 py-2  rounded-lg bg-gradient-to-r from-red-700 to-black text-white"
                 >
                     <PlusSquare size={18} />
                     <span>New Details</span>

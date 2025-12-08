@@ -514,7 +514,7 @@ const Empdashboard = () => {
                     dark:shadow-none 
                     dark:hover:shadow-none hover:border-red-700 dark:hover:border-none
                     dark:bg-slate-800">
-                    <div className="flex justify-between">
+                    <div className="flex flex-col sm:flex-row  sm:justify-between">
                         <h3 className="text-lg font-semibold flex items-center gap-2 text-slate-900 dark:text-slate-50">
                             <ClipboardList size={20} className="text-red-700 dark:text-slate-50" />
                             Leaves Utilized
@@ -599,8 +599,8 @@ const Empdashboard = () => {
             border border-transparent dark:shadow-none
         "
                 >
-                    <div className="flex justify-between">
-                        <h3 className="text-lg font-semibold flex items-center gap-2 text-red-700 dark:text-white mb-6">
+                    <div className="flex flex-col sm:flex-row justify-between">
+                        <h3 className="text-lg font-semibold flex items-center gap-2 text-red-700 dark:text-white">
                             <ClipboardList size={20} /> Credit summary
                         </h3>
                         {/* Monthly Filter */}
@@ -664,7 +664,7 @@ const Empdashboard = () => {
             border border-transparent dark:shadow-none
         "
                 >
-                    <div className="flex justify-between">
+                    <div className="flex  flex-col sm:flex-row justify-between">
                         <h3 className="text-lg font-semibold flex items-center gap-2 text-red-700 dark:text-white mb-6">
                             <ClipboardList size={20} /> Leaves Balance Summary
                         </h3>
@@ -730,7 +730,7 @@ const Empdashboard = () => {
                     
                     dark:shadow-none 
                     dark:hover:shadow-none overflow-auto">
-                    <div className="flex justify-between">
+                    <div className="flex  flex-col sm:flex-row justify-between">
                         <h3 className="text-lg font-medium flex items-center gap-2 text-red-800 dark:text-slate-200">
                             <ClipboardList size={20} /> Short Leave
                         </h3>
@@ -817,7 +817,7 @@ const Empdashboard = () => {
                     
                         dark:shadow-none 
                         dark:hover:shadow-none hover:border-red-700 dark:hover:border-none">
-                    <div className="flex justify-between" >
+                    <div className="flex  flex-col sm:flex-row justify-between" >
                         <h3 className="text-lg font-semibold flex items-center gap-2 text-red-800 dark:text-slate-200">
                             <ClipboardList size={20} /> Work From Home
                         </h3>
@@ -865,7 +865,7 @@ const Empdashboard = () => {
                     
                     dark:shadow-none 
                     dark:hover:shadow-none overflow-auto">
-                    <div className="flex justify-between">
+                    <div className="flex  flex-col sm:flex-row justify-between">
                         <h3 className="text-lg font-semibold flex items-center gap-2 text-red-800 dark:text-slate-200">
                             <ClipboardList size={20} /> Extra Working Hours
                         </h3>
