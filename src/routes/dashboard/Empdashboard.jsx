@@ -272,7 +272,7 @@ const Empdashboard = () => {
                                 <h3 className="text-xl font-bold text-black dark:text-white leading-tight">
                                     {employee.name}
                                 </h3>
-                                <p className="text-red-800 dark:text-red-400 text-md font-medium">
+                                <p className="text-red-800 dark:text-red-500 text-md font-medium">
                                     {employee.designation}
                                 </p>
                             </div>
@@ -290,7 +290,7 @@ const Empdashboard = () => {
                     </div>
 
                     {/* Divider */}
-                    <div className="my-3 h-[1px] bg-gradient-to-r from-red-400 to-transparent dark:from-red-300"></div>
+                    <div className="my-3 h-[1px] bg-gradient-to-r from-red-500 to-transparent dark:from-red-500"></div>
 
                     {/* Details Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -307,7 +307,7 @@ const Empdashboard = () => {
                     p-2 rounded-lg border border-red-100/60 dark:border-slate-600
                     hover:bg-red-100/50 dark:hover:bg-slate-700 transition
                 ">
-                                <p className="text-[16px] text-red-800 dark:text-red-300 font-semibold tracking-wide">
+                                <p className="text-[16px] text-red-800 dark:text-red-500 font-semibold tracking-wide">
                                     {label}
                                 </p>
                                 <p className="text-sm font-medium text-black dark:text-white mt-1">
@@ -430,7 +430,7 @@ const Empdashboard = () => {
 
                     {/* HEADER */}
                     <h3 className="text-xl font-semibold flex items-center gap-2 
-                        text-red-700 dark:text-red-300 mb-6 tracking-wide">
+                        text-red-700 dark:text-red-500 mb-6 tracking-wide">
                         <ClipboardList size={22} /> Payable Working Days Calculation Slip
                     </h3>
 
@@ -516,7 +516,7 @@ const Empdashboard = () => {
                     dark:bg-slate-800">
                     <div className="flex flex-col sm:flex-row  sm:justify-between">
                         <h3 className="text-lg font-semibold flex items-center gap-2 text-slate-900 dark:text-slate-50">
-                            <ClipboardList size={20} className="text-red-700 dark:text-slate-50" />
+                            <ClipboardList size={20} className="text-red-700 dark:text-red-600" />
                             Leaves Utilized
                         </h3>
                         {/* Monthly Filter */}
@@ -601,7 +601,7 @@ const Empdashboard = () => {
                 >
                     <div className="flex flex-col sm:flex-row justify-between">
                         <h3 className="text-lg font-semibold flex items-center gap-2 text-red-700 dark:text-white">
-                            <ClipboardList size={20} /> Credit summary
+                            <ClipboardList size={20} className="text-red-700 dark:text-red-600" /> Credit summary
                         </h3>
                         {/* Monthly Filter */}
                         <div className="mt-2 mb-4">
@@ -666,7 +666,7 @@ const Empdashboard = () => {
                 >
                     <div className="flex  flex-col sm:flex-row justify-between">
                         <h3 className="text-lg font-semibold flex items-center gap-2 text-red-700 dark:text-white mb-6">
-                            <ClipboardList size={20} /> Leaves Balance Summary
+                            <ClipboardList size={20} className="text-red-700 dark:text-red-600" /> Leaves Balance Summary
                         </h3>
                         {/* Monthly Filter */}
                         <div className="mt-2 mb-4">
@@ -732,7 +732,7 @@ const Empdashboard = () => {
                     dark:hover:shadow-none overflow-auto">
                     <div className="flex  flex-col sm:flex-row justify-between">
                         <h3 className="text-lg font-medium flex items-center gap-2 text-red-800 dark:text-slate-200">
-                            <ClipboardList size={20} /> Short Leave
+                            <ClipboardList size={20} className="text-red-700 dark:text-red-600" /> Short Leave
                         </h3>
                         {/* Monthly Filter */}
                         <div className="mt-2">
@@ -780,7 +780,7 @@ const Empdashboard = () => {
   dark:shadow-none 
   dark:hover:shadow-none hover:border-red-700 dark:hover:border-none">
                     <h3 className="text-lg font-semibold flex items-center gap-2 text-red-800 dark:text-slate-200">
-                        <ClipboardList size={20} /> Leaves Policy
+                        <ClipboardList size={20} className="text-red-700 dark:text-red-600" /> Leaves Policy
                     </h3>
                     <table className="w-full text-md border-collapse mt-3">
                         <thead>
@@ -819,7 +819,7 @@ const Empdashboard = () => {
                         dark:hover:shadow-none hover:border-red-700 dark:hover:border-none">
                     <div className="flex  flex-col sm:flex-row justify-between" >
                         <h3 className="text-lg font-semibold flex items-center gap-2 text-red-800 dark:text-slate-200">
-                            <ClipboardList size={20} /> Work From Home
+                            <ClipboardList size={20} className="text-red-700 dark:text-red-600" /> Work From Home
                         </h3>
                         {/* Monthly Filter */}
                         <div className="mt-2">
@@ -867,7 +867,7 @@ const Empdashboard = () => {
                     dark:hover:shadow-none overflow-auto">
                     <div className="flex  flex-col sm:flex-row justify-between">
                         <h3 className="text-lg font-semibold flex items-center gap-2 text-red-800 dark:text-slate-200">
-                            <ClipboardList size={20} /> Extra Working Hours
+                            <ClipboardList size={20} className="text-red-700 dark:text-red-600" /> Extra Working Hours
                         </h3>
                         {/* Monthly Filter */}
                         <div className="mt-2">
@@ -918,7 +918,7 @@ const Empdashboard = () => {
                 dark:shadow-none 
                 dark:hover:shadow-none overflow-auto">
                     <h3 className="text-lg font-semibold flex items-center gap-2 text-red-800 dark:text-slate-200">
-                        <ClipboardList size={20} /> Salary Details
+                        <ClipboardList size={20} className="text-red-700 dark:text-red-600" /> Salary Details
                     </h3>
                     <table className="w-full text-md border-collapse mt-3">
                         <thead>

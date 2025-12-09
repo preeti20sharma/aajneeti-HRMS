@@ -267,7 +267,7 @@ const EmployeeBankdetails = () => {
                                 dark:hover:bg-slate-700 
                                 dark:hover:text-red-300"
                             >
-                                <X className="w-5 h-5 text-red-100" />
+                                <X className="w-5 h-5 text-red-800 dark:text-red-100" />
                             </button>
                         </div>
 
@@ -361,13 +361,13 @@ const EmployeeBankdetails = () => {
                                 <button
                                     type="button"
                                     onClick={closeEditModal}
-                                    className="rounded-full border border-gray-300 px-4 py-2 text-sm font-medium text-gray-200"
+                                    className="rounded-full border border-red-800 text-red-800 dark:border-gray-300 px-4 py-2 text-sm font-medium dark:text-gray-200"
                                 >
                                     Cancel
                                 </button>
                                 <button
                                     type="submit"
-                                    className="rounded-full bg-red-600 px-5 py-2 text-sm font-semibold text-white hover:bg-red-700"
+                                    className="rounded-full bg-gradient-to-r from-red-800 to-black  px-5 py-2 text-sm font-semibold text-white hover:bg-none hover:bg-red-800"
                                 >
                                     Save Changes
                                 </button>
@@ -524,7 +524,7 @@ const EmployeeBankdetails = () => {
                                 hover:bg-red-50 
                                 dark:hover:bg-slate-700 
                                 dark:hover:text-red-300" >
-                                <X className="w-5 h-5 text-red-100" />
+                                <X className="w-5 h-5 text-red-800 dark:text-red-100" />
                             </button>
                         </div>
 
@@ -632,7 +632,7 @@ const EmployeeBankdetails = () => {
                                 <button
                                     type="button"
                                     onClick={closeEditpersonalModal}
-                                    className="rounded-full border border-gray-300 px-4 py-2 text-sm font-medium text-slate-200 "
+                                    className="rounded-full border border-red-800 text-red-800 dark:border-gray-300 px-4 py-2 text-sm font-medium dark:text-slate-200 "
                                 >
                                     Cancel
                                 </button>
