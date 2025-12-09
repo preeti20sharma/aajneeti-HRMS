@@ -745,24 +745,24 @@ const Empdashboard = () => {
                     ) : (
                         <table className="w-full text-md border-collapse mt-3">
                             <thead>
-                                <tr className="bg-red-100 text-red-800 dark:text-slate-200 dark:bg-slate-700">
-                                    <th className="border border-red-100 px-2 py-1">Date</th>
-                                    <th className="border border-red-100 px-2 py-1">Start Time</th>
-                                    <th className="border border-red-100 px-2 py-1">End Time</th>
-                                    <th className="border border-red-100 px-2 py-1">Total Hours</th>
-                                    <th className="border border-red-100 px-2 py-1">Reason</th>
-                                    <th className="border border-red-100 px-2 py-1">Approved By</th>
+                                <tr className="bg-red-50 text-red-800 dark:text-slate-200 dark:bg-slate-700">
+                                    <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Date</th>
+                                    <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Start Time</th>
+                                    <th className="border border-red-100 dark:border-slate-700 px-2 py-1">End Time</th>
+                                    <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Total Hours</th>
+                                    <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Reason</th>
+                                    <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Approved By</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {monthlyFilteredShortLeave.map((shortLeave, idx) => (
                                     <tr key={idx} className="hover:bg-red-50 dark:hover:bg-slate-800 text-center  transition-all duration-300">
-                                        <td className="border border-red-100 px-2 py-1">{shortLeave.date}</td>
-                                        <td className="border border-red-100 px-2 py-1">{shortLeave.startTime}</td>
-                                        <td className="border border-red-100 px-2 py-1">{shortLeave.endTime}</td>
-                                        <td className="border border-red-100 px-2 py-1">{shortLeave.totalHours}</td>
-                                        <td className="border border-red-100 px-2 py-1">{shortLeave.reason}</td>
-                                        <td className="border border-red-100 px-2 py-1">{shortLeave.approvedBy}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{shortLeave.date}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{shortLeave.startTime}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{shortLeave.endTime}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{shortLeave.totalHours}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{shortLeave.reason}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{shortLeave.approvedBy}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -785,23 +785,23 @@ const Empdashboard = () => {
                     <table className="w-full text-md border-collapse mt-3">
                         <thead>
                             <tr className="bg-red-50 text-red-800 dark:text-slate-200 dark:bg-slate-700  transition-all duration-300">
-                                <th className="border border-red-100 px-2 py-1">Category</th>
-                                <th className="border border-red-100 px-2 py-1">Month</th>
-                                <th className="border border-red-100 px-2 py-1">Full day leave</th>
-                                <th className="border border-red-100 px-2 py-1">Half day leave</th>
-                                <th className="border border-red-100 px-2 py-1">Paid/Unpaid Rule</th>
-                                <th className="border border-red-100 px-2 py-1">Notice Period</th>
+                                <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Category</th>
+                                <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Month</th>
+                                <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Full day leave</th>
+                                <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Half day leave</th>
+                                <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Paid/Unpaid Rule</th>
+                                <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Notice Period</th>
                             </tr>
                         </thead>
                         <tbody>
                             {employee.leavesPolicy.map((leave, idx) => (
                                 <tr key={idx} className="hover:bg-red-50 dark:hover:bg-slate-800 text-center  transition-all duration-300">
-                                    <td className="border border-red-100 px-2 py-1">{leave.category}</td>
-                                    <td className="border border-red-100 px-2 py-1">{leave.month}</td>
-                                    <td className="border border-red-100 px-2 py-1">{leave.fulldayLeave}</td>
-                                    <td className="border border-red-100 px-2 py-1">{leave.halfdayLeave}</td>
-                                    <td className="border border-red-100 px-2 py-1">{leave.PaidUnpaidRule}</td>
-                                    <td className="border border-red-100 px-2 py-1">{leave.noticePeriod}</td>
+                                    <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{leave.category}</td>
+                                    <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{leave.month}</td>
+                                    <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{leave.fulldayLeave}</td>
+                                    <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{leave.halfdayLeave}</td>
+                                    <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{leave.PaidUnpaidRule}</td>
+                                    <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{leave.noticePeriod}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -833,23 +833,23 @@ const Empdashboard = () => {
                         <table className="w-full text-md border-collapse mt-3">
                             <thead>
                                 <tr className="bg-red-50 text-red-800 dark:text-slate-200 dark:bg-slate-700 border border-red-100">
-                                    <th className="border border-red-100 px-2 py-1">From Date</th>
-                                    <th className="border border-red-100 px-2 py-1">To Date</th>
-                                    <th className="border border-red-100 px-2 py-1">Days</th>
-                                    <th className="border border-red-100 px-2 py-1">Reason</th>
-                                    <th className="border border-red-100 px-2 py-1">Status</th>
-                                    <th className="border border-red-100 px-2 py-1">Approved By</th>
+                                    <th className="border border-red-100  dark:border-slate-700 px-2 py-1">From Date</th>
+                                    <th className="border border-red-100  dark:border-slate-700 px-2 py-1">To Date</th>
+                                    <th className="border border-red-100  dark:border-slate-700 px-2 py-1">Days</th>
+                                    <th className="border border-red-100  dark:border-slate-700 px-2 py-1">Reason</th>
+                                    <th className="border border-red-100  dark:border-slate-700 px-2 py-1">Status</th>
+                                    <th className="border border-red-100  dark:border-slate-700 px-2 py-1">Approved By</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {monthlyFilteredWFH.map((work, idx) => (
                                     <tr key={idx} className="hover:bg-red-50 dark:hover:bg-slate-800 text-center  transition-all duration-300">
-                                        <td className="border border-red-100 px-2 py-1">{work.from}</td>
-                                        <td className="border border-red-100 px-2 py-1">{work.to}</td>
-                                        <td className="border border-red-100 px-2 py-1">{work.days}</td>
-                                        <td className="border border-red-100 px-2 py-1">{work.reason}</td>
-                                        <td className="border border-red-100 px-2 py-1">{work.status}</td>
-                                        <td className="border border-red-100 px-2 py-1">{work.approvedBy}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{work.from}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{work.to}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{work.days}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{work.reason}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{work.status}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{work.approvedBy}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -881,27 +881,27 @@ const Empdashboard = () => {
                         <table className="w-full text-md border-collapse mt-3">
                             <thead>
                                 <tr className="bg-red-50 text-red-800 dark:text-slate-200 dark:bg-slate-700">
-                                    <th className="border border-red-100 px-2 py-1">Date</th>
-                                    <th className="border border-red-100 px-2 py-1">In Time</th>
-                                    <th className="border border-red-100 px-2 py-1">Out Time</th>
-                                    <th className="border border-red-100 px-2 py-1">Total Hours</th>
-                                    <th className="border border-red-100 px-2 py-1">Working Place</th>
-                                    <th className="border border-red-100 px-2 py-1">Reason</th>
-                                    <th className="border border-red-100 px-2 py-1">Approved By</th>
-                                    <th className="border border-red-100 px-2 py-1">Compensation Type</th>
+                                    <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Date</th>
+                                    <th className="border border-red-100 dark:border-slate-700 px-2 py-1">In Time</th>
+                                    <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Out Time</th>
+                                    <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Total Hours</th>
+                                    <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Working Place</th>
+                                    <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Reason</th>
+                                    <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Approved By</th>
+                                    <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Compensation Type</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {monthlyFilteredExtrawork.map((work, idx) => (
                                     <tr key={idx} className="hover:bg-red-50 dark:hover:bg-slate-800 text-center  transition-all duration-300">
-                                        <td className="border border-red-100 px-2 py-1">{work.date}</td>
-                                        <td className="border border-red-100 px-2 py-1">{work.inTime}</td>
-                                        <td className="border border-red-100 px-2 py-1">{work.outTime}</td>
-                                        <td className="border border-red-100 px-2 py-1">{work.totalHours}</td>
-                                        <td className="border border-red-100 px-2 py-1">{work.workingPlace}</td>
-                                        <td className="border border-red-100 px-2 py-1">{work.reason}</td>
-                                        <td className="border border-red-100 px-2 py-1">{work.approvedBy}</td>
-                                        <td className="border border-red-100 px-2 py-1">{work.compensationType}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{work.date}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{work.inTime}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{work.outTime}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{work.totalHours}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{work.workingPlace}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{work.reason}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{work.approvedBy}</td>
+                                        <td className="border border-red-100 dark:border-slate-700 px-2 py-1">{work.compensationType}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -923,21 +923,21 @@ const Empdashboard = () => {
                     <table className="w-full text-md border-collapse mt-3">
                         <thead>
                             <tr className="bg-red-50 text-red-800 dark:text-slate-200 dark:bg-slate-700">
-                                <th className="border border-red-100 px-2 py-1">Basic</th>
-                                <th className="border border-red-100 px-2 py-1">HRA</th>
-                                <th className="border border-red-100 px-2 py-1">Allowance</th>
-                                <th className="border border-red-100 px-2 py-1">Deductions</th>
-                                <th className="border border-red-100 px-2 py-1">Net</th>
+                                <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Basic</th>
+                                <th className="border border-red-100 dark:border-slate-700 px-2 py-1">HRA</th>
+                                <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Allowance</th>
+                                <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Deductions</th>
+                                <th className="border border-red-100 dark:border-slate-700 px-2 py-1">Net</th>
                             </tr>
                         </thead>
                         <tbody>
                             {employee.salary.map((salary, idx) => (
                                 <tr key={idx} className="hover:bg-red-50 dark:hover:bg-slate-800  transition-all duration-300">
-                                    <td className="border border-red-100 px-2 py-1 text-center">{salary.basic}</td>
-                                    <td className="border border-red-100 px-2 py-1 text-center">{salary.hra}</td>
-                                    <td className="border border-red-100 px-2 py-1 text-center">{salary.allowance}</td>
-                                    <td className="border border-red-100 px-2 py-1 text-center">{salary.deductions}</td>
-                                    <td className="border border-red-100 px-2 py-1 text-center">{salary.net}</td>
+                                    <td className="border border-red-100 dark:border-slate-700 px-2 py-1 text-center">{salary.basic}</td>
+                                    <td className="border border-red-100 dark:border-slate-700 px-2 py-1 text-center">{salary.hra}</td>
+                                    <td className="border border-red-100 dark:border-slate-700 px-2 py-1 text-center">{salary.allowance}</td>
+                                    <td className="border border-red-100 dark:border-slate-700 px-2 py-1 text-center">{salary.deductions}</td>
+                                    <td className="border border-red-100 dark:border-slate-700 px-2 py-1 text-center">{salary.net}</td>
                                 </tr>
                             ))}
                         </tbody>

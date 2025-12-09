@@ -260,58 +260,74 @@ const DashboardPage = () => {
                     </div>
                 </div>
 
-                <div className="
-                        h-[380px] col-span-1 md:col-span-2 lg:col-span-3
-                        rounded-xl  border border-red-100
-                        bg-white dark:bg-slate-900 
-                        shadow-md shadow-red-500/20 
-                    hover:shadow-red-500/20
-                    dark:border-slate-700
-                    dark:shadow-none 
-                    dark:hover:shadow-none
-                        transition-all duration-300 
-                    ">
+                <div
+                    className="
+    col-span-1 md:col-span-2 lg:col-span-3
+    rounded-xl border border-red-100
+    bg-white dark:bg-slate-900
+    shadow-md shadow-red-500/20 hover:shadow-red-500/20
+    dark:border-slate-700 dark:shadow-none dark:hover:shadow-none
+    transition-all duration-300
+  "
+                >
                     {/* Header */}
-                    <div className="
-         px-4 py-5
-       
-        rounded-t-xl text-white 
-        font-semibold tracking-wide
-        dark:bg-none dark:text-red-300
-    ">
+                    <div
+                        className="
+      px-4 py-4
+      rounded-t-xl
+      text-slate-900 dark:text-red-300
+      font-semibold tracking-wide
+    "
+                    >
                         <p className="card-title">Today</p>
                     </div>
 
-                    {/* Body */}
-                    <div className=" h-[300px] overflow-auto p-0 [scrollbar-width:_thin]">
+                    {/* TABLE */}
+                    <div className="h-[300px] overflow-auto pb-2 [scrollbar-width:_thin]">
+                        <table className="w-full text-left text-sm sm:text-base">
+                            {/* Table Header */}
+                            {/* <thead className="bg-red-50 dark:bg-slate-800/40 text-slate-700 dark:text-red-300 sticky top-0 z-10">
+                                <tr>
+                                    <th className="py-2 px-3 font-semibold">Employee</th>
+                                    <th className="py-2 px-3 font-semibold text-right">Today</th>
+                                </tr>
+                            </thead> */}
 
-                        {recentSalesData.map((sale) => (
-                            <div key={sale.id} className="
-                    flex items-center justify-between gap-x-4 py-2 pr-2 px-2
-                    border-b border-red-100 dark:border-slate-700/40
-                    hover:bg-red-50 dark:hover:bg-slate-800/40
-                    transition-all duration-200
-                ">
-                                {/* Left Section */}
-                                <div className="flex items-center gap-x-4">
-                                    <img src={sale.image} alt={sale.name} className="
-                            size-12 rounded-full object-cover
-                            border border-red-100 shadow-sm
-                        " />
-                                    <div className="flex flex-col gap-y-1">
-                                        <p className="font-semibold text-slate-900 dark:text-white">
-                                            {sale.name}
-                                        </p>
-                                    </div>
-                                </div>
+                            {/* Table Body */}
+                            <tbody>
+                                {recentSalesData.map((sale) => (
+                                    <tr
+                                        key={sale.id}
+                                        className="
+              border-b border-red-100 dark:border-slate-700/40
+              hover:bg-red-50 dark:hover:bg-slate-800/40
+              transition-all
+            "
+                                    >
+                                        {/* Employee Info */}
+                                        <td className="py-4 px-6">
+                                            <div className="flex items-center gap-3">
+                                                <img
+                                                    src={sale.image}
+                                                    alt={sale.name}
+                                                    className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-red-100 object-cover"
+                                                />
+                                                <p className="font-semibold text-slate-900 dark:text-white">
+                                                    {sale.name}
+                                                </p>
+                                            </div>
+                                        </td>
 
-                                {/* Right Section */}
-                                <p className="font-semibold text-red-700 dark:text-red-400">
-                                    {sale.today}
-                                </p>
-                            </div>
-                        ))}
-
+                                        {/* Today Column */}
+                                        <td className="py-3 px-3 text-left">
+                                            <p className="font-semibold text-red-700 dark:text-red-400 whitespace-nowrap">
+                                                {sale.today}
+                                            </p>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
