@@ -188,7 +188,7 @@ const Department = () => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
-                                    className="w-full mt-1 border dark:border-slate-700 rounded p-2 bg-white dark:bg-slate-800"
+                                    className="w-full mt-1 border border-red-100 dark:border-slate-700 rounded p-2 bg-white dark:bg-slate-800"
                                 />
                             </div>
 
@@ -200,7 +200,7 @@ const Department = () => {
                                     value={formData.head}
                                     onChange={handleChange}
                                     required
-                                    className="w-full mt-1 border dark:border-slate-700 rounded p-2 bg-white dark:bg-slate-800"
+                                    className="w-full mt-1 border border-red-100 dark:border-slate-700 rounded p-2 bg-white dark:bg-slate-800"
                                 />
                             </div>
 
@@ -212,7 +212,7 @@ const Department = () => {
                                     value={formData.employees}
                                     onChange={handleChange}
                                     required
-                                    className="w-full mt-1 border dark:border-slate-700 rounded p-2 bg-white dark:bg-slate-800"
+                                    className="w-full mt-1 border border-red-100 dark:border-slate-700 rounded p-2 bg-white dark:bg-slate-800"
                                 />
                             </div>
 
@@ -224,7 +224,7 @@ const Department = () => {
                                     value={formData.created}
                                     onChange={handleChange}
                                     required
-                                    className="w-full mt-1 border dark:border-slate-700 rounded p-2 bg-white dark:bg-slate-800"
+                                    className="w-full mt-1 border border-red-100 dark:border-slate-700 rounded p-2 bg-white dark:bg-slate-800"
                                 />
                             </div>
 

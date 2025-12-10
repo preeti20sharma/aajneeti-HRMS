@@ -1,4 +1,4 @@
-import { CalendarCog, CalendarDays, Clock10, FileClock, Home, IndianRupeeIcon, LogIn, LogOutIcon, Trophy, UsersRound, Wifi, AlertTriangle, Bell } from "lucide-react";
+import { CalendarCog, CalendarDays, Clock10, FileClock, Home, IndianRupeeIcon, LogIn, LogOutIcon, Trophy, UsersRound, Wifi, AlertTriangle, Bell, File } from "lucide-react";
 
 import ProfileImage from "@/assets/profile-image.jpg";
 // import ProductImage from "@/assets/product-image.jpg";
@@ -111,6 +111,11 @@ export const navbarLinks = [
                 label: "pending Request",
                 icon: Bell,
                 path: "/pending-request",
+            },
+            {
+                label: "HR Policy",
+                icon: File,
+                path: "/policies",
             },
         ],
     },

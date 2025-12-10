@@ -29,6 +29,7 @@ import Notifications from "./routes/Notification";
 import EmployeeBankDetails from "./routes/EmployeeBankdetails";
 import AttendanceInsights from "./routes/AttendanceInsights";
 import PendingRequest from "./routes/PendingRequest";
+import Policy from "./routes/Policy";
 
 function App() {
     const router = createBrowserRouter([
@@ -143,7 +144,10 @@ function App() {
                     path: "employees-salary",
                     element: <EmployeeSalary />,
                 },
-
+                {
+                    path: "policies",
+                    element: <Policy />
+                },
                 {
                     path: "employeesgrid",
                     element: <EmployeeGrid />,
@@ -151,8 +155,6 @@ function App() {
 
             ],
         },
-
-
     ]);
 
     return (

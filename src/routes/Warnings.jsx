@@ -279,11 +279,11 @@ const Warnings = () => {
                     <div className="bg-white dark:bg-slate-900 rounded-2xl w-full max-w-lg shadow-2xl p-6 border dark:border-none animate-scaleIn">
 
                         <div className="flex justify-between items-center mb-4">
-                            <h3 className="text-xl font-semibold dark:text-slate-200">
+                            <h3 className="text-xl font-semibold text-red-800 dark:text-slate-200">
                                 {editing ? "Edit Warning" : "Add New Warning"}
                             </h3>
                             <button onClick={() => setIsOpen(false)}>
-                                <X size={22} className="dark:text-slate-200" />
+                                <X size={22} className="text-red-800 dark:text-slate-200" />
                             </button>
                         </div>
 
@@ -300,7 +300,7 @@ const Warnings = () => {
                                     value={formData.employee}
                                     onChange={handleChange}
                                     required
-                                    className="w-full p-2 mt-1 rounded-lg bg-slate-100 dark:bg-slate-800 border dark:border-slate-700"
+                                    className="w-full p-2 mt-1 rounded-lg bg-red-50 dark:bg-slate-800 border border-red-100 dark:border-slate-700"
                                 />
                             </div>
 
@@ -315,7 +315,7 @@ const Warnings = () => {
                                     value={formData.date}
                                     onChange={handleChange}
                                     required
-                                    className="w-full p-2 mt-1 rounded-lg  bg-slate-100 dark:bg-slate-800 border dark:border-slate-700 dark:text-white"
+                                    className="w-full p-2 mt-1 rounded-lg  bg-red-50 dark:bg-slate-800 border border-red-100 dark:border-slate-700 dark:text-white"
                                 />
                             </div>
 
@@ -330,7 +330,7 @@ const Warnings = () => {
                                     value={formData.subject}
                                     onChange={handleChange}
                                     required
-                                    className="w-full p-2 mt-1 rounded-lg bg-slate-100 dark:bg-slate-800 border dark:border-slate-700"
+                                    className="w-full p-2 mt-1 rounded-lg bg-red-50 dark:bg-slate-800 border border-red-100 dark:border-slate-700"
                                 />
                             </div>
 
@@ -342,7 +342,7 @@ const Warnings = () => {
                                     value={formData.details}
                                     onChange={handleChange}
                                     required
-                                    className="w-full p-2 mt-1 rounded-lg bg-slate-100 dark:bg-slate-800 border dark:border-slate-700"
+                                    className="w-full p-2 mt-1 rounded-lg bg-red-50 dark:bg-slate-800 border border-red-100 dark:border-slate-700"
                                 ></textarea>
                             </div>
 
@@ -353,7 +353,7 @@ const Warnings = () => {
                                         setIsOpen(false);
                                         setEditing(null);
                                     }}
-                                    className="px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800"
+                                    className="px-4 py-2 rounded-lg border border-red-800 dark:border-slate-700 text-red-800 dark:text-slate-200  dark:hover:bg-slate-800"
                                 >
                                     Cancel
                                 </button>

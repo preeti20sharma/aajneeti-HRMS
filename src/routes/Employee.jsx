@@ -413,37 +413,37 @@ const Employees = () => {
             {isOpen && (
                 <div className="fixed inset-0 z-50 bg-black bg-opacity-50 overflow-auto animate-fadeIn">
                     <div className="bg-white dark:bg-slate-800 px-6 py-2 rounded-lg relative my-8 mx-auto shadow-lg w-full max-w-xl animate-scaleIn ">
-                        <h2 className="text-xl font-bold mb-4">
+                        <h2 className="text-xl text-red-800 dark:text-white font-semibold mt-2 mb-4">
                             {selectedEmployee ? "Edit Employee" : "Add Employee"}
                         </h2>
                         <form onSubmit={handleSubmit} className="space-y-3">
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div>
                                     <label className={labelClasses}>Employee Name</label>
-                                    <input name="name" placeholder="Name" defaultValue={selectedEmployee?.name || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="name" placeholder="Name" defaultValue={selectedEmployee?.name || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-red-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 " />
                                 </div>
                                 <div>
                                     <label className={labelClasses}>Employee ID</label>
-                                    <input name="id" placeholder="Employee ID" defaultValue={selectedEmployee?.number || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="id" placeholder="Employee ID" defaultValue={selectedEmployee?.number || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-red-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 " />
                                 </div>
                                 <div>
                                     <label className={labelClasses}>Employee Type</label>
-                                    <input name="status" placeholder="Employment Type" defaultValue={selectedEmployee?.status || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="status" placeholder="Employment Type" defaultValue={selectedEmployee?.status || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-red-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 " />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div>
                                     <label className={labelClasses}>Experience</label>
-                                    <input name="experience" placeholder="Experience" defaultValue={selectedEmployee?.experience || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="experience" placeholder="Experience" defaultValue={selectedEmployee?.experience || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-red-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 " />
                                 </div>
                                 <div>
                                     <label className={labelClasses}>Employee Designation</label>
-                                    <input name="description" placeholder="Designation" defaultValue={selectedEmployee?.description || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="description" placeholder="Designation" defaultValue={selectedEmployee?.description || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-red-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 " />
                                 </div>
                                 <div>
                                     <label className={labelClasses}>Department</label>
-                                    <input name="department" placeholder="Department" defaultValue={selectedEmployee?.department || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="department" placeholder="Department" defaultValue={selectedEmployee?.department || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-red-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 " />
                                 </div>
                             </div>
 
@@ -451,15 +451,15 @@ const Employees = () => {
 
                                 <div>
                                     <label className={labelClasses}>Team Manager</label>
-                                    <input name="teamLeader" placeholder="Team Manager" defaultValue={selectedEmployee?.teamLeader || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="teamLeader" placeholder="Team Manager" defaultValue={selectedEmployee?.teamLeader || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-red-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 " />
                                 </div>
                                 <div>
                                     <label className={labelClasses}>Email ID</label>
-                                    <input name="email" placeholder="Email ID" defaultValue={selectedEmployee?.email || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="email" placeholder="Email ID" defaultValue={selectedEmployee?.email || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-red-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 " />
                                 </div>
                                 <div>
                                     <label className={labelClasses}>Mobile No.</label>
-                                    <input name="phone" placeholder="Mobile No." defaultValue={selectedEmployee?.phone || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input name="phone" placeholder="Mobile No." defaultValue={selectedEmployee?.phone || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-red-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 " />
                                 </div>
                             </div>
 
@@ -467,27 +467,27 @@ const Employees = () => {
 
                                 <div>
                                     <label className={labelClasses}>Joining Date</label>
-                                    <input type="date" name="joiningDate" defaultValue={selectedEmployee?.joiningDate || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-slate-900 dark:text-slate-100" />
+                                    <input type="date" name="joiningDate" defaultValue={selectedEmployee?.joiningDate || ""} className="mt-1 w-full border rounded-lg p-2 text-sm bg-white dark:bg-slate-800 border-red-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 " />
                                 </div>
                             </div>
 
-                            <h2 className="text-lg font-semibold mb-4 border-b pb-2 border-gray-200 dark:border-slate-700">
+                            <h2 className="text-lg text-red-800 dark:text-slate-200  font-semibold mb-4 border-b pb-2 border-gray-200 dark:border-slate-700">
                                 Upload Profile
                             </h2>
                             <div className="flex flex-col items-center md:items-start">
                                 <label className={`${labelClasses} mb-1`}>Image</label>
-                                <input type="file" name="image" accept="image/*" onChange={handleImageChange} className="block text-sm text-slate-700 dark:text-slate-200" />
+                                <input type="file" name="image" accept="image/*" onChange={handleImageChange} className="block text-sm text-slate-700 dark:text-slate-200 " />
                                 {preview && (
                                     <img src={preview} alt="Preview" className="mt-2 w-20 h-20 rounded-lg object-cover" />
                                 )}
                                 <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">JPG or PNG, max 5MB</p>
                             </div>
 
-                            <div className="flex justify-end gap-3">
-                                <button type="button" onClick={() => setIsOpen(false)} className="px-4 py-2 text-slate-800 bg-gray-300 rounded">
+                            <div className="flex justify-end gap-3 ">
+                                <button type="button" onClick={() => setIsOpen(false)} className="px-6 py-1 border border-red-800 text-red-800 dark:border-slate-200 dark:text-slate-200 rounded-md mb-2">
                                     Cancel
                                 </button>
-                                <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded">
+                                <button type="submit" className="px-6 py-1 bg-gradient-to-r from-red-800 to-black text-white rounded mb-2">
                                     Save
                                 </button>
                             </div>

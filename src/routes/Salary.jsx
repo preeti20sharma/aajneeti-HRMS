@@ -213,14 +213,14 @@ const EmployeeSalary = () => {
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 animate-fadeIn">
                     <div className="bg-white dark:bg-slate-900 p-6 rounded-xl w-full max-w-lg shadow-xl animate-scaleIn">
                         <div className="flex justify-between items-center mb-4">
-                            <h3 className="text-xl font-bold">
+                            <h3 className="text-xl font-semibold text-red-800 dark:text-slate-200">
                                 {editingEmployee ? "Edit Salary Details" : "Add Salary Details"}
                             </h3>
                             <button
                                 onClick={() => setIsOpen(false)}
                                 className="text-slate-500 hover:text-red-500"
                             >
-                                <X size={22} />
+                                <X size={22} className="text-red-800 dark:text-slate-200" />
                             </button>
                         </div>
 
@@ -322,7 +322,7 @@ const EmployeeSalary = () => {
                                         setIsOpen(false);
                                         setEditingEmployee(null);
                                     }}
-                                    className="px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800"
+                                    className="px-4 py-2 rounded-lg border border-red-800 dark:border-slate-700 text-red-800 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800"
                                 >
                                     Cancel
                                 </button>
